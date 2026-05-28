@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+:root {
+  --color-shrine-crimson: #a50000;
+  --color-shrine-vermil: #e2501f;
+  --color-shrine-gold: #a27a28;
+  --color-shrine-gold-lt: #c49a3a;
+  --color-shrine-brown: #873800;
+  --color-shrine-ivory: #faf8f5;
+  --color-shrine-stone: #f2ece4;
+  --color-shrine-stone-dk: #ede5d9;
+  --color-shrine-dark: #1e1810;
+  
+  --color-shrine-text: #333333;
+  --color-shrine-text-mid: #555555;
+  --color-shrine-text-mute: #7a6a5a;
+  
+  --color-shrine-border: rgba(165,0,0,0.12);
+  --color-shrine-border-gold: rgba(162,122,40,0.18);
+  
+  --color-shrine-blue: #1a4fa0;
+  
+  --background: var(--color-shrine-ivory);
+  --foreground: var(--color-shrine-text);
+}
+
+@theme {
+  --color-crimson: var(--color-shrine-crimson);
+  --color-vermil: var(--color-shrine-vermil);
+  --color-gold: var(--color-shrine-gold);
+  --color-gold-lt: var(--color-shrine-gold-lt);
+  --color-brown: var(--color-shrine-brown);
+  --color-ivory: var(--color-shrine-ivory);
+  --color-stone: var(--color-shrine-stone);
+  --color-stone-dk: var(--color-shrine-stone-dk);
+  --color-dark: var(--color-shrine-dark);
+  
+  --color-text-body: var(--color-shrine-text);
+  --color-text-mid: var(--color-shrine-text-mid);
+  --color-text-mute: var(--color-shrine-text-mute);
+  
+  --color-border-shrine: var(--color-shrine-border);
+  --color-border-gold: var(--color-shrine-border-gold);
+  
+  --color-shrine-blue: var(--color-shrine-blue);
+  
+  --font-serif: var(--font-serif), var(--font-serif-en), serif;
+  --font-sans: var(--font-sans), var(--font-sans-en), sans-serif;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  min-height: 100%;
+}
+
+/* Custom scrollbars and transition effects */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-shrine-stone);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-shrine-gold);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-shrine-gold-lt);
+}
+
+/* Base selection color */
+::selection {
+  background-color: rgba(162, 122, 40, 0.2);
+  color: var(--color-shrine-crimson);
+}

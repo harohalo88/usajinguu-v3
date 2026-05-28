@@ -1,0 +1,486 @@
+{
+  "langJa": "日本語",
+  "langEn": "English",
+  "langZhTW": "繁體中文",
+  "langZhCN": "简体中文",
+  "langKo": "한국어",
+  "home": "首頁",
+  "navAbout": "關於宇佐神宮",
+  "navWorship": "參拜指南",
+  "navFestivals": "祭典活動",
+  "navAccess": "交通資訊",
+  "navNews": "最新消息",
+  "navContact": "聯絡我們",
+  "navMenu": "選單",
+  "navClose": "關閉",
+  "サイトマップ": "網站地圖",
+  "宇佐神宮について": "關於宇佐神宮",
+  "参拝について": "參拜指南",
+  "お祭りについて": "祭典活動",
+  "神前結婚式": "神前婚禮",
+  "八幡講崇敬会": "八幡講崇敬會",
+  "その他": "其他",
+  "openingTitle": "宇佐神宮",
+  "openingSubtitle": "八幡總本宮",
+  "openingTagline": "創建於西元725年",
+  "heroTaglineVertical": "靜謐\n之美\n自然\n和諧",
+  "heroTitle": "宇佐神宮",
+  "heroSubtitle": "八幡總本宮",
+  "heroDescription": "全日本四萬餘座八幡神社的總本宮。\n自西元725年創建以來，\n為皇室虔誠崇敬的神聖之地。",
+  "heroScrollText": "向下滑動",
+  "heroCta": "參拜指南",
+  "newsTitle": "最新消息",
+  "newsTitleEn": "Latest News",
+  "newsViewAll": "查看所有消息",
+  "newsItems": {
+    "0": {
+      "date": "2026年3月1日",
+      "tag": "公告",
+      "title": "2026年春季例大祭公告（預定3月中旬舉行）"
+    },
+    "1": {
+      "date": "2026年2月15日",
+      "tag": "活動",
+      "title": "宇佐神宮創建1300年紀念奉祝活動詳情"
+    },
+    "2": {
+      "date": "2026年2月1日",
+      "tag": "公告",
+      "title": "新年神符及護身符發放結束公告"
+    },
+    "3": {
+      "date": "2026年1月15日",
+      "tag": "纜車",
+      "title": "1月20日（週一）纜車因檢修停止運行"
+    },
+    "4": {
+      "date": "2025年12月25日",
+      "tag": "公告",
+      "title": "新年參拜期間交通管制及臨時停車場資訊"
+    }
+  },
+  "aboutTitle": "關於宇佐神宮",
+  "aboutTitleEn": "About Usa Jingu",
+  "aboutIntro": "宇佐神宮是全日本約四萬座八幡神社的總本宮。自西元725年創建以來，深受皇室崇敬，被視為僅次於伊勢神宮的第二宗廟。",
+  "historyTitle": "由緒沿革",
+  "historyTitleEn": "History & Origins",
+  "historyText1": "宇佐神宮於神龜二年（西元725年）鎮座於宇佐之地，是八幡神社的總本宮。自古以來深受皇室崇敬，被視為僅次於伊勢神宮的第二宗廟，受到朝廷的厚遇。",
+  "historyText2": "被稱為「八幡大神」的祭神，作為武運之神、文化之神、農耕之神，自古以來也深受百姓愛戴，在全國各地設有分社。被指定為國寶的本殿以「八幡造」這種獨特的建築樣式建造，展現了日本建築美的極致。",
+  "deitiesTitle": "祭神",
+  "deitiesTitleEn": "Enshrined Deities",
+  "deity1Name": "八幡大神",
+  "deity1Name2": "（應神天皇）",
+  "deity1Desc": "全日本八幡神社供奉的主神。被崇拜為武道之神、文化之神、農耕之神。是應神天皇神格化的神靈，也是武士道的精神支柱。",
+  "deity2Name": "比賣大神",
+  "deity2Name2": "（宗像三女神）",
+  "deity2Desc": "宗像大社祭神宗像三女神的總稱。被崇拜為守護海上航路的神，賜予結緣和家庭和睦的神恩。",
+  "deity3Name": "神功皇后",
+  "deity3Name2": "（息長帶比賣命）",
+  "deity3Desc": "應神天皇之母神。以三韓征伐的傳說聞名，集聚了育兒和安產之神的信仰。是兼具力量與慈愛的神靈。",
+  "legendsTitle": "八幡大神相關傳說",
+  "legendsTitleEn": "Legends of Hachiman Okami",
+  "legend1Title": "御靈水",
+  "legend1Subtitle": "Sacred Spring Water",
+  "legend1Text": "相傳本殿側面湧出的清水，是八幡大神初次降臨時從大地湧現的。自古以來被崇拜為「靈水」，據信能淨化參拜者的身心，並賜予諸願成就的神恩。",
+  "legend2Title": "東大寺大佛建立",
+  "legend2Subtitle": "Building of Todaiji",
+  "legend2Text": "天平勝寶元年（749年），聖武天皇發願建立東大寺大佛時，宇佐神宮的八幡大神宣告「雖余乃神，亦護佑佛法」，宣示協助建立大佛。這是成為神佛習合思想起源的重要史實。",
+  "legend3Title": "和氣清麻呂與神諭",
+  "legend3Subtitle": "Wake no Kiyomaro",
+  "legend3Text": "神護景雲三年（769年），道鏡試圖篡奪皇位時，和氣清麻呂前往宇佐神宮請求神諭。八幡大神降諭「自我國開闢以來，君臣有別，未曾有以臣為君者」，守護了皇統的正統性。",
+  "legend4Title": "神佛習合",
+  "legend4Subtitle": "Syncretism of Shinto & Buddhism",
+  "legend4Text": "宇佐神宮被視為日本神佛習合的發源地之一。八幡大神獲賜菩薩稱號「八幡大菩薩」，是神道與佛教融合的日本獨特宗教文化的象徵，展示了日本文化的深度與包容性。",
+  "timelineTitle": "歷史年表",
+  "timelineTitleEn": "Chronological History",
+  "timelineEvents": {
+    "0": {
+      "year": "725年",
+      "era": "神龜二年",
+      "event": "宇佐神宮鎮座。八幡大神初次降臨宇佐之地。"
+    },
+    "1": {
+      "year": "749年",
+      "era": "天平勝寶元年",
+      "event": "東大寺大佛建立之際，八幡神降下神諭。成為神佛習合的重要史實。"
+    },
+    "2": {
+      "year": "769年",
+      "era": "神護景雲三年",
+      "event": "道鏡事件。和氣清麻呂奉八幡大神神諭，守護皇位繼承。"
+    },
+    "3": {
+      "year": "859年",
+      "era": "貞觀元年",
+      "event": "石清水八幡宮創建，由宇佐神宮勸請。"
+    },
+    "4": {
+      "year": "1193年",
+      "era": "建久四年",
+      "event": "源賴朝大規模修繕社殿，武家信仰日益深厚。"
+    },
+    "5": {
+      "year": "1861年",
+      "era": "文久元年",
+      "event": "現存本殿（國寶）完工，集八幡造之精髓，莊嚴宏偉。"
+    },
+    "6": {
+      "year": "1952年",
+      "era": "昭和二十七年",
+      "event": "本殿被指定為國寶，是日本建築史上最重要的文化財產之一。"
+    },
+    "7": {
+      "year": "2025年",
+      "era": "令和七年",
+      "event": "迎來鎮座1300年，來自全國的參拜者聚集奉祝。"
+    }
+  },
+  "museumTitle": "寶物館介紹",
+  "museumTitleEn": "Treasure Museum",
+  "museumText": "宇佐神宮寶物館收藏了長久歷史中奉納的各種寶物。可參觀包括國寶、重要文化財在內的珍貴物品，訴說著神社的歷史與文化。",
+  "museumHours": "開館時間：9:00〜16:30（入館至16:00）",
+  "museumFee": "參觀費：成人500日圓 / 中高生300日圓 / 小學生200日圓",
+  "museumClosed": "休館日：週一（遇假日則次日）、年末年始",
+  "worshipTitle": "參拜指南",
+  "worshipTitleEn": "Worship & Visit",
+  "worshipIntro": "在宇佐神宮，請以古來傳承的特別禮儀參拜。以符合八幡總本宮的虔誠心情，與神明面對面度過神聖時刻。",
+  "etiquetteTitle": "參拜禮儀",
+  "etiquetteTitleEn": "Worship Etiquette",
+  "etiquetteSpecial": "二拜四拍手一拜",
+  "etiquetteSpecialDesc": "只在宇佐神宮和出雲大社流傳的特別參拜作法，與一般神社的「二拜二拍手一拜」有所不同。",
+  "etiquetteSteps": {
+    "0": {
+      "num": "一",
+      "title": "手水禮儀",
+      "desc": "參拜前在手水舍淨手漱口。依序為右手→左手→口→左手→柄杓柄。"
+    },
+    "1": {
+      "num": "二",
+      "title": "穿過鳥居",
+      "desc": "在鳥居前鞠躬後穿過。參道中央（正中）是神明的通道，請走側邊。"
+    },
+    "2": {
+      "num": "三",
+      "title": "站在拜殿前",
+      "desc": "站在賽錢箱前，輕輕鞠躬。靜靜投入賽錢，如有鈴則搖鈴。"
+    },
+    "3": {
+      "num": "四",
+      "title": "二拜四拍手一拜",
+      "desc": "深深鞠躬兩次，在胸前高度拍手四次（發出聲音），最後深深鞠躬一次。請誠心祈禱。"
+    }
+  },
+  "groundsTitle": "境內導覽",
+  "groundsTitleEn": "Shrine Grounds",
+  "groundsAreas": {
+    "0": {
+      "name": "上宮",
+      "desc": "供奉八幡大神、比賣大神、神功皇后的三社。國寶本殿所在。",
+      "icon": "⛩"
+    },
+    "1": {
+      "name": "下宮",
+      "desc": "同樣供奉三柱神明。「下拜」的場所。",
+      "icon": "⛩"
+    },
+    "2": {
+      "name": "若宮神社",
+      "desc": "供奉應神天皇長子仁德天皇的攝社。",
+      "icon": "🏛"
+    },
+    "3": {
+      "name": "手水舍",
+      "desc": "參拝前淨身心之所。湧出靈水的神聖場所。",
+      "icon": "💧"
+    },
+    "4": {
+      "name": "寶物館",
+      "desc": "展示包括國寶、重要文化財在內的珍貴寶物。",
+      "icon": "🏺"
+    },
+    "5": {
+      "name": "表參道",
+      "desc": "從大鳥居延伸的莊嚴參道。兩側排列著石燈籠。",
+      "icon": "🌿"
+    }
+  },
+  "prayerTitle": "祈願祭",
+  "prayerTitleEn": "Prayer Rituals",
+  "prayerText": "宇佐神宮為各種心願舉行祈願祭。神職人員將以正式禮儀代為祈願。",
+  "yaku": "除厄開運",
+  "yakuText": "受理厄年人士的除厄・開運祈願。男性為25歲・42歲，女性為19歲・33歲。",
+  "prayers": {
+    "0": "家庭平安",
+    "1": "交通安全",
+    "2": "生意興隆",
+    "3": "學業成就",
+    "4": "身體康復",
+    "5": "安產祈願",
+    "6": "良緣締結",
+    "7": "五穀豐收"
+  },
+  "amuletsTitle": "授與品介紹",
+  "amuletsTitleEn": "Sacred Items & Amulets",
+  "amuletsText": "宇佐神宮提供各種蒙受八幡大神神威的授與品。",
+  "amuletItems": {
+    "0": {
+      "name": "御守",
+      "desc": "身體平安、交通安全、學業成就等各種護身符"
+    },
+    "1": {
+      "name": "御神札",
+      "desc": "在神棚供奉的神符。家庭平安、生意興隆等"
+    },
+    "2": {
+      "name": "繪馬",
+      "desc": "寫下心願後奉納的繪馬。多種設計可選"
+    },
+    "3": {
+      "name": "御朱印",
+      "desc": "宇佐神宮相關的御朱印。也販售御朱印帳"
+    },
+    "4": {
+      "name": "破魔矢",
+      "desc": "驅邪的吉祥物。新年、節日等時節尤為適合"
+    },
+    "5": {
+      "name": "神棚用品",
+      "desc": "家庭和職場神棚用品一應俱全"
+    }
+  },
+  "weddingTitle": "神前婚禮",
+  "weddingTitleEn": "Shinto Wedding",
+  "weddingText": "可在宇佐神宮神前舉行莊嚴美麗的神前婚禮。在八幡大神的庇護下，祝福新的人生開始。",
+  "weddingInquiry": "婚禮諮詢與預約",
+  "offsiteTitle": "外出祭典",
+  "offsiteTitleEn": "Off-site Ceremonies",
+  "offsiteText": "地鎮祭、上棟祭、竣工祭、神葬祭等，神職人員可前往家庭或職場舉行祭典。",
+  "monorailTitle": "纜車介紹",
+  "monorailTitleEn": "Monorail Guide",
+  "monorailText": "可搭乘纜車前往上宮，安全登上陡峭的參道。",
+  "monorailHours": "運行時間：8:30〜17:00（末班16:45發車）",
+  "monorailFee": "費用：單程200日圓（來回350日圓）",
+  "monorailNote": "※ 惡劣天氣及檢修時停止運行。",
+  "festivalsTitle": "祭典活動",
+  "festivalsTitleEn": "Festivals & Events",
+  "festivalsIntro": "宇佐神宮全年舉行各種祭事。古來傳承的傳統祭儀是當地居民的心靈寄託。",
+  "majorFestivalsTitle": "主要祭典",
+  "majorFestivalsTitleEn": "Major Festivals",
+  "festivals": {
+    "0": {
+      "month": "1月",
+      "name": "元旦祭",
+      "date": "1月1日",
+      "desc": "祈願國家安泰、五穀豐登、氏子崇敬者平安的重要祭典。"
+    },
+    "1": {
+      "month": "3月",
+      "name": "春季例大祭",
+      "date": "3月中旬",
+      "desc": "感謝春天到來，祈願五穀豐登、國民安泰的全年最大祭典之一。"
+    },
+    "2": {
+      "month": "6月",
+      "name": "夏越大祓",
+      "date": "6月30日",
+      "desc": "通過穿越茅草環，祓除上半年積累的罪穢，祈願下半年健康安全。"
+    },
+    "3": {
+      "month": "7月",
+      "name": "放生會（全國大會）",
+      "date": "7月中旬",
+      "desc": "向所有生靈獻上慈悲與感謝的宇佐特有祭典。國家重要無形民俗文化財。"
+    },
+    "4": {
+      "month": "9月",
+      "name": "勅祭（勅使參向祭）",
+      "date": "9月下旬",
+      "desc": "天皇陛下的使者勅使前來參拜，是宇佐神宮最高等級的祭事。自古代延續至今的莊嚴神事。"
+    },
+    "5": {
+      "month": "10月",
+      "name": "仲秋祭",
+      "date": "10月中旬",
+      "desc": "感謝豐收的盛大祭典。舉行神輿渡御和傳統藝能奉納。"
+    },
+    "6": {
+      "month": "11月",
+      "name": "新嘗祭",
+      "date": "11月23日",
+      "desc": "將新穀奉獻給神明、感謝豐收的日本最古老祭典之一。全國農業相關者前來參拜。"
+    },
+    "7": {
+      "month": "12月",
+      "name": "年越大祓",
+      "date": "12月31日",
+      "desc": "祓除一整年的罪穢，以清淨之心迎接新年的淨化神事。"
+    }
+  },
+  "scheduleTitle": "下月活動預定",
+  "scheduleTitleEn": "Next Month's Schedule",
+  "scheduleNote": "※ 祭事日程可能有所變更，請聯絡確認最新資訊。",
+  "scheduleItems": {
+    "0": {
+      "date": "4月1日",
+      "name": "月次祭（朔日祭）",
+      "time": "10:00",
+      "type": "月例"
+    },
+    "1": {
+      "date": "4月8日",
+      "name": "觀音祭",
+      "time": "10:00",
+      "type": "祭事"
+    },
+    "2": {
+      "date": "4月15日",
+      "name": "月次祭（十五日祭）",
+      "time": "10:00",
+      "type": "月例"
+    },
+    "3": {
+      "date": "4月21日",
+      "name": "春季神樂祭",
+      "time": "13:00",
+      "type": "神樂"
+    },
+    "4": {
+      "date": "4月29日",
+      "name": "昭和祭",
+      "time": "10:00",
+      "type": "祭事"
+    }
+  },
+  "accessTitle": "交通資訊",
+  "accessTitleEn": "Access & Transportation",
+  "accessAddress": "〒872-0102 大分縣宇佐市南宇佐2859",
+  "accessPhone": "TEL: 0978-37-0001",
+  "accessFax": "FAX: 0978-37-0408",
+  "accessHours": "參拜時間: 5:30〜21:00（依季節可能有所變動）",
+  "byTrain": "電車",
+  "byTrainDesc": "搭乘JR日豰本線至「宇佐站」下車，計程車約10分鐘（約5km）。亦有路線巴士可搭乘。",
+  "byCar": "自駕",
+  "byCarDesc": "從東九州自動車道「宇佐IC」約5分鐘。參道沿線設有多個停車場（免費）。",
+  "byBus": "巴士",
+  "byBusDesc": "搭乘大分交通巴士至「宇佐神宮前」站下車，從宇佐站約15分鐘。",
+  "parking": "停車場",
+  "parkingDesc": "設有第1〜第4停車場，共可容納約500輛。亦有大型巴士專用停車場。",
+  "faqTitle": "常見問題",
+  "faqTitleEn": "FAQ",
+  "faqs": {
+    "0": {
+      "q": "參拜時間是什麼時候？",
+      "a": "5:30〜21:00（依季節略有變動）。纜車運行時間為8:30〜17:00。"
+    },
+    "1": {
+      "q": "祈願需要預約嗎？",
+      "a": "基本上無需預約，但大型祈願（地鎮祭、婚禮等）需提前預約。"
+    },
+    "2": {
+      "q": "有停車場嗎？",
+      "a": "設有第1〜第4停車場，共約500個停車位，免費使用。"
+    },
+    "3": {
+      "q": "可以領御朱印嗎？",
+      "a": "可以，在授與所受理，時間為9:00〜16:30。"
+    },
+    "4": {
+      "q": "可以帶寵物入境嗎？",
+      "a": "請勿帶寵物進入境內，感謝您的理解與配合。"
+    }
+  },
+  "footerAddress": "〒872-0102 大分縣宇佐市南宇佐2859",
+  "footerPhone": "TEL: 0978-37-0001",
+  "footerCopyright": "© 宇佐神宮 版權所有。",
+  "footerLinks1Title": "關於宇佐神宮",
+  "footerLinks1": {
+    "0": "由緒・歷史",
+    "1": "祭神",
+    "2": "寶物館",
+    "3": "境內導覽"
+  },
+  "footerLinks2Title": "參拜・祈願",
+  "footerLinks2": {
+    "0": "參拜禮儀",
+    "1": "祈願指南",
+    "2": "外出祭典",
+    "3": "授與品"
+  },
+  "footerLinks3Title": "其他",
+  "footerLinks3": {
+    "0": "表參道商店街",
+    "1": "八幡講崇敬會",
+    "2": "奉贊申請",
+    "3": "聯絡我們"
+  },
+  "footerLinks4Title": "法律資訊",
+  "footerLinks4": {
+    "0": "免責聲明",
+    "1": "隱私政策",
+    "2": "網站地圖"
+  },
+  "footerSocial": "追蹤我們",
+  "footerOmotesando": "表參道商店街",
+  "footerDonation": "奉贊申請",
+  "footerHachiman": "八幡講崇敬會",
+  "footerContact": "聯絡我們",
+  "footerDisclaimer": "免責聲明",
+  "footerPrivacy": "隱私政策",
+  "navGridTitleEn": "Usa Jingu · Guide",
+  "navGrid": {
+    "0": {
+      "title": "精選活動"
+    },
+    "1": {
+      "title": "歷史淵源"
+    },
+    "2": {
+      "title": "主祭神明"
+    },
+    "3": {
+      "title": "參拜禮儀"
+    },
+    "4": {
+      "title": "境內導覽"
+    },
+    "5": {
+      "title": "祈願祭"
+    },
+    "6": {
+      "title": "神前婚禮"
+    },
+    "7": {
+      "title": "授予品"
+    },
+    "8": {
+      "title": "祭典介紹"
+    },
+    "9": {
+      "title": "八幡講崇敬會"
+    }
+  },
+  "quickAccessTitleEn": "Quick Access",
+  "quickAccessTitle": "精選連結",
+  "quickAccessCategoryLabel": "關於參拜",
+  "quickAccess": {
+    "pray": {
+      "title": "祈願祭",
+      "cta": "查看詳情"
+    },
+    "access": {
+      "title": "交通方式",
+      "cta": "確認路線"
+    },
+    "monorail": {
+      "title": "單軌鐵路導覽",
+      "cta": "運行資訊"
+    }
+  },
+  "visitCtaTitleEn": "Visit Us",
+  "visitCtaTitle": "歡迎蒞臨參拜",
+  "visitCtaAddress": "〒872-0102 大分縣宇佐市南宇佐2859",
+  "visitCtaAccess": "查看路線",
+  "visitCtaContact": "聯絡我們",
+  "floatingBannerText": "營業時間已更改",
+  "floatingBannerSub": "Opening hour changed"
+}

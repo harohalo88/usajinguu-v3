@@ -1,0 +1,486 @@
+{
+  "langJa": "日本語",
+  "langEn": "English",
+  "langZhTW": "繁體中文",
+  "langZhCN": "简体中文",
+  "langKo": "한국어",
+  "home": "Home",
+  "navAbout": "About Usa Jingu",
+  "navWorship": "Worship & Visit",
+  "navFestivals": "Festivals",
+  "navAccess": "Access",
+  "navNews": "News",
+  "navContact": "Contact",
+  "navMenu": "Menu",
+  "navClose": "Close",
+  "サイトマップ": "Sitemap",
+  "宇佐神宮について": "About Usa Jingu",
+  "参拝について": "Worship & Visit",
+  "お祭りについて": "Festivals",
+  "神前結婚式": "Shinto Wedding",
+  "八幡講崇敬会": "Hachiman-ko",
+  "その他": "Others",
+  "openingTitle": "宇佐神宮",
+  "openingSubtitle": "Usa Jingu",
+  "openingTagline": "Founded in 725 AD",
+  "heroTaglineVertical": "Beauty\nin\nStillness",
+  "heroTitle": "Usa Jingu",
+  "heroSubtitle": "Grand Shrine of Hachiman",
+  "heroDescription": "The Grand Shrine of Hachiman,\nenshrining over 40,000 shrines across Japan.\nA sacred site revered since 725 AD.",
+  "heroScrollText": "Scroll Down",
+  "heroCta": "Plan Your Visit",
+  "newsTitle": "Latest News",
+  "newsTitleEn": "Latest News",
+  "newsViewAll": "View all news",
+  "newsItems": {
+    "0": {
+      "date": "March 1, 2026",
+      "tag": "Notice",
+      "title": "Spring Grand Festival Schedule Announcement (Mid-March)"
+    },
+    "1": {
+      "date": "February 15, 2026",
+      "tag": "Event",
+      "title": "1300th Anniversary Celebration Events at Usa Jingu"
+    },
+    "2": {
+      "date": "February 1, 2026",
+      "tag": "Notice",
+      "title": "New Year Sacred Items Distribution End Notice"
+    },
+    "3": {
+      "date": "January 15, 2026",
+      "tag": "Monorail",
+      "title": "Monorail Service Suspension on January 20 (Mon) for Inspection"
+    },
+    "4": {
+      "date": "December 25, 2025",
+      "tag": "Notice",
+      "title": "New Year Traffic Restrictions and Temporary Parking Information"
+    }
+  },
+  "aboutTitle": "About Usa Jingu",
+  "aboutTitleEn": "About Usa Jingu",
+  "aboutIntro": "Usa Jingu is the head shrine of approximately 40,000 Hachiman shrines across Japan. Since its founding in 725 AD, it has been deeply revered by the Imperial Family as the second most important shrine after Ise Jingu.",
+  "historyTitle": "History & Origins",
+  "historyTitleEn": "History & Origins",
+  "historyText1": "Usa Jingu was established in 725 AD (Jinki 2) in the land of Usa, serving as the head shrine of all Hachiman shrines. Throughout history, it has been deeply venerated by the Imperial Family, honored as the second most sacred shrine after Ise Jingu.",
+  "historyText2": "The enshrined deity, known as \"Hachiman Okami,\" is worshipped as the god of martial arts, culture, and agriculture, beloved by commoners throughout Japan. The main hall, designated as a National Treasure, was built in the distinctive \"Hachiman-zukuri\" architectural style, representing the pinnacle of Japanese architecture.",
+  "deitiesTitle": "Enshrined Deities",
+  "deitiesTitleEn": "Enshrined Deities",
+  "deity1Name": "Hachiman Okami",
+  "deity1Name2": "(Emperor Ojin)",
+  "deity1Desc": "The principal deity enshrined in all Hachiman shrines. Revered as the god of martial arts, culture, and agriculture. Deified spirit of Emperor Ojin, who serves as the spiritual pillar of the samurai code.",
+  "deity2Name": "Hime Okami",
+  "deity2Name2": "(Three Goddesses of Munakata)",
+  "deity2Desc": "A collective name for the three goddesses of Munakata Taisha. Revered as protectors of sea routes, they are associated with matchmaking and family harmony.",
+  "deity3Name": "Empress Jingu",
+  "deity3Name2": "(Okinagatarashi Hime)",
+  "deity3Desc": "Mother of Emperor Ojin, known for the legend of the Three Kingdoms expedition. Revered as the deity of child-rearing and safe childbirth, embodying both strength and compassion.",
+  "legendsTitle": "Legends of Hachiman Okami",
+  "legendsTitleEn": "Legends of Hachiman Okami",
+  "legend1Title": "Sacred Spring Water",
+  "legend1Subtitle": "御霊水",
+  "legend1Text": "A sacred spring beside the main hall is said to have welled up from the earth when Hachiman Okami first descended to this land. Revered since ancient times as \"spirit water,\" it is believed to purify the body and soul and grant the fulfillment of wishes.",
+  "legend2Title": "Building of Todaiji",
+  "legend2Subtitle": "東大寺の大仏建立",
+  "legend2Text": "In 749 AD, when Emperor Shomu undertook the construction of the Great Buddha at Todaiji, Hachiman Okami of Usa Jingu declared: \"Though I am a god, I will protect the Buddha Dharma.\" This marks a pivotal moment in Japanese history as the origin of the syncretism of Shinto and Buddhism.",
+  "legend3Title": "Wake no Kiyomaro & The Oracle",
+  "legend3Subtitle": "和気清麻呂とご神託",
+  "legend3Text": "In 769 AD, when Dokyo attempted to usurp the throne, Wake no Kiyomaro visited Usa Jingu to receive the divine oracle. Hachiman Okami declared: \"Since the founding of our nation, rulers and subjects have been defined. No subject has ever become a ruler.\" The oracle protected the imperial lineage.",
+  "legend4Title": "Syncretism of Shinto & Buddhism",
+  "legend4Subtitle": "神仏習合",
+  "legend4Text": "Usa Jingu is considered one of the birthplaces of Japan's unique religious synthesis of Shinto and Buddhism. When Hachiman Okami was granted the title \"Hachiman Daibosatsu\" (Great Bodhisattva), it symbolized the fusion of these two traditions—a testament to the depth and inclusivity of Japanese culture.",
+  "timelineTitle": "Chronological History",
+  "timelineTitleEn": "Chronological History",
+  "timelineEvents": {
+    "0": {
+      "year": "725",
+      "era": "Jinki 2",
+      "event": "Founding of Usa Jingu. Hachiman Okami first descends to the land of Usa."
+    },
+    "1": {
+      "year": "749",
+      "era": "Tenpyo-shoho 1",
+      "event": "Oracle regarding the construction of the Great Buddha at Todaiji. A pivotal moment in the history of Shinto-Buddhist syncretism."
+    },
+    "2": {
+      "year": "769",
+      "era": "Jingo-keiun 3",
+      "event": "The Dokyo Incident. Wake no Kiyomaro carries the divine oracle to protect the imperial succession."
+    },
+    "3": {
+      "year": "859",
+      "era": "Jogan 1",
+      "event": "Founding of Iwashimizu Hachimangu, branched from Usa Jingu."
+    },
+    "4": {
+      "year": "1193",
+      "era": "Kenkyu 4",
+      "event": "Minamoto no Yoritomo undertakes extensive restoration of the shrine buildings, deepening samurai devotion."
+    },
+    "5": {
+      "year": "1861",
+      "era": "Bunkyu 1",
+      "event": "Completion of the existing main hall (National Treasure) in the distinctive Hachiman-zukuri style."
+    },
+    "6": {
+      "year": "1952",
+      "era": "Showa 27",
+      "event": "The main hall is designated a National Treasure, one of the most important cultural properties in Japanese architectural history."
+    },
+    "7": {
+      "year": "2025",
+      "era": "Reiwa 7",
+      "event": "The 1300th anniversary of the shrine's founding is celebrated with special events drawing visitors from across Japan."
+    }
+  },
+  "museumTitle": "Treasure Museum",
+  "museumTitleEn": "Treasure Museum",
+  "museumText": "The Usa Jingu Treasure Museum houses numerous treasures dedicated throughout its long history. Visitors can view precious items including National Treasures and Important Cultural Properties that tell the story of the shrine's history and culture.",
+  "museumHours": "Hours: 9:00–16:30 (Last entry 16:00)",
+  "museumFee": "Admission: Adult ¥500 / Middle & High School ¥300 / Elementary ¥200",
+  "museumClosed": "Closed: Mondays (next day if holiday), Year-end/New Year",
+  "worshipTitle": "Worship & Visit",
+  "worshipTitleEn": "Worship & Visit",
+  "worshipIntro": "Please follow the traditional etiquette passed down through the ages at Usa Jingu. Approach the deities with a reverent heart befitting the Grand Shrine of Hachiman.",
+  "etiquetteTitle": "Worship Etiquette",
+  "etiquetteTitleEn": "Worship Etiquette",
+  "etiquetteSpecial": "Two Bows, Four Claps, One Bow",
+  "etiquetteSpecialDesc": "A special form of worship unique to Usa Jingu and Izumo Taisha. It differs from the \"two bows, two claps, one bow\" used at most other shrines.",
+  "etiquetteSteps": {
+    "0": {
+      "num": "1",
+      "title": "Hand Purification",
+      "desc": "Before worshipping, purify your hands and mouth at the temizuya (purification fountain). Follow the order: right hand → left hand → mouth → left hand → ladle handle."
+    },
+    "1": {
+      "num": "2",
+      "title": "Pass Through the Torii",
+      "desc": "Bow once before passing through the torii gate. Walk on the sides of the path—the center is reserved as the pathway for the deities."
+    },
+    "2": {
+      "num": "3",
+      "title": "Stand Before the Haiden",
+      "desc": "Stand before the offertory box and bow lightly. Quietly offer a coin and ring the bell if one is present."
+    },
+    "3": {
+      "num": "4",
+      "title": "Two Bows, Four Claps, One Bow",
+      "desc": "Bow deeply twice, clap four times at chest height (making sound), then bow deeply once more. Offer your prayers from the heart."
+    }
+  },
+  "groundsTitle": "Shrine Grounds",
+  "groundsTitleEn": "Shrine Grounds",
+  "groundsAreas": {
+    "0": {
+      "name": "Upper Shrine",
+      "desc": "The main sanctuary housing the three deities. Contains the National Treasure main hall.",
+      "icon": "⛩"
+    },
+    "1": {
+      "name": "Lower Shrine",
+      "desc": "Also enshrines the same three deities. A place of worship for the \"lower pilgrimage.\"",
+      "icon": "⛩"
+    },
+    "2": {
+      "name": "Wakamiya Shrine",
+      "desc": "A subsidiary shrine enshrining Emperor Nintoku, eldest son of Emperor Ojin.",
+      "icon": "🏛"
+    },
+    "3": {
+      "name": "Temizuya",
+      "desc": "The place for ritual purification before worship. Fed by sacred spring water.",
+      "icon": "💧"
+    },
+    "4": {
+      "name": "Treasure Museum",
+      "desc": "Displays precious treasures including National Treasures and Important Cultural Properties.",
+      "icon": "🏺"
+    },
+    "5": {
+      "name": "Omotesando",
+      "desc": "The grand approach from the great torii gate, lined with stone lanterns on both sides.",
+      "icon": "🌿"
+    }
+  },
+  "prayerTitle": "Prayer Rituals",
+  "prayerTitleEn": "Prayer Rituals",
+  "prayerText": "Usa Jingu performs prayer rituals for various wishes and intentions. Priests will offer prayers on your behalf following formal sacred procedures.",
+  "yaku": "Warding off Evil & Good Fortune",
+  "yakuText": "We accept prayers for warding off misfortune during critical ages. For men: ages 25 and 42. For women: ages 19 and 33.",
+  "prayers": {
+    "0": "Family Safety",
+    "1": "Traffic Safety",
+    "2": "Business Success",
+    "3": "Academic Achievement",
+    "4": "Recovery from Illness",
+    "5": "Safe Childbirth",
+    "6": "Matchmaking",
+    "7": "Bountiful Harvest"
+  },
+  "amuletsTitle": "Sacred Items & Amulets",
+  "amuletsTitleEn": "Sacred Items & Amulets",
+  "amuletsText": "Usa Jingu offers a variety of sacred items imbued with the divine power of Hachiman Okami.",
+  "amuletItems": {
+    "0": {
+      "name": "Omamori",
+      "desc": "Amulets for body safety, traffic safety, academic success, and more"
+    },
+    "1": {
+      "name": "Ofuda",
+      "desc": "Sacred tablets for household shrines, family safety, business success, etc."
+    },
+    "2": {
+      "name": "Ema",
+      "desc": "Wooden wishing plaques to inscribe your prayers and dedicate to the shrine"
+    },
+    "3": {
+      "name": "Goshuin",
+      "desc": "Shrine seal stamps. Goshuin books also available for purchase"
+    },
+    "4": {
+      "name": "Hamaya",
+      "desc": "Arrow to ward off evil spirits. Popular for New Year and special occasions"
+    },
+    "5": {
+      "name": "Kamidana",
+      "desc": "Various household shrine items and accessories available"
+    }
+  },
+  "weddingTitle": "Shinto Wedding",
+  "weddingTitleEn": "Shinto Wedding",
+  "weddingText": "Hold your solemn and beautiful Shinto wedding ceremony before the deities of Usa Jingu. Begin your new life together under the divine blessing of Hachiman Okami.",
+  "weddingInquiry": "Ceremony Inquiry & Reservation",
+  "offsiteTitle": "Off-site Ceremonies",
+  "offsiteTitleEn": "Off-site Ceremonies",
+  "offsiteText": "Our priests can travel to your home or workplace for ground-breaking ceremonies, topping-out ceremonies, completion ceremonies, and Shinto funerals.",
+  "monorailTitle": "Monorail Guide",
+  "monorailTitleEn": "Monorail Guide",
+  "monorailText": "A monorail service is available to reach the Upper Shrine, allowing safe ascent up the steep approach path.",
+  "monorailHours": "Hours: 8:30–17:00 (Last departure 16:45)",
+  "monorailFee": "Fare: One-way ¥200 (Round-trip ¥350)",
+  "monorailNote": "※ Service may be suspended during severe weather or maintenance.",
+  "festivalsTitle": "Festivals & Events",
+  "festivalsTitleEn": "Festivals & Events",
+  "festivalsIntro": "Numerous festivals and ceremonies are held throughout the year at Usa Jingu. The traditional rituals passed down since ancient times serve as the spiritual anchor of the community.",
+  "majorFestivalsTitle": "Major Festivals",
+  "majorFestivalsTitleEn": "Major Festivals",
+  "festivals": {
+    "0": {
+      "month": "Jan",
+      "name": "New Year Festival",
+      "date": "January 1",
+      "desc": "An important ceremony praying for national prosperity, bountiful harvest, and the safety of all parishioners."
+    },
+    "1": {
+      "month": "Mar",
+      "name": "Spring Grand Festival",
+      "date": "Mid-March",
+      "desc": "One of the largest annual festivals, giving thanks for the arrival of spring and praying for bountiful harvest."
+    },
+    "2": {
+      "month": "Jun",
+      "name": "Summer Purification",
+      "date": "June 30",
+      "desc": "Purification ceremony to cleanse accumulated impurities through the first half of the year by passing through a sacred ring of reeds."
+    },
+    "3": {
+      "month": "Jul",
+      "name": "Hojoe (National)",
+      "date": "Mid-July",
+      "desc": "A unique festival expressing compassion and gratitude for all living beings. Designated as an Important Intangible Folk Cultural Property."
+    },
+    "4": {
+      "month": "Sep",
+      "name": "Imperial Messenger Festival",
+      "date": "Late September",
+      "desc": "The highest festival at Usa Jingu, attended by an imperial envoy from the Emperor. A solemn ceremony continuing since ancient times."
+    },
+    "5": {
+      "month": "Oct",
+      "name": "Mid-Autumn Festival",
+      "date": "Mid-October",
+      "desc": "A grand festival of thanksgiving for the autumn harvest, featuring mikoshi processions and dedication of traditional performing arts."
+    },
+    "6": {
+      "month": "Nov",
+      "name": "Harvest Thanksgiving",
+      "date": "November 23",
+      "desc": "One of Japan's oldest festivals, offering new grain to the deities in gratitude for the harvest. Agricultural communities across Japan make pilgrimages."
+    },
+    "7": {
+      "month": "Dec",
+      "name": "Year-end Purification",
+      "date": "December 31",
+      "desc": "A purification ceremony to cleanse the year's accumulated impurities and welcome the New Year with a pure heart."
+    }
+  },
+  "scheduleTitle": "Next Month's Schedule",
+  "scheduleTitleEn": "Next Month's Schedule",
+  "scheduleNote": "※ Festival dates may be subject to change. Please contact us for the latest information.",
+  "scheduleItems": {
+    "0": {
+      "date": "Apr 1",
+      "name": "Monthly Ceremony (New Month)",
+      "time": "10:00",
+      "type": "Monthly"
+    },
+    "1": {
+      "date": "Apr 8",
+      "name": "Kannon Festival",
+      "time": "10:00",
+      "type": "Festival"
+    },
+    "2": {
+      "date": "Apr 15",
+      "name": "Monthly Ceremony (15th Day)",
+      "time": "10:00",
+      "type": "Monthly"
+    },
+    "3": {
+      "date": "Apr 21",
+      "name": "Spring Kagura Festival",
+      "time": "13:00",
+      "type": "Kagura"
+    },
+    "4": {
+      "date": "Apr 29",
+      "name": "Showa Day Festival",
+      "time": "10:00",
+      "type": "Festival"
+    }
+  },
+  "accessTitle": "Access & Transportation",
+  "accessTitleEn": "Access & Transportation",
+  "accessAddress": "2859 Minamiusa, Usa City, Oita Prefecture 872-0102",
+  "accessPhone": "TEL: 0978-37-0001",
+  "accessFax": "FAX: 0978-37-0408",
+  "accessHours": "Worship Hours: 5:30–21:00 (may vary by season)",
+  "byTrain": "By Train",
+  "byTrainDesc": "Alight at Usa Station on the JR Nippo Main Line. Approx. 10 minutes by taxi (approx. 5km). Local buses also available.",
+  "byCar": "By Car",
+  "byCarDesc": "Approx. 5 minutes from Usa Interchange on the Higashi-Kyushu Expressway. Multiple free parking lots available along the approach road.",
+  "byBus": "By Bus",
+  "byBusDesc": "Take the Oita Kotsu Bus to \"Usa Jingu-mae\" bus stop. Approx. 15 minutes from Usa Station.",
+  "parking": "Parking",
+  "parkingDesc": "Parking Lots 1–4 available. Accommodates approx. 500 vehicles total. Dedicated lot for large buses also available.",
+  "faqTitle": "Frequently Asked Questions",
+  "faqTitleEn": "FAQ",
+  "faqs": {
+    "0": {
+      "q": "What are the worship hours?",
+      "a": "5:30–21:00 (may vary slightly by season). The monorail operates 8:30–17:00."
+    },
+    "1": {
+      "q": "Is a reservation required for prayer rituals?",
+      "a": "Generally no reservation is needed. However, large-scale rituals (ground-breaking ceremonies, weddings, etc.) do require advance booking."
+    },
+    "2": {
+      "q": "Is there parking available?",
+      "a": "Yes, Parking Lots 1–4 provide approximately 500 spaces in total. Parking is free of charge."
+    },
+    "3": {
+      "q": "Can I receive a goshuin (shrine seal stamp)?",
+      "a": "Yes, goshuin are available at the sacred items counter from 9:00–16:30."
+    },
+    "4": {
+      "q": "Can I bring pets to the shrine?",
+      "a": "We kindly ask that you refrain from bringing pets within the shrine grounds. Thank you for your understanding."
+    }
+  },
+  "footerAddress": "2859 Minamiusa, Usa City, Oita Prefecture 872-0102",
+  "footerPhone": "TEL: 0978-37-0001",
+  "footerCopyright": "© Usa Jingu. All Rights Reserved.",
+  "footerLinks1Title": "About Usa Jingu",
+  "footerLinks1": {
+    "0": "History & Origins",
+    "1": "Enshrined Deities",
+    "2": "Treasure Museum",
+    "3": "Shrine Grounds"
+  },
+  "footerLinks2Title": "Worship & Prayer",
+  "footerLinks2": {
+    "0": "Worship Etiquette",
+    "1": "Prayer Rituals",
+    "2": "Off-site Ceremonies",
+    "3": "Sacred Items"
+  },
+  "footerLinks3Title": "Other",
+  "footerLinks3": {
+    "0": "Omotesando Shopping",
+    "1": "Hachiman-ko Association",
+    "2": "Donations",
+    "3": "Contact Us"
+  },
+  "footerLinks4Title": "Legal",
+  "footerLinks4": {
+    "0": "Disclaimer",
+    "1": "Privacy Policy",
+    "2": "Sitemap"
+  },
+  "footerSocial": "Follow Us",
+  "footerOmotesando": "Omotesando Shopping",
+  "footerDonation": "Donations",
+  "footerHachiman": "Hachiman-ko Association",
+  "footerContact": "Contact Us",
+  "footerDisclaimer": "Disclaimer",
+  "footerPrivacy": "Privacy Policy",
+  "navGridTitleEn": "Usa Jingu · Guide",
+  "navGrid": {
+    "0": {
+      "title": "Featured Events"
+    },
+    "1": {
+      "title": "History & Origins"
+    },
+    "2": {
+      "title": "Enshrined Deities"
+    },
+    "3": {
+      "title": "Worship Etiquette"
+    },
+    "4": {
+      "title": "Grounds Guide"
+    },
+    "5": {
+      "title": "Prayer Ceremony"
+    },
+    "6": {
+      "title": "Shinto Wedding"
+    },
+    "7": {
+      "title": "Amulets & Charms"
+    },
+    "8": {
+      "title": "Festivals"
+    },
+    "9": {
+      "title": "Hachiman Society"
+    }
+  },
+  "quickAccessTitleEn": "Quick Access",
+  "quickAccessTitle": "Highlights & Links",
+  "quickAccessCategoryLabel": "Worship",
+  "quickAccess": {
+    "pray": {
+      "title": "Prayer Ceremony",
+      "cta": "Learn More"
+    },
+    "access": {
+      "title": "Getting Here",
+      "cta": "View Access"
+    },
+    "monorail": {
+      "title": "Monorail Service",
+      "cta": "Service Info"
+    }
+  },
+  "visitCtaTitleEn": "Visit Us",
+  "visitCtaTitle": "We Welcome Your Visit",
+  "visitCtaAddress": "2859 Minamiusa, Usa City, Oita Prefecture",
+  "visitCtaAccess": "View Access",
+  "visitCtaContact": "Contact Us",
+  "floatingBannerText": "営業時間が変更になりました",
+  "floatingBannerSub": "Opening hour changed"
+}
