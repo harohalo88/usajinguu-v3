@@ -5,13 +5,14 @@ import Link from 'next/link';
 import { useLocale } from 'next-intl';
 import { motion, useInView } from 'framer-motion';
 import { ChevronRight } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 // ── Images ────────────────────────────────────────────────────────────────────
 const IMG_WAKE_ORACLE = '/images/image-5.png';
-const IMG_GOOU_SHRINE = '/images/image-6.png';
+const IMG_GOOU_SHRINE = 'https://res.cloudinary.com/dxhqwmwz1/image/upload/c_scale,w_760/f_auto/q_auto/v1779961457/%E5%AE%87%E4%BD%90%E7%A5%9E%E5%AE%AE%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6_%E5%92%8C%E6%B0%97%E6%B8%85%E9%BA%BB%E5%91%82%E3%81%A8%E3%81%93%E3%82%99%E7%A5%9E%E8%A8%97_img03_ce6swq.jpg';
 
 // ── Remote images ─────────────────────────────────────────────────────────────
-const IMG_HERO = 'https://images.unsplash.com/photo-1770647228005-941d2462c0ee?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1920';
+const IMG_HERO = 'https://res.cloudinary.com/dxhqwmwz1/image/upload/c_crop,w_4032,h_1134,x_0,y_945/c_scale,w_1600,h_450/f_auto/q_auto/v1779961453/%E5%AE%87%E4%BD%90%E7%A5%9E%E5%AE%AE%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6_%E5%92%8C%E6%B0%97%E6%B8%85%E9%BA%BB%E5%91%82%E3%81%A8%E3%81%93%E3%82%99%E7%A5%9E%E8%A8%97_img01_lq7ovg.jpg';
 
 // ── Design tokens ─────────────────────────────────────────────────────────────
 const CRIMSON  = '#a50000';
@@ -146,6 +147,7 @@ function LegendCard({ href, label, sub }: { href: string; label: string; sub: st
 
 // ════════════════════════════════════════════════════════════════════════════
 export default function WakePage() {
+  const t = useTranslations();
   const locale = useLocale();
   return (
     <div className="min-h-screen" style={{ background: IVORY, color: TEXT }}>
@@ -154,7 +156,7 @@ export default function WakePage() {
       <section style={{ position: 'relative', height: '340px', overflow: 'hidden' }}>
         <img
           src={IMG_HERO}
-          alt="和気清麻呂とご神託"
+          alt={t('aboutLegendsWake_text_1')}
           style={{
             position: 'absolute', inset: 0,
             width: '100%', height: '100%',
@@ -174,17 +176,11 @@ export default function WakePage() {
             <Link
               href={`/${locale}`}
               className="font-sans text-ivory/55 text-[0.62rem] tracking-widest hover:text-ivory transition-colors"
-            >
-              ホーム
-            </Link>
+            >{t("aboutLegendsWakePage_text_34653")}</Link>
             <ChevronRight size={11} className="text-ivory/30" />
-            <span className="font-sans text-gold-lt/90 text-[0.62rem] tracking-widest">
-              宇佐神宮について
-            </span>
+            <span className="font-sans text-gold-lt/90 text-[0.62rem] tracking-widest">{t("aboutLegendsWakePage_text_44003")}</span>
             <ChevronRight size={11} className="text-ivory/30" />
-            <span className="font-sans text-gold-lt/90 text-[0.62rem] tracking-widest">
-              和気清麻呂とご神託
-            </span>
+            <span className="font-sans text-gold-lt/90 text-[0.62rem] tracking-widest">{t("aboutLegendsWakePage_text_63696")}</span>
           </nav>
 
           <motion.div
@@ -204,9 +200,7 @@ export default function WakePage() {
               fontFamily: 'var(--font-serif)', color: '#faf8f5',
               fontSize: 'clamp(2rem, 5vw, 3rem)', fontWeight: 300,
               letterSpacing: '0.3em', textShadow: '0 3px 20px rgba(0,0,0,0.4)',
-            }}>
-              和気清麻呂とご神託
-            </h1>
+            }}>{t("aboutLegendsWakePage_text_63696")}</h1>
             <div className="flex items-center justify-center gap-3 mt-5">
               <div style={{ width: '40px', height: '1px', backgroundColor: 'rgba(162,122,40,0.5)' }} />
               <div style={{ width: '5px', height: '5px', backgroundColor: '#a27a28', opacity: 0.7, transform: 'rotate(45deg)' }} />
@@ -251,9 +245,7 @@ export default function WakePage() {
                   color: TEXT,
                   textShadow: `1px 1px 0 ${IVORY}, 2px 2px 0 rgba(162,122,40,0.06)`,
                 }}
-              >
-                国体護持の御神託
-              </h2>
+              >{t("aboutLegendsWakePage_text_33080")}</h2>
             </div>
           </FadeIn>
 
@@ -275,8 +267,8 @@ export default function WakePage() {
                   宇佐神宮を深くご崇拝になっておられた天皇は、真相を確認するため、すぐに官僚であった和気清麻呂公を派遣します。公は出発に際して次のような歌をお作りになりました。
                 </p>
                 <PoemBox
-                  poem={"西の海たつ白波の上にして\nなにすごすらんかりのこの世を"}
-                  attribution="出立に際し　和気清麻呂公　詠"
+                  poem={t('aboutLegendsWake_text_2')}
+                  attribution={t('aboutLegendsWake_text_3')}
                 />
               </div>
 
@@ -284,8 +276,8 @@ export default function WakePage() {
               <div className="sm:w-[45%]">
                 <CaptionedImage
                   src={IMG_WAKE_ORACLE}
-                  alt="神託を受ける清麻呂"
-                  caption="神託を受ける清麻呂"
+                  alt={t('aboutLegendsWake_text_4')}
+                  caption={t('aboutLegendsWake_text_5')}
                 />
               </div>
             </div>
@@ -302,13 +294,11 @@ export default function WakePage() {
           <FadeIn>
             <div className="flex items-center gap-5 mb-10">
               <div className="h-px flex-1" style={{ background: 'rgba(162,122,40,0.2)' }} />
-              <h3 className="font-serif tracking-[0.4em]" style={{ fontSize: '1.15rem', color: TEXT }}>御神託</h3>
+              <h3 className="font-serif tracking-[0.4em]" style={{ fontSize: '1.15rem', color: TEXT }}>{t('aboutLegendsWake_text_6')}</h3>
               <div className="h-px flex-1" style={{ background: 'rgba(162,122,40,0.2)' }} />
             </div>
 
-            <p className="text-center font-sans tracking-[0.3em] mb-10" style={{ fontSize: '0.72rem', color: GOLD }}>
-              神護景雲三年（七六九）七月十一日
-            </p>
+            <p className="text-center font-sans tracking-[0.3em] mb-10" style={{ fontSize: '0.72rem', color: GOLD }}>{t("aboutLegendsWakePage_text_98865")}</p>
 
             <p
               className="font-sans text-[0.88rem] leading-[2.3] tracking-wide mb-10"
@@ -317,7 +307,7 @@ export default function WakePage() {
               清麻呂公は都を立って１０日余りの旅程で宇佐神宮に着き、斎戒沐浴して神殿にぬかづき、神護景雲３年（７６９）７月１１日、
             </p>
 
-            <QuoteBlock attribution="八幡宇佐宮御託宣集">
+            <QuoteBlock attribution={t('aboutLegendsWake_text_7')}>
               「我が国は開闢（かいびゃく）以来、君臣の分定まれり。<br />
               臣を以って君と為すこと未だあらざるなり。<br />
               天津日嗣(ひつぎ)は必ず皇緒を立てよ。<br />
@@ -353,9 +343,7 @@ export default function WakePage() {
             <FadeIn delay={0.1}>
               <div className="flex items-center gap-3 mb-7">
                 <div className="w-[3px] h-7" style={{ background: CRIMSON }} />
-                <h3 className="font-serif tracking-[0.3em]" style={{ fontSize: '1.2rem', color: TEXT }}>
-                  流罪と奇跡
-                </h3>
+                <h3 className="font-serif tracking-[0.3em]" style={{ fontSize: '1.2rem', color: TEXT }}>{t("aboutLegendsWakePage_text_89718")}</h3>
               </div>
 
               <p className="font-sans text-[0.88rem] leading-[2.3] tracking-wide mb-6" style={{ color: TEXT_MID }}>
@@ -379,17 +367,15 @@ export default function WakePage() {
             <FadeIn delay={0.2}>
               <div className="flex items-center gap-3 mb-7">
                 <div className="w-[3px] h-7" style={{ background: GOLD }} />
-                <h3 className="font-serif tracking-[0.3em]" style={{ fontSize: '1.2rem', color: TEXT }}>
-                  護皇神社と和気氏
-                </h3>
+                <h3 className="font-serif tracking-[0.3em]" style={{ fontSize: '1.2rem', color: TEXT }}>{t("aboutLegendsWakePage_text_14420")}</h3>
               </div>
 
               <p className="font-sans text-[0.88rem] leading-[2.3] tracking-wide mb-6" style={{ color: TEXT_MID }}>
                 このようにして、宇佐神宮の国体擁護のご神徳と、和気公の至誠の精神とが皇室をご守護することとなりました。
               </p>
 
-              <p className="font-sans text-[0.88rem] leading-[2.3] tracking-wide mb-8" style={{ color: TEXT_MID }}>この後、宇佐神宮への勅使を宇佐使（うさづかい）また和気使（わけづかい）といい、和気氏が派遣されるのが例となりました。</p>
-              <p className="font-sans text-[0.88rem] leading-[2.3] tracking-wide mb-8" style={{ color: TEXT_MID }}>清麻呂公は当宮末社、護皇(ごおう)神社に祭祀されています。</p>
+              <p className="font-sans text-[0.88rem] leading-[2.3] tracking-wide mb-8" style={{ color: TEXT_MID }}>{t('aboutLegendsWake_text_8')}</p>
+              <p className="font-sans text-[0.88rem] leading-[2.3] tracking-wide mb-8" style={{ color: TEXT_MID }}>{t('aboutLegendsWake_text_9')}</p>
             </FadeIn>
           </div>
 
@@ -397,8 +383,8 @@ export default function WakePage() {
           <FadeIn delay={0.25} className="md:sticky md:top-24">
             <CaptionedImage
               src={IMG_GOOU_SHRINE}
-              alt="清麻呂公を祀る護皇神社"
-              caption="清麻呂公を祀る護皇神社"
+              alt={t('aboutLegendsWake_text_10')}
+              caption={t('aboutLegendsWake_text_11')}
             />
           </FadeIn>
 
@@ -412,17 +398,15 @@ export default function WakePage() {
         <FadeIn>
           <div className="flex items-center gap-3 mb-12">
             <div className="w-[3px] h-6" style={{ background: GOLD }} />
-            <h3 className="font-serif tracking-[0.35em]" style={{ fontSize: '1.1rem', color: TEXT }}>
-              その他の伝承
-            </h3>
+            <h3 className="font-serif tracking-[0.35em]" style={{ fontSize: '1.1rem', color: TEXT }}>{t("aboutLegendsWakePage_text_63428")}</h3>
           </div>
         </FadeIn>
 
         <FadeIn delay={0.1}>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-            <LegendCard href="/about/legends/goreisui"  label="御霊水"        sub="Sacred Spring" />
-            <LegendCard href="/about/legends/todaiji"   label="東大寺の大仏建立" sub="Tōdai-ji Temple" />
-            <LegendCard href="/about/legends/shinbutsu" label="神仏習合 of 歴史"  sub="Syncretism" />
+            <LegendCard href="/about/legends/goreisui"  label={t('aboutLegendsWake_text_12')}        sub="Sacred Spring" />
+            <LegendCard href="/about/legends/todaiji"   label={t('aboutLegendsWake_text_13')} sub="Tōdai-ji Temple" />
+            <LegendCard href="/about/legends/shinbutsu" label={t('aboutLegendsWake_text_14')}  sub="Syncretism" />
           </div>
         </FadeIn>
       </section>

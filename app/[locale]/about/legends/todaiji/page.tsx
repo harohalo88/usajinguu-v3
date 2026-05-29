@@ -20,7 +20,7 @@ const TEXT_MID = '#555555';
 const TEXT_MUT = '#7a6a5a';
 
 // ── Images ──────────────────────────────────────────────────────────────────
-const IMG_HERO  = 'https://images.unsplash.com/photo-1770307930101-1f7b6feb5a4e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1920';
+const IMG_HERO  = 'https://res.cloudinary.com/dxhqwmwz1/image/upload/c_crop,w_7360,h_2070,x_0,y_300/c_scale,w_1600,h_450/f_auto/q_auto/v1779961467/%E5%AE%87%E4%BD%90%E7%A5%9E%E5%AE%AE%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6_%E6%9D%B1%E5%A4%A7%E5%AF%BA%E3%81%AE%E5%A4%A7%E4%BB%8F%E5%BB%BA%E7%AB%8B_img01_mj8od1.jpg';
 const IMG_BUDDHA = 'https://images.unsplash.com/photo-1662554471428-d036dfbc6c45?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080';
 
 // ── Scroll-reveal wrapper ────────────────────────────────────────────────────
@@ -113,6 +113,7 @@ function StatItem({ value, unit, label }: { value: string; unit: string; label: 
 
 // ════════════════════════════════════════════════════════════════════════════
 export default function TodaijiPage() {
+  const t = useTranslations();
   const locale = useLocale();
   return (
     <div className="min-h-screen" style={{ background: IVORY, color: TEXT }}>
@@ -121,7 +122,7 @@ export default function TodaijiPage() {
       <section style={{ position: 'relative', height: '340px', overflow: 'hidden' }}>
         <img
           src={IMG_HERO}
-          alt="東大寺の大仏建立"
+          alt={t('aboutLegendsTodaiji_text_1')}
           style={{
             position: 'absolute', inset: 0,
             width: '100%', height: '100%',
@@ -142,17 +143,11 @@ export default function TodaijiPage() {
             <Link
               href={`/${locale}`}
               className="font-sans text-ivory/55 text-[0.62rem] tracking-widest hover:text-ivory transition-colors"
-            >
-              ホーム
-            </Link>
+            >{t("aboutLegendsTodaijiPage_text_34653")}</Link>
             <ChevronRight size={11} className="text-ivory/30" />
-            <span className="font-sans text-gold-lt/90 text-[0.62rem] tracking-widest">
-              宇佐神宮について
-            </span>
+            <span className="font-sans text-gold-lt/90 text-[0.62rem] tracking-widest">{t("aboutLegendsTodaijiPage_text_44003")}</span>
             <ChevronRight size={11} className="text-ivory/30" />
-            <span className="font-sans text-gold-lt/90 text-[0.62rem] tracking-widest">
-              東大寺の大仏建立
-            </span>
+            <span className="font-sans text-gold-lt/90 text-[0.62rem] tracking-widest">{t("aboutLegendsTodaijiPage_text_60347")}</span>
           </nav>
 
           <motion.div
@@ -172,9 +167,7 @@ export default function TodaijiPage() {
               fontFamily: 'var(--font-serif)', color: '#faf8f5',
               fontSize: 'clamp(2rem, 5vw, 3rem)', fontWeight: 300,
               letterSpacing: '0.3em', textShadow: '0 3px 20px rgba(0,0,0,0.4)',
-            }}>
-              東大寺の大仏建立
-            </h1>
+            }}>{t("aboutLegendsTodaijiPage_text_60347")}</h1>
             <div className="flex items-center justify-center gap-3 mt-5">
               <div style={{ width: '40px', height: '1px', backgroundColor: 'rgba(162,122,40,0.5)' }} />
               <div style={{ width: '5px', height: '5px', backgroundColor: '#a27a28', opacity: 0.7, transform: 'rotate(45deg)' }} />
@@ -225,9 +218,7 @@ export default function TodaijiPage() {
                   color: TEXT,
                   textShadow: `1px 1px 0 ${IVORY}, 2px 2px 0 rgba(162,122,40,0.06)`,
                 }}
-              >
-                八幡大神の御力による大仏建立
-              </h2>
+              >{t("aboutLegendsTodaijiPage_text_51472")}</h2>
 
             </div>
           </FadeIn>
@@ -261,7 +252,7 @@ export default function TodaijiPage() {
                 >
                   <img
                     src={IMG_BUDDHA}
-                    alt="奈良の大仏"
+                    alt={t('aboutLegendsTodaiji_text_2')}
                     className="w-full transition-transform duration-1000 group-hover:scale-[1.025]"
                     style={{ display: 'block', height: 'auto' }}
                   />
@@ -273,9 +264,7 @@ export default function TodaijiPage() {
                   <span
                     className="font-sans tracking-[0.22em]"
                     style={{ fontSize: '0.62rem', color: TEXT_MUT }}
-                  >
-                    東大寺盧舎那仏像（奈良の大仏）
-                  </span>
+                  >{t("aboutLegendsTodaijiPage_text_11204")}</span>
                 </div>
               </div>
             </div>
@@ -286,10 +275,10 @@ export default function TodaijiPage() {
                 MATERIALS · 大仏鋳造に使われた金属
               </p>
               <div className="grid grid-cols-2 md:grid-cols-4 border" style={{ borderColor: 'rgba(162,122,40,0.13)', background: IVORY }}>
-                <StatItem value="499.0" unit="トン" label="銅" />
-                <StatItem value="8.5"   unit="トン" label="すず" />
-                <StatItem value="2.5"   unit="トン" label="水銀" />
-                <StatItem value="0.4"   unit="トン" label="金" />
+                <StatItem value="499.0" unit={t('aboutLegendsTodaiji_text_4')} label={t('aboutLegendsTodaiji_text_3')} />
+                <StatItem value="8.5"   unit={t('aboutLegendsTodaiji_text_6')} label={t('aboutLegendsTodaiji_text_5')} />
+                <StatItem value="2.5"   unit={t('aboutLegendsTodaiji_text_8')} label={t('aboutLegendsTodaiji_text_7')} />
+                <StatItem value="0.4"   unit={t('aboutLegendsTodaiji_text_10')} label={t('aboutLegendsTodaiji_text_9')} />
               </div>
             </div>
           </FadeIn>
@@ -306,19 +295,17 @@ export default function TodaijiPage() {
             {/* Title bar */}
             <div className="flex items-center gap-5 mb-10">
               <div className="h-px flex-1" style={{ background: `rgba(162,122,40,0.2)` }} />
-              <h3 className="font-serif tracking-[0.4em]" style={{ fontSize: '1.15rem', color: TEXT }}>御託宣</h3>
+              <h3 className="font-serif tracking-[0.4em]" style={{ fontSize: '1.15rem', color: TEXT }}>{t('aboutLegendsTodaiji_text_11')}</h3>
               <div className="h-px flex-1" style={{ background: `rgba(162,122,40,0.2)` }} />
             </div>
 
-            <p className="text-center font-sans tracking-[0.3em] mb-10" style={{ fontSize: '0.72rem', color: GOLD }}>
-              八幡宇佐宮御託宣集より
-            </p>
+            <p className="text-center font-sans tracking-[0.3em] mb-10" style={{ fontSize: '0.72rem', color: GOLD }}>{t("aboutLegendsTodaijiPage_text_38095")}</p>
 
             <p className="font-sans text-[0.88rem] leading-[2.3] tracking-wide text-center mb-12" style={{ color: TEXT_MID }}>
               八幡神は天の神・地の神を率いてわが身をなげうって協力し、東大寺の建立を必ず成功させると誓いました。また、大仏に塗る金が不足すると「金は必ず国内より出る」という御託宣を出し、やがて陸奥国から金が献上されることとなりました。
             </p>
 
-            <QuoteBlock attribution="八幡宇佐宮御託宣集">
+            <QuoteBlock attribution={t('aboutLegendsTodaiji_text_12')}>
               「われ天神地祇（てんしんちぎ）を率（ひき）い、必ず成し奉（たてまつ）る。<br />
               銅の湯を水となし、わが身を草木に交（まじ）えて<br />
               障（さわ）ることなくなさん」
@@ -346,7 +333,7 @@ export default function TodaijiPage() {
             <div className="relative overflow-hidden border border-[#A27A28]/15 group">
               <img
                 src={IMG_MIKOSHI}
-                alt="神興発祥の地 宇佐"
+                alt={t('aboutLegendsTodaiji_text_13')}
                 className="w-full transition-transform duration-1000 group-hover:scale-[1.04]"
                 style={{ display: 'block', height: 'auto' }}
               />
@@ -356,9 +343,7 @@ export default function TodaijiPage() {
               <span
                 className="font-sans tracking-[0.22em]"
                 style={{ fontSize: '0.62rem', color: TEXT_MUT }}
-              >
-                神輿（みこし）
-              </span>
+              >{t("aboutLegendsTodaijiPage_text_72666")}</span>
             </div>
           </FadeIn>
 
@@ -373,7 +358,7 @@ export default function TodaijiPage() {
 
             <p className="font-sans text-[0.88rem] leading-[2.3] tracking-wide mb-6" style={{ color: TEXT_MID }}>
               大仏鋳造直後の天平勝宝元（749）年12月、八幡大神とお供の宇佐宮の女禰宜（めねぎ）・大神杜女（おおがのもりめ）が大仏を拝するため、
-              <strong style={{ color: CRIMSON }}>紫の輿（こし）</strong>
+              <strong style={{ color: CRIMSON }}>{t('aboutLegendsTodaiji_text_14')}</strong>
               に乗って転害門（てがいもん）をくぐりました。
             </p>
 
@@ -383,7 +368,7 @@ export default function TodaijiPage() {
 
             <p className="font-sans text-[0.88rem] leading-[2.3] tracking-wide" style={{ color: TEXT_MID }}>
               宇佐の神を乗せた「輿」が遠方へと渡御したこの出来事は、
-              <strong style={{ color: CRIMSON }}>神輿（みこし）発祥</strong>
+              <strong style={{ color: CRIMSON }}>{t('aboutLegendsTodaiji_text_15')}</strong>
               の故事として語り継がれ、宇佐はその発祥の地とされています。
             </p>
           </FadeIn>
@@ -396,7 +381,7 @@ export default function TodaijiPage() {
           <FadeIn>
             <div className="flex items-center gap-5 mb-10">
               <div className="h-px flex-1" style={{ background: `rgba(162,122,40,0.2)` }} />
-              <h3 className="font-serif tracking-[0.4em]" style={{ fontSize: '1.15rem', color: TEXT }}>大仏開眼法要</h3>
+              <h3 className="font-serif tracking-[0.4em]" style={{ fontSize: '1.15rem', color: TEXT }}>{t('aboutLegendsTodaiji_text_16')}</h3>
               <div className="h-px flex-1" style={{ background: `rgba(162,122,40,0.2)` }} />
             </div>
 
@@ -404,7 +389,7 @@ export default function TodaijiPage() {
               三年後の天平勝宝4（752）年に行われた東大寺大仏開眼法要について、『東大寺縁起（えんぎ）』には次のように記されています。
             </p>
 
-            <QuoteBlock attribution="東大寺縁起">
+            <QuoteBlock attribution={t('aboutLegendsTodaiji_text_17')}>
               開眼法要のため聖武太上天皇・孝謙天皇が大仏殿に入御され、<br />
               続いて八幡神も入御になりました。<br />
               そのとき、「神明霊威」により内裏に「天下太平」の文字が出現しました。
@@ -424,9 +409,7 @@ export default function TodaijiPage() {
         <FadeIn>
           <div className="flex items-center gap-3 mb-8">
             <div className="w-[3px] h-7" style={{ background: GOLD }} />
-            <h3 className="font-serif tracking-[0.35em]" style={{ fontSize: '1.15rem', color: TEXT }}>
-              朝廷からの褒賞と手向山八幡宮
-            </h3>
+            <h3 className="font-serif tracking-[0.35em]" style={{ fontSize: '1.15rem', color: TEXT }}>{t("aboutLegendsTodaijiPage_text_55134")}</h3>
           </div>
         </FadeIn>
 
@@ -434,13 +417,13 @@ export default function TodaijiPage() {
           <FadeIn delay={0.1}>
             <p className="font-sans text-[0.88rem] leading-[2.3] tracking-wide mb-6" style={{ color: TEXT_MID }}>
               大仏建立への協力の褒美（ほうび）として、朝廷から八幡神へ
-              <strong style={{ color: CRIMSON }}>封戸800戸・位田60町</strong>
-              がおくられ、東大寺が完成すると東大寺を護(まも)る神として、寺の近くに<strong style={{ color: CRIMSON }}>手向山（たむけやま）八幡</strong>
+              <strong style={{ color: CRIMSON }}>{t('aboutLegendsTodaiji_text_18')}</strong>
+              がおくられ、東大寺が完成すると東大寺を護(まも)る神として、寺の近くに<strong style={{ color: CRIMSON }}>{t('aboutLegendsTodaiji_text_19')}</strong>
               が分霊（ぶんれい）として祀られました。
             </p>
             <p className="font-sans text-[0.88rem] leading-[2.3] tracking-wide" style={{ color: TEXT_MID }}>
               八幡神は奈良の人々に強力な印象を与え、
-              <strong style={{ color: CRIMSON }}>国家神としての第一歩</strong>
+              <strong style={{ color: CRIMSON }}>{t('aboutLegendsTodaiji_text_20')}</strong>
               を踏み出したのでした。
             </p>
           </FadeIn>
@@ -465,9 +448,7 @@ export default function TodaijiPage() {
                 href={`/${locale}/about/museum`}
                 className="inline-flex items-center gap-2 mt-5 font-sans tracking-[0.25em] transition-opacity hover:opacity-60"
                 style={{ fontSize: '0.68rem', color: GOLD }}
-              >
-                宝物館はこちら
-                <ChevronRight size={12} />
+              >{t("aboutLegendsTodaijiPage_text_30424")}<ChevronRight size={12} />
               </Link>
             </div>
           </FadeIn>
@@ -479,17 +460,15 @@ export default function TodaijiPage() {
         <FadeIn>
           <div className="flex items-center gap-3 mb-12">
             <div className="w-[3px] h-6" style={{ background: GOLD }} />
-            <h3 className="font-serif tracking-[0.35em]" style={{ fontSize: '1.1rem', color: TEXT }}>
-              その他の伝承
-            </h3>
+            <h3 className="font-serif tracking-[0.35em]" style={{ fontSize: '1.1rem', color: TEXT }}>{t("aboutLegendsTodaijiPage_text_63428")}</h3>
           </div>
         </FadeIn>
 
         <FadeIn delay={0.1}>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-            <LegendCard href="/about/legends/goreisui"   label="御霊水" sub="Sacred Spring" />
-            <LegendCard href="/about/legends/wake"        label="和気清麻呂とご神託" sub="Wake no Kiyomaro" />
-            <LegendCard href="/about/legends/shinbutsu"   label="神仏習合の歴史" sub="Syncretism" />
+            <LegendCard href="/about/legends/goreisui"   label={t('aboutLegendsTodaiji_text_21')} sub="Sacred Spring" />
+            <LegendCard href="/about/legends/wake"        label={t('aboutLegendsTodaiji_text_22')} sub="Wake no Kiyomaro" />
+            <LegendCard href="/about/legends/shinbutsu"   label={t('aboutLegendsTodaiji_text_23')} sub="Syncretism" />
           </div>
         </FadeIn>
       </section>

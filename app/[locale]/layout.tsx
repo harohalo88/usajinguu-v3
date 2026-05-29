@@ -1,5 +1,5 @@
-import type { Metadata } from 'next';
-import { Noto_Serif_JP, Noto_Sans_JP, Cormorant_Garamond, Inter } from 'next/font/google';
+import type { Metadata, Viewport } from 'next';
+import { Noto_Serif_JP, Noto_Sans_JP, Cormorant_Garamond, Inter, Hina_Mincho, Noto_Serif_SC, Noto_Serif_TC } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTranslations } from 'next-intl/server';
 import { GoogleAnalytics } from '@next/third-parties/google';
@@ -8,7 +8,7 @@ import '../globals.css';
 // Load Google Fonts
 const notoSerifJp = Noto_Serif_JP({
   weight: ['300', '400', '500', '700'],
-  subsets: ['latin'],
+  preload: false,
   variable: '--font-serif',
   display: 'swap',
 });
@@ -22,7 +22,7 @@ const cormorantGaramond = Cormorant_Garamond({
 
 const notoSansJp = Noto_Sans_JP({
   weight: ['300', '400', '500', '700'],
-  subsets: ['latin'],
+  preload: false,
   variable: '--font-sans',
   display: 'swap',
 });
@@ -33,6 +33,27 @@ const inter = Inter({
   display: 'swap',
 });
 
+const hinaMincho = Hina_Mincho({
+  weight: '400',
+  preload: false,
+  variable: '--font-hina-mincho',
+  display: 'swap',
+});
+
+const notoSerifSc = Noto_Serif_SC({
+  weight: ['400', '700'],
+  preload: false,
+  variable: '--font-noto-serif-sc',
+  display: 'swap',
+});
+
+const notoSerifTc = Noto_Serif_TC({
+  weight: ['400', '700'],
+  preload: false,
+  variable: '--font-noto-serif-tc',
+  display: 'swap',
+});
+
 type Props = {
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
@@ -40,16 +61,16 @@ type Props = {
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: 'Metadata' });
+  const t = await getTranslations({ locale });
 
   // Fallback metadata if metadata translations are not defined yet
   return {
     title: {
-      template: '%s | 宇佐神宮 - Usa Jingu',
-      default: locale === 'ja' ? '宇佐神宮 - 八幡総本宮' : 'Usa Jingu - Grand Shrine of Hachiman',
+      template: t('layout_text_1'),
+      default: locale === 'ja' ? t('layout_text_2') : 'Usa Jingu - Grand Shrine of Hachiman',
     },
     description: locale === 'ja' 
-      ? '全国四万社あまりの八幡様の総本宮、宇佐神宮。神亀二年（725年）の創建以来、皇室の御崇敬篤き霊地。'
+      ? t('layout_text_3')
       : 'Usa Jingu is the head shrine of Hachiman shrines. A sacred site revered since 725 AD.',
     alternates: {
       canonical: `https://www.usajingu.or.jp/${locale}`,
@@ -65,8 +86,15 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   };
 }
 
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+};
+
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
+import { useTranslations } from 'next-intl';
 
 export default async function LocaleLayout({ children, params }: Props) {
   const { locale } = await params;
@@ -78,11 +106,11 @@ export default async function LocaleLayout({ children, params }: Props) {
   return (
     <html
       lang={locale}
-      className={`${notoSerifJp.variable} ${cormorantGaramond.variable} ${notoSansJp.variable} ${inter.variable} h-full antialiased`}
+      className={`${notoSerifJp.variable} ${cormorantGaramond.variable} ${notoSansJp.variable} ${inter.variable} ${hinaMincho.variable} ${notoSerifSc.variable} ${notoSerifTc.variable} h-full antialiased`}
       suppressHydrationWarning
     >
       <body 
-        className="min-h-full flex flex-col bg-ivory text-text-body font-sans"
+        className="min-h-full flex flex-col bg-ivory text-text-body font-sans overflow-x-hidden"
         suppressHydrationWarning
       >
         <NextIntlClientProvider locale={locale} messages={messages}>

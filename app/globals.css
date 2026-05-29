@@ -22,6 +22,36 @@
   
   --background: var(--color-shrine-ivory);
   --foreground: var(--color-shrine-text);
+
+  /* Fallback: Mapped variables that resolve to language-specific main and sub serif/calligraphy fonts */
+  --font-title-main: var(--font-serif-en), var(--font-serif), serif;
+  --font-title-sub: var(--font-serif-en), var(--font-serif), serif;
+}
+
+/* Calligraphy/Serif font mappings per language locale */
+html[lang="ja"] {
+  --font-title-main: var(--font-hina-mincho), var(--font-serif), serif; /* Hina Mincho strictly for main H1 titles */
+  --font-title-sub: var(--font-serif), serif; /* Revert other serif elements to original Noto Serif JP */
+}
+
+html[lang="en"] {
+  --font-title-main: var(--font-serif-en), var(--font-serif), serif; /* Cormorant Garamond */
+  --font-title-sub: var(--font-serif-en), var(--font-serif), serif;
+}
+
+html[lang="zh-CN"] {
+  --font-title-main: var(--font-noto-serif-sc), serif; /* Traditional-style serif for Simplified Chinese */
+  --font-title-sub: var(--font-noto-serif-sc), serif;
+}
+
+html[lang="zh-TW"] {
+  --font-title-main: var(--font-noto-serif-tc), serif; /* Noto Serif TC */
+  --font-title-sub: var(--font-noto-serif-tc), serif;
+}
+
+html[lang="ko"] {
+  --font-title-main: var(--font-serif), serif; /* Revert back to original styling */
+  --font-title-sub: var(--font-serif), serif;
 }
 
 @theme {
@@ -44,8 +74,12 @@
   
   --color-shrine-blue: var(--color-shrine-blue);
   
-  --font-serif: var(--font-serif), var(--font-serif-en), serif;
+  --font-serif: var(--font-title-sub);
   --font-sans: var(--font-sans), var(--font-sans-en), sans-serif;
+}
+
+html {
+  overflow-x: hidden;
 }
 
 body {
@@ -53,6 +87,8 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans);
   min-height: 100%;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 /* Custom scrollbars and transition effects */
@@ -78,4 +114,12 @@ body {
 ::selection {
   background-color: rgba(162, 122, 40, 0.2);
   color: var(--color-shrine-crimson);
+}
+
+/* Global Main Title typography rule */
+h1.font-serif,
+h1 [class*="font-serif"],
+h1[class*="font-serif"],
+.font-title-main {
+  font-family: var(--font-title-main) !important;
 }

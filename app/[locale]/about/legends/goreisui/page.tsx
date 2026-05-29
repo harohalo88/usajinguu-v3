@@ -9,7 +9,7 @@ import { ChevronRight } from 'lucide-react';
 // ── Assets ─────────────────────────────────────────────────────────────────
 const IMG_PAINTING = '/images/8dc1625149675992d075b7d40836d72ea813790e.png';
 const heroImage = '/images/e81c6decfbb240a94172c794c450041546333d9a.png';
-const IMG_TORII = '/images/bf9f7b6f02cc9e1443c20d6967d1430724f52ec6.png';
+const IMG_TORII = 'https://res.cloudinary.com/dxhqwmwz1/image/upload/c_scale,w_960/f_auto/q_auto/v1779961443/%E5%AE%87%E4%BD%90%E7%A5%9E%E5%AE%AE%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6_%E5%BE%A1%E9%9C%8A%E6%B0%B4_img03_eo0i9m.jpg';
 
 // ── Design tokens ───────────────────────────────────────────────────────────
 const CRIMSON  = '#a50000';
@@ -111,10 +111,11 @@ function LegendCard({ href, label, sub }: { href: string; label: string; sub: st
 }
 
 // ── Header image ────────────────────────────────────────────────────────────
-const IMG_HEADER = 'https://images.unsplash.com/photo-1763092806297-b2ea9763f118?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1920';
+const IMG_HEADER = 'https://res.cloudinary.com/dxhqwmwz1/image/upload/c_fill,g_auto,w_1600,h_450/f_auto/q_auto/v1779961437/%E5%AE%87%E4%BD%90%E7%A5%9E%E5%AE%AE%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6_%E5%BE%A1%E9%9C%8A%E6%B0%B4_img01_x9hemc.jpg';
 
 // ════════════════════════════════════════════════════════════════════════════
 export default function GoreisuiPage() {
+  const t = useTranslations();
   const locale = useLocale();
   return (
     <div className="min-h-screen" style={{ background: IVORY, color: TEXT }}>
@@ -123,7 +124,7 @@ export default function GoreisuiPage() {
       <section style={{ position: 'relative', height: '340px', overflow: 'hidden' }}>
         <img
           src={IMG_HEADER}
-          alt="御霊水"
+          alt={t('aboutLegendsGoreisui_text_1')}
           style={{
             position: 'absolute', inset: 0,
             width: '100%', height: '100%',
@@ -144,17 +145,11 @@ export default function GoreisuiPage() {
             <Link
               href={`/${locale}`}
               className="font-sans text-ivory/55 text-[0.62rem] tracking-widest hover:text-ivory transition-colors"
-            >
-              ホーム
-            </Link>
+            >{t("aboutLegendsGoreisuiPage_text_34653")}</Link>
             <ChevronRight size={11} className="text-ivory/30" />
-            <span className="font-sans text-gold-lt/90 text-[0.62rem] tracking-widest">
-              宇佐神宮について
-            </span>
+            <span className="font-sans text-gold-lt/90 text-[0.62rem] tracking-widest">{t("aboutLegendsGoreisuiPage_text_44003")}</span>
             <ChevronRight size={11} className="text-ivory/30" />
-            <span className="font-sans text-gold-lt/90 text-[0.62rem] tracking-widest">
-              御霊水
-            </span>
+            <span className="font-sans text-gold-lt/90 text-[0.62rem] tracking-widest">{t("aboutLegendsGoreisuiPage_text_71631")}</span>
           </nav>
 
           <motion.div
@@ -170,13 +165,11 @@ export default function GoreisuiPage() {
             }}>
               Sacred Spring · First Manifestation
             </p>
-            <h1 style={{
+            <h1 className="font-title-main" style={{
               fontFamily: 'var(--font-serif)', color: '#faf8f5',
               fontSize: 'clamp(2rem, 5vw, 3rem)', fontWeight: 300,
               letterSpacing: '0.3em', textShadow: '0 3px 20px rgba(0,0,0,0.4)',
-            }}>
-              御霊水
-            </h1>
+            }}>{t("aboutLegendsGoreisuiPage_text_71631")}</h1>
             <div className="flex items-center justify-center gap-3 mt-5">
               <div style={{ width: '40px', height: '1px', backgroundColor: 'rgba(162,122,40,0.5)' }} />
               <div style={{ width: '5px', height: '5px', backgroundColor: '#a27a28', opacity: 0.7, transform: 'rotate(45deg)' }} />
@@ -227,9 +220,7 @@ export default function GoreisuiPage() {
                   color: TEXT,
                   textShadow: `1px 1px 0 ${IVORY}, 2px 2px 0 rgba(162,122,40,0.06)`,
                 }}
-              >
-                八幡大神ご顕現の聖地
-              </h2>
+              >{t("aboutLegendsGoreisuiPage_text_65453")}</h2>
 
             </div>
           </FadeIn>
@@ -261,7 +252,7 @@ export default function GoreisuiPage() {
                 >
                   <img
                     src={IMG_PAINTING}
-                    alt="八幡大神ご顕現の古図"
+                    alt={t('aboutLegendsGoreisui_text_2')}
                     className="w-full transition-transform duration-1000 group-hover:scale-[1.025]"
                     style={{ display: 'block', height: 'auto' }}
                   />
@@ -273,9 +264,7 @@ export default function GoreisuiPage() {
                   <span
                     className="font-sans tracking-[0.22em]"
                     style={{ fontSize: '0.62rem', color: TEXT_MUT }}
-                  >
-                    八幡大神ご顕現の古図
-                  </span>
+                  >{t("aboutLegendsGoreisuiPage_text_26560")}</span>
                 </div>
               </div>
             </div>
@@ -293,19 +282,17 @@ export default function GoreisuiPage() {
             {/* Title bar */}
             <div className="flex items-center gap-5 mb-10">
               <div className="h-px flex-1" style={{ background: `rgba(162,122,40,0.2)` }} />
-              <h3 className="font-serif tracking-[0.4em]" style={{ fontSize: '1.15rem', color: TEXT }}>御託宣</h3>
+              <h3 className="font-serif tracking-[0.4em]" style={{ fontSize: '1.15rem', color: TEXT }}>{t('aboutLegendsGoreisui_text_3')}</h3>
               <div className="h-px flex-1" style={{ background: `rgba(162,122,40,0.2)` }} />
             </div>
 
-            <p className="text-center font-sans tracking-[0.3em] mb-10" style={{ fontSize: '0.72rem', color: GOLD }}>
-              八幡宇佐宮御託宣集より
-            </p>
+            <p className="text-center font-sans tracking-[0.3em] mb-10" style={{ fontSize: '0.72rem', color: GOLD }}>{t("aboutLegendsGoreisuiPage_text_38095")}</p>
 
             <p className="font-sans text-[0.88rem] leading-[2.3] tracking-wide text-center mb-12" style={{ color: TEXT_MID }}>
               豊前国宇佐郡厩峯菱形池の間に、鍛冶の翁有り。首甚だ奇異なり。これに因って大神比義(おおがのひぎ)、穀を絶つこと三年、籠居精進して、即ち幣帛を捧げて祈って言く。「若し汝神ならば、我が前に顕るべし」と。即ち三歳の小児と顕れ、竹葉に立ちて宣く。
             </p>
 
-            <QuoteBlock attribution="八幡宇佐宮御託宣集">
+            <QuoteBlock attribution={t('aboutLegendsGoreisui_text_4')}>
               「我は是れ日本の人皇第十六代誉田の天皇広幡八幡麿（ほんだのすめらみことひろはたのやはたまろ）なり。<br />
               我が名は、護国霊験威力神通大自在王菩薩（ごこくれいげんいりきじんつうだいじざいおうぼさつ）なり。<br />
               国々所々に、跡を神道に垂れ、初て顕るのみ。」
@@ -330,24 +317,22 @@ export default function GoreisuiPage() {
           <FadeIn delay={0.1}>
             <div className="flex items-center gap-3 mb-7">
               <div className="w-[3px] h-7" style={{ background: CRIMSON }} />
-              <h3 className="font-serif tracking-[0.3em]" style={{ fontSize: '1.2rem', color: TEXT }}>
-                御霊水
-              </h3>
+              <h3 className="font-serif tracking-[0.3em]" style={{ fontSize: '1.2rem', color: TEXT }}>{t("aboutLegendsGoreisuiPage_text_71631")}</h3>
             </div>
 
             <p className="font-sans text-[0.88rem] leading-[2.3] tracking-wide mb-6" style={{ color: TEXT_MID }}>
               霊泉が湧き出るこの神聖な場所は、長い歴史の中で
-              <strong style={{ color: CRIMSON }}>　御霊水・御鍛冶場・下井の霊水　</strong>
+              <strong style={{ color: CRIMSON }}>　{t('aboutLegendsGoreisui_text_5')}</strong>
               という三つの名で親しまれてきました。
             </p>
 
             <p className="font-sans text-[0.88rem] leading-[2.3] tracking-wide mb-6" style={{ color: TEXT_MID }}>
-              <strong style={{ color: CRIMSON }}>御鍛冶場（おかじば）</strong>
+              <strong style={{ color: CRIMSON }}>{t('aboutLegendsGoreisui_text_6')}</strong>
               と呼ぶのは、鍛冶の翁が現れたという故事や、社僧の神息（しんそく）がこの御霊水で社宝の刀「神息」（当神宮宝物館所蔵）を鍛えたという事跡によります。
             </p>
 
             <p className="font-sans text-[0.88rem] leading-[2.3] tracking-wide" style={{ color: TEXT_MID }}>
-              <strong style={{ color: CRIMSON }}>下井（しもい）の霊水</strong>
+              <strong style={{ color: CRIMSON }}>{t('aboutLegendsGoreisui_text_7')}</strong>
               と呼ぶのは、江戸中期の公卿鳥丸光胤が「はふり子が　汲む手や涼し神垣の　下井の清水　影も濁らず」と歌に詠んだことからです。
             </p>
           </FadeIn>
@@ -357,7 +342,7 @@ export default function GoreisuiPage() {
             <div className="relative overflow-hidden border border-[#A27A28]/15 group">
               <img
                 src={IMG_TORII}
-                alt="御霊水"
+                alt={t('aboutLegendsGoreisui_text_8')}
                 className="w-full transition-transform duration-1000 group-hover:scale-[1.04]"
                 style={{ display: 'block', height: 'auto' }}
               />
@@ -368,8 +353,8 @@ export default function GoreisuiPage() {
         {/* Poem below */}
         <FadeIn delay={0.3} className="mt-14">
           <PoemBox
-            poem="はふり子が　汲む手や涼し神垣の　下井の清水　影も濁らず"
-            attribution="江戸中期　公卿　鳥丸光胤　詠"
+            poem={t('aboutLegendsGoreisui_text_9')}
+            attribution={t('aboutLegendsGoreisui_text_10')}
           />
         </FadeIn>
       </section>
@@ -381,17 +366,15 @@ export default function GoreisuiPage() {
         <FadeIn>
           <div className="flex items-center gap-3 mb-12">
             <div className="w-[3px] h-6" style={{ background: GOLD }} />
-            <h3 className="font-serif tracking-[0.35em]" style={{ fontSize: '1.1rem', color: TEXT }}>
-              その他の伝承
-            </h3>
+            <h3 className="font-serif tracking-[0.35em]" style={{ fontSize: '1.1rem', color: TEXT }}>{t("aboutLegendsGoreisuiPage_text_63428")}</h3>
           </div>
         </FadeIn>
 
         <FadeIn delay={0.1}>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-            <LegendCard href="/about/legends/todaiji" label="東大寺の大仏建立" sub="Todai-ji Temple" />
-            <LegendCard href="/about/legends/wake"    label="和気清麻呂とご神託" sub="Wake no Kiyomaro" />
-            <LegendCard href="/about/legends/shinbutsu" label="神仏習合の歴史" sub="Syncretism" />
+            <LegendCard href="/about/legends/todaiji" label={t('aboutLegendsGoreisui_text_11')} sub="Todai-ji Temple" />
+            <LegendCard href="/about/legends/wake"    label={t('aboutLegendsGoreisui_text_12')} sub="Wake no Kiyomaro" />
+            <LegendCard href="/about/legends/shinbutsu" label={t('aboutLegendsGoreisui_text_13')} sub="Syncretism" />
           </div>
         </FadeIn>
       </section>

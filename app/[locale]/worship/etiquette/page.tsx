@@ -2,15 +2,17 @@
 
 import React from 'react';
 import { StubPage } from '@/components/layout/StubPage';
+import { useTranslations } from 'next-intl';
 
 export default function EtiquettePage() {
+  const t = useTranslations();
   return (
     <StubPage
       titleKey="etiquetteTitle"
       enTitle="Worship Etiquette"
-      defaultTitle="参拝の作法"
+      defaultTitle={t('worshipEtiquette_text_1')}
       parentPath="/worship/guide"
-      parentLabel="参拝について"
+      parentLabel={t('worshipEtiquette_text_2')}
     />
   );
 }

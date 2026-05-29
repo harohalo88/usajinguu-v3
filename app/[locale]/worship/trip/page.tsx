@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useLocale } from 'next-intl';
 import { motion } from 'framer-motion';
 import { Phone, MapPin, ChevronRight, Printer } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import {
   C,
   FadeIn,
@@ -19,6 +20,7 @@ const IMG_SHIHO    = '/images/image-15.png';
 
 // ═══════════════════════════════════════════════════════════════════════════════
 export default function TripPage() {
+  const t = useTranslations();
   const locale = useLocale();
 
   return (
@@ -49,17 +51,11 @@ export default function TripPage() {
             <Link
               href={`/${locale}`}
               className="font-sans text-ivory/55 text-[0.62rem] tracking-widest hover:text-ivory transition-colors"
-            >
-              ホーム
-            </Link>
+            >{t("worshipTripPage_text_34653")}</Link>
             <ChevronRight size={11} className="text-ivory/30" />
-            <span className="font-sans text-gold-lt/90 text-[0.62rem] tracking-widest">
-              ご参拝・ご祈願
-            </span>
+            <span className="font-sans text-gold-lt/90 text-[0.62rem] tracking-widest">{t("worshipTripPage_text_11089")}</span>
             <ChevronRight size={11} className="text-ivory/30" />
-            <span className="font-sans text-gold-lt/90 text-[0.62rem] tracking-widest">
-              出張祭典について
-            </span>
+            <span className="font-sans text-gold-lt/90 text-[0.62rem] tracking-widest">{t("worshipTripPage_text_19100")}</span>
           </nav>
 
           <motion.div
@@ -80,9 +76,7 @@ export default function TripPage() {
               fontSize: 'clamp(1.8rem,5vw,2.8rem)', fontWeight: 300,
               letterSpacing: '0.35em',
               textShadow: '0 3px 20px rgba(0,0,0,0.5)',
-            }}>
-              出張祭典について
-            </h1>
+            }}>{t("worshipTripPage_text_19100")}</h1>
             <div className="flex items-center justify-center gap-3 mt-5">
               <div style={{ width: '40px', height: '1px', backgroundColor: 'rgba(162,122,40,0.5)' }} />
               <div style={{ width: '5px', height: '5px', backgroundColor: C.gold, opacity: 0.7, transform: 'rotate(45deg)' }} />
@@ -98,7 +92,7 @@ export default function TripPage() {
 
           {/* ══ 祭典の種類 ══ */}
           <FadeIn>
-            <SectionBanner ja="祭典の種類" en="Types of Ceremony" />
+            <SectionBanner ja={t('worshipTrip_text_1')} en="Types of Ceremony" />
           </FadeIn>
 
           {/* Two-column: LEFT = ceremony descriptions, RIGHT = two stacked images */}
@@ -110,7 +104,7 @@ export default function TripPage() {
 
                 {/* ── 地鎮祭・起工式 ── */}
                 <div style={{ marginBottom: '28px' }}>
-                  <ContentHeading>地鎮祭・起工式</ContentHeading>
+                  <ContentHeading>{t('worshipTrip_text_2')}</ContentHeading>
                   <p style={{
                     fontFamily: 'var(--font-sans)', color: C.textMid,
                     fontSize: '0.95rem', lineHeight: 2.2, letterSpacing: '0.05em',
@@ -143,14 +137,12 @@ export default function TripPage() {
                       borderBottom: `1px solid rgba(165,0,0,0.35)`,
                       paddingBottom: '1px',
                     }}
-                  >
-                    地鎮祭の式次第はこちら
-                  </a>
+                  >{t("worshipTripPage_text_34745")}</a>
                 </div>
 
                 {/* ── 上棟祭 ── */}
                 <div style={{ marginBottom: '28px', paddingTop: '20px', borderTop: `1px solid ${C.borderG}` }}>
-                  <ContentHeading>上棟祭</ContentHeading>
+                  <ContentHeading>{t('worshipTrip_text_3')}</ContentHeading>
                   <p style={{
                     fontFamily: 'var(--font-sans)', color: C.textMid,
                     fontSize: '0.95rem', lineHeight: 2.2, letterSpacing: '0.05em',
@@ -175,7 +167,7 @@ export default function TripPage() {
 
                 {/* ── 竣功祭・入居清祓式 ── */}
                 <div style={{ marginBottom: '28px', paddingTop: '20px', borderTop: `1px solid ${C.borderG}` }}>
-                  <ContentHeading>竣功祭・入居清祓式</ContentHeading>
+                  <ContentHeading>{t('worshipTrip_text_4')}</ContentHeading>
                   <p style={{
                     fontFamily: 'var(--font-sans)', color: C.textMid,
                     fontSize: '0.95rem', lineHeight: 2.2, letterSpacing: '0.05em',
@@ -186,7 +178,7 @@ export default function TripPage() {
 
                 {/* ── 工事安全祈願祭 ── */}
                 <div style={{ marginBottom: '28px', paddingTop: '20px', borderTop: `1px solid ${C.borderG}` }}>
-                  <ContentHeading>工事安全祈願祭</ContentHeading>
+                  <ContentHeading>{t('worshipTrip_text_5')}</ContentHeading>
                   <p style={{
                     fontFamily: 'var(--font-sans)', color: C.textMid,
                     fontSize: '0.95rem', lineHeight: 2.2, letterSpacing: '0.05em',
@@ -203,13 +195,12 @@ export default function TripPage() {
                     fontFamily: 'var(--font-sans)', color: C.textMid,
                     fontSize: '0.95rem', lineHeight: 2.2, letterSpacing: '0.05em',
                   }}>
-                    その他、<strong style={{ fontFamily: 'var(--font-serif)', color: C.text }}>家屋解体清祓式</strong>、<strong style={{ fontFamily: 'var(--font-serif)', color: C.text }}>井戸埋納祭</strong>なども受け付けております。
+                    その他、<strong style={{ fontFamily: 'var(--font-serif)', color: C.text }}>{t('worshipTrip_text_7')}</strong>、<strong style={{ fontFamily: 'var(--font-serif)', color: C.text }}>{t('worshipTrip_text_6')}</strong>なども受け付けております。
                   </p>
                   <p style={{
                     fontFamily: 'var(--font-sans)', color: C.textMid,
                     fontSize: '0.95rem', lineHeight: 2.2, letterSpacing: '0.05em',
-                  }}>
-                    詳しくは<em style={{ fontStyle: 'normal', color: C.gold }}>下記【お問い合わせ】まで</em>ご連絡ください。
+                  }}>{t("worshipTripPage_text_74490")}<em style={{ fontStyle: 'normal', color: C.gold }}>{t('worshipTrip_text_8')}</em>ご連絡ください。
                   </p>
                 </div>
 
@@ -226,7 +217,7 @@ export default function TripPage() {
                     <div style={{ border: `1px solid ${C.borderG}`, overflow: 'hidden' }}>
                       <img
                         src={IMG_KARIZOME}
-                        alt="地鎮祭「刈初（かりぞめ）の儀」"
+                        alt={t('worshipTrip_text_9')}
                         style={{ width: '100%', display: 'block', objectFit: 'cover' }}
                       />
                     </div>
@@ -247,7 +238,7 @@ export default function TripPage() {
                     <div style={{ border: `1px solid ${C.borderG}`, overflow: 'hidden' }}>
                       <img
                         src={IMG_SHIHO}
-                        alt="地鎮祭「四方祓いの儀」"
+                        alt={t('worshipTrip_text_10')}
                         style={{ width: '100%', display: 'block', objectFit: 'cover' }}
                       />
                     </div>
@@ -270,7 +261,7 @@ export default function TripPage() {
 
           {/* ══ 初穂料について ══ */}
           <FadeIn>
-            <SectionBanner ja="初穂料について" en="Offering" />
+            <SectionBanner ja={t('worshipTrip_text_11')} en="Offering" />
           </FadeIn>
 
           <FadeIn delay={0.05}>
@@ -283,7 +274,7 @@ export default function TripPage() {
                 className="flex-shrink-0 flex flex-col items-center justify-center px-7 py-5"
                 style={{ background: C.gold, minWidth: '120px' }}
               >
-                <p style={{ fontFamily: 'var(--font-serif)', color: '#faf8f5', fontSize: '0.75rem', letterSpacing: '0.2em', marginBottom: '4px' }}>初穂料</p>
+                <p style={{ fontFamily: 'var(--font-serif)', color: '#faf8f5', fontSize: '0.75rem', letterSpacing: '0.2em', marginBottom: '4px' }}>{t('worshipTrip_text_12')}</p>
                 <p style={{ fontFamily: 'var(--font-sans)', color: 'rgba(250,248,245,0.75)', fontSize: '0.58rem', letterSpacing: '0.15em' }}>Offering</p>
               </div>
               <div>
@@ -352,9 +343,7 @@ export default function TripPage() {
                   paddingBottom: '2px',
                 }}
               >
-                <ChevronRight size={13} />
-                その他のご祈願について
-              </Link>
+                <ChevronRight size={13} />{t("worshipTripPage_text_53107")}</Link>
             </div>
           </FadeIn>
 
@@ -370,9 +359,7 @@ export default function TripPage() {
                 color: '#faf8f5', backgroundColor: C.crimson, padding: '11px 28px',
                 textDecoration: 'none', display: 'inline-block',
               }}
-            >
-              参拝についてへ戻る
-            </Link>
+            >{t("worshipTripPage_text_71902")}</Link>
             <Link
               href={`/${locale}/worship/pray`}
               style={{
@@ -380,9 +367,7 @@ export default function TripPage() {
                 color: C.crimson, backgroundColor: 'transparent', padding: '11px 28px',
                 textDecoration: 'none', border: `1px solid ${C.crimson}`, display: 'inline-block',
               }}
-            >
-              ご祈祷について
-            </Link>
+            >{t("worshipTripPage_text_17397")}</Link>
           </div>
 
         </div>

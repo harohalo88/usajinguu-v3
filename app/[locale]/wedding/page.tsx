@@ -6,6 +6,7 @@ import { useLocale } from 'next-intl';
 import { motion, useInView } from 'framer-motion';
 import { Phone, MapPin, Printer, ChevronRight } from 'lucide-react';
 import { C } from '@/components/ShrineUI';
+import { useTranslations } from 'next-intl';
 
 // ── Images ────────────────────────────────────────────────────────────────────
 const gishikidenBrideGroom   = '/images/b08e83237fa8de1d59a7c19b8bdc8abbbc407429.png';
@@ -140,6 +141,7 @@ function FlowCard({ src, label, index }: { src: string; label: string; index: nu
 
 // ═══════════════════════════════════════════════════════════════════════════════
 export default function WeddingPage() {
+  const t = useTranslations();
   const locale = useLocale();
 
   return (
@@ -148,7 +150,7 @@ export default function WeddingPage() {
       <section style={{ position: 'relative', height: '90vh', maxHeight: '680px', overflow: 'hidden' }}>
         <img
           src={HERO_IMG}
-          alt="神前結婚式"
+          alt={t('wedding_text_1')}
           style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 35%' }}
         />
         {/* gradient overlays */}
@@ -177,9 +179,7 @@ export default function WeddingPage() {
               letterSpacing: '0.3em',
               lineHeight: 1.4,
               textShadow: '0 2px 12px rgba(0,0,0,0.55), 0 4px 32px rgba(0,0,0,0.35)',
-            }}>
-              神前結婚式
-            </div>
+            }}>{t("weddingPage_text_85063")}</div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', paddingTop: '6px' }}>
               <p style={{
                 fontFamily: 'var(--font-sans)', color: C.goldLt,
@@ -191,7 +191,7 @@ export default function WeddingPage() {
                 fontFamily: 'var(--font-sans)', color: 'rgba(250,248,245,0.7)',
                 fontSize: '0.58rem', letterSpacing: '0.15em',
                 textShadow: '0 1px 8px rgba(0,0,0,0.5)',
-              }}>宇佐神宮</p>
+              }}>{t('wedding_text_2')}</p>
             </div>
           </motion.div>
         </div>
@@ -223,9 +223,7 @@ export default function WeddingPage() {
                 fontSize: 'clamp(1.2rem, 3vw, 1.7rem)', fontWeight: 300,
                 letterSpacing: '0.3em', lineHeight: 1.6,
                 height: '280px',
-              }}>
-                日本ならでは<br/>の結婚式
-              </div>
+              }}>{t("weddingPage_text_24814")}<br/>{t("weddingPage_text_55543")}</div>
             </FadeIn>
 
             {/* Right: intro text */}
@@ -239,7 +237,7 @@ export default function WeddingPage() {
                 fontFamily: 'var(--font-serif)', color: C.text,
                 fontSize: 'clamp(1.2rem, 2.5vw, 1.6rem)', fontWeight: 400,
                 letterSpacing: '0.2em', marginBottom: '20px',
-              }}>神前結婚式</h1>
+              }}>{t('wedding_text_3')}</h1>
               <div style={{ width: '28px', height: '2px', backgroundColor: C.vermil, opacity: 0.7, marginBottom: '24px' }} />
 
               <p style={{
@@ -269,7 +267,7 @@ export default function WeddingPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-14">
             <FadeIn delay={0.1}>
               <div style={{ position: 'relative', overflow: 'hidden', height: '320px' }}>
-                <img src={BRIDE_IMG} alt="花嫁" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                <img src={BRIDE_IMG} alt={t('wedding_text_4')} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                 <div style={{
                   position: 'absolute', inset: 0,
                   background: 'linear-gradient(to top, rgba(10,3,3,0.45) 0%, transparent 50%)',
@@ -278,7 +276,7 @@ export default function WeddingPage() {
             </FadeIn>
             <FadeIn delay={0.2}>
               <div style={{ position: 'relative', overflow: 'hidden', height: '320px' }}>
-                <img src={COUPLE_IMG} alt="新郎新婦" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                <img src={COUPLE_IMG} alt={t('wedding_text_5')} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                 <div style={{
                   position: 'absolute', inset: 0,
                   background: 'linear-gradient(to top, rgba(10,3,3,0.45) 0%, transparent 50%)',
@@ -293,15 +291,15 @@ export default function WeddingPage() {
       <section style={{ backgroundColor: C.stone, padding: '80px 0' }}>
         <div className="max-w-5xl mx-auto px-6 md:px-12">
           <FadeIn>
-            <SectionTitle ja="挙式の流れ" en="Ceremony Flow" />
+            <SectionTitle ja={t('wedding_text_6')} en="Ceremony Flow" />
           </FadeIn>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-10">
             {[
-              { src: nagare3, label: '参進の儀' },
-              { src: nagare1, label: '修祓の儀' },
-              { src: nagare4, label: '祝詞奏上' },
-              { src: nagare2, label: '三献の儀' },
+              { src: nagare3, label: t('wedding_text_7') },
+              { src: nagare1, label: t('wedding_text_8') },
+              { src: nagare4, label: t('wedding_text_9') },
+              { src: nagare2, label: t('wedding_text_10') },
             ].map((item, i) => (
               <FlowCard key={i} src={item.src} label={item.label} index={i} />
             ))}
@@ -319,23 +317,23 @@ export default function WeddingPage() {
                 fontFamily: 'var(--font-serif)', color: C.text,
                 fontSize: '0.85rem', letterSpacing: '0.15em',
                 marginBottom: '18px', fontWeight: 400,
-              }}>神前結婚式　式次第</p>
+              }}>{t('wedding_text_11')}</p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-2">
                 {[
-                  '参進',
-                  '修祓',
-                  '祝詞奏上',
-                  '夫婦誓いの盃',
-                  '指輪交換の儀',
-                  '誓詞奏上',
-                  '浦安の舞奉奏',
-                  '親族固めの盃',
-                  '斎主挨拶',
-                  '本殿に昇殿',
-                  '新郎新婦玉串拝礼',
-                  '記念品授与',
-                  '本殿より退出',
+                  t('wedding_text_12'),
+                  t('wedding_text_13'),
+                  t('wedding_text_14'),
+                  t('wedding_text_15'),
+                  t('wedding_text_16'),
+                  t('wedding_text_17'),
+                  t('wedding_text_18'),
+                  t('wedding_text_19'),
+                  t('wedding_text_20'),
+                  t('wedding_text_21'),
+                  t('wedding_text_22'),
+                  t('wedding_text_23'),
+                  t('wedding_text_24'),
                 ].map((step, i) => (
                   <div key={i} className="flex items-center gap-3 py-2" style={{ borderBottom: `1px solid rgba(165,0,0,0.12)` }}>
                     <span style={{
@@ -381,7 +379,7 @@ export default function WeddingPage() {
       <div style={{ position: 'relative', height: '420px', overflow: 'hidden' }}>
         <img
           src={GARDEN_IMG}
-          alt="宇佐神宮の境内"
+          alt={t('wedding_text_25')}
           style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 60%' }}
         />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(10,3,3,0.55), rgba(10,3,3,0.1) 60%, rgba(10,3,3,0.1))' }} />
@@ -409,7 +407,7 @@ export default function WeddingPage() {
 
             {/* 写真撮影について */}
             <FadeIn dir="left">
-              <SectionTitle ja="写真撮影について" en="Photography" />
+              <SectionTitle ja={t('wedding_text_26')} en="Photography" />
               <p style={{
                 fontFamily: 'var(--font-sans)', color: C.textMid,
                 fontSize: '0.85rem', lineHeight: 2.1, marginTop: '20px',
@@ -420,12 +418,12 @@ export default function WeddingPage() {
 
             {/* 控室について */}
             <FadeIn dir="right" delay={0.1}>
-              <SectionTitle ja="控室について" en="Waiting Room" />
+              <SectionTitle ja={t('wedding_text_27')} en="Waiting Room" />
               <div style={{ marginTop: '20px' }}>
                 <div style={{ position: 'relative', height: '180px', overflow: 'hidden', marginBottom: '16px' }}>
                   <img
                     src={INTERIOR_IMG}
-                    alt="儀式殿 控室"
+                    alt={t('wedding_text_28')}
                     style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                   />
                   <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(10,3,3,0.45), transparent)' }} />
@@ -433,7 +431,7 @@ export default function WeddingPage() {
                     position: 'absolute', bottom: '10px', left: '12px',
                     fontFamily: 'var(--font-serif)', color: C.goldLt,
                     fontSize: '0.6rem', letterSpacing: '0.15em',
-                  }}>儀式殿</span>
+                  }}>{t('wedding_text_29')}</span>
                 </div>
                 <p style={{
                   fontFamily: 'var(--font-sans)', color: C.textMid,
@@ -450,7 +448,7 @@ export default function WeddingPage() {
                   <p style={{
                     fontFamily: 'var(--font-serif)', color: C.gold,
                     fontSize: '0.75rem', letterSpacing: '0.12em', marginBottom: '6px',
-                  }}>【控室料】</p>
+                  }}>{t('wedding_text_30')}</p>
                   <p style={{
                     fontFamily: 'var(--font-sans)', color: C.textMid,
                     fontSize: '0.82rem', lineHeight: 1.9,
@@ -472,7 +470,7 @@ export default function WeddingPage() {
       <section style={{ backgroundColor: C.stoneDk, padding: '80px 0' }}>
         <div className="max-w-5xl mx-auto px-6 md:px-12">
           <FadeIn>
-            <SectionTitle ja="お申込みについて" en="Application & Reservation" center />
+            <SectionTitle ja={t('wedding_text_31')} en="Application & Reservation" center />
           </FadeIn>
           <GoldDivider />
 
@@ -495,23 +493,23 @@ export default function WeddingPage() {
                   <p style={{
                     fontFamily: 'var(--font-serif)', color: C.crimson,
                     fontSize: '0.72rem', letterSpacing: '0.25em', marginBottom: '16px',
-                  }}>挙式料について</p>
+                  }}>{t('wedding_text_32')}</p>
 
                   <div style={{ marginBottom: '18px' }}>
                     <p style={{
                       fontFamily: 'var(--font-serif)', color: C.gold,
                       fontSize: '0.7rem', letterSpacing: '0.15em', marginBottom: '8px',
-                    }}>【初穂料】</p>
+                    }}>{t('wedding_text_33')}</p>
                     <p style={{
                       fontFamily: 'var(--font-serif)', color: C.crimson,
                       fontSize: '2.0rem', letterSpacing: '0.1em', fontWeight: 500,
                       lineHeight: 1.2
-                    }}>100,000 <span style={{ fontSize: '1.2rem' }}>円</span></p>
+                    }}>100,000 <span style={{ fontSize: '1.2rem' }}>{t('wedding_text_34')}</span></p>
                     <p style={{
                       fontFamily: 'var(--font-sans)', color: C.crimson,
                       fontSize: '0.92rem', letterSpacing: '0.05em', marginTop: '6px',
                       opacity: 0.9
-                    }}>（浦安の舞 有り）</p>
+                    }}>{t('wedding_text_35')}</p>
                   </div>
 
                   <p style={{
@@ -533,7 +531,7 @@ export default function WeddingPage() {
                   <p style={{
                     fontFamily: 'var(--font-serif)', color: C.textMute,
                     fontSize: '0.72rem', letterSpacing: '0.2em', marginBottom: '10px',
-                  }}>振込先</p>
+                  }}>{t('wedding_text_36')}</p>
                   <p style={{
                     fontFamily: 'var(--font-sans)', color: C.textMid,
                     fontSize: '0.8rem', lineHeight: 2.0,
@@ -595,9 +593,7 @@ export default function WeddingPage() {
                     <h3 style={{
                       fontFamily: 'var(--font-serif)', color: C.text,
                       fontSize: '0.9rem', letterSpacing: '0.1em', margin: 0
-                    }}>
-                      予約のお手続き
-                    </h3>
+                    }}>{t("weddingPage_text_90927")}</h3>
                   </div>
                   <div style={{ padding: '0 8px' }}>
                     <div style={{ marginBottom: '24px' }}>
@@ -647,7 +643,7 @@ export default function WeddingPage() {
       <div style={{ position: 'relative', height: '380px', overflow: 'hidden' }}>
         <img
           src={PRIEST_IMG}
-          alt="神職"
+          alt={t('wedding_text_37')}
           style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 30%' }}
         />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to left, rgba(10,3,3,0.55), rgba(10,3,3,0.1) 60%)' }} />
@@ -664,8 +660,7 @@ export default function WeddingPage() {
             letterSpacing: '0.35em',
             lineHeight: 1.6,
             textShadow: '0 2px 16px rgba(0,0,0,0.6), 0 4px 40px rgba(0,0,0,0.4)',
-          }}>
-            八幡大神のご加護のもと<br/>清らかな誓いを
+          }}>{t("weddingPage_text_83830")}<br/>清らかな誓いを
           </div>
         </div>
       </div>
@@ -674,20 +669,20 @@ export default function WeddingPage() {
       <section style={{ backgroundColor: C.ivory, padding: '80px 0' }}>
         <div className="max-w-5xl mx-auto px-6 md:px-12">
           <FadeIn>
-            <SectionTitle ja="その他留意事項" en="Important Notes" />
+            <SectionTitle ja={t('wedding_text_38')} en="Important Notes" />
           </FadeIn>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
             {/* キャンセル料 */}
             <FadeIn delay={0.05}>
-              <InfoBox title="【キャンセル料について】">
+              <InfoBox title={t('wedding_text_39')}>
                 <table style={{ width: '100%', borderCollapse: 'collapse' }}>
                   <tbody>
                     {[
-                      ['3ヶ月前以内', '20％'],
-                      ['1ヶ月前以内', '50％'],
-                      ['1週間前以内', '80％'],
-                      ['6日以内・当日', '100％'],
+                      [t('wedding_text_40'), '20％'],
+                      [t('wedding_text_41'), '50％'],
+                      [t('wedding_text_42'), '80％'],
+                      [t('wedding_text_43'), '100％'],
                     ].map(([period, fee], i) => (
                       <tr key={i}>
                         <td style={{
@@ -712,18 +707,18 @@ export default function WeddingPage() {
 
             {/* 定員・時間 */}
             <FadeIn delay={0.1}>
-              <InfoBox title="【当日の注意事項】">
+              <InfoBox title={t('wedding_text_44')}>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
                   {[
-                    <><strong>結婚式場の定員は、<u>ご両家各15名ずつ（合計30名）</u></strong>とさせていただきます。</>,
-                    <><strong>結婚式当日は30分前までに上宮祈祷殿へお越しください。</strong>結婚式式次第また式典中の作法などのご案内をさせていただきます。</>,
-                    '式典中に指輪の交換を希望される新郎新婦は、祈祷殿に指輪をお持ちください。',
-                    '誓詞は新郎にご奉読いただきますので、当日までにご確認ください。',
-                    '衣装業者及び披露宴会場は、ご自身でご手配いただくか、挙式プランをご参照ください。',
-                    'ご希望の方には車椅子をご用意いたします。事前にご連絡ください。',
+                    <><strong>{t('wedding_text_47')}<u>{t('wedding_text_46')}</u></strong>{t('wedding_text_45')}</>,
+                    <><strong>{t('wedding_text_49')}</strong>{t('wedding_text_48')}</>,
+                    t('wedding_text_50'),
+                    t('wedding_text_51'),
+                    t('wedding_text_52'),
+                    t('wedding_text_53'),
                   ].map((note, i) => (
                     <li key={i} className="flex items-start gap-2" style={{ marginBottom: '8px' }}>
-                      <span style={{ color: C.gold, fontSize: '0.7rem', marginTop: '0.25rem', flexShrink: 0 }}>・</span>
+                      <span style={{ color: C.gold, fontSize: '0.7rem', marginTop: '0.25rem', flexShrink: 0 }}>{t('wedding_text_54')}</span>
                       <span style={{ fontFamily: 'var(--font-sans)', color: C.textMid, fontSize: '0.8rem', lineHeight: 1.9 }}>{note}</span>
                     </li>
                   ))}
@@ -738,7 +733,7 @@ export default function WeddingPage() {
       <section style={{ backgroundColor: C.stone, padding: '72px 0' }}>
         <div className="max-w-5xl mx-auto px-6 md:px-12">
           <FadeIn>
-            <SectionTitle ja="お問い合わせ" en="Contact" center />
+            <SectionTitle ja={t('wedding_text_55')} en="Contact" center />
           </FadeIn>
           <GoldDivider />
 
@@ -787,7 +782,7 @@ export default function WeddingPage() {
       <section style={{ backgroundColor: C.ivory, padding: '72px 0' }}>
         <div className="max-w-5xl mx-auto px-6 md:px-12">
           <FadeIn>
-            <SectionTitle ja="挙式プランのご案内" en="Wedding Plans" center />
+            <SectionTitle ja={t('wedding_text_56')} en="Wedding Plans" center />
           </FadeIn>
 
           {/* Full-width image at bottom */}
@@ -798,7 +793,7 @@ export default function WeddingPage() {
             }}>
               <img
                 src={HERO_IMG}
-                alt="宇佐神宮"
+                alt={t('wedding_text_57')}
                 style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 40%' }}
               />
               <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(250,248,245,0.85) 0%, rgba(10,3,3,0.2) 60%, rgba(10,3,3,0.35) 100%)' }} />
@@ -811,9 +806,7 @@ export default function WeddingPage() {
                     fontSize: 'clamp(1.2rem, 3vw, 1.8rem)', fontWeight: 300,
                     letterSpacing: '0.4em',
                     textShadow: '0 2px 20px rgba(0,0,0,0.55), 0 4px 40px rgba(0,0,0,0.35)',
-                  }}>
-                    縁結びの聖地にて
-                  </p>
+                  }}>{t("weddingPage_text_61953")}</p>
                   <p style={{
                     fontFamily: 'var(--font-sans)', color: 'rgba(196,154,58,0.9)',
                     fontSize: '0.62rem', letterSpacing: '0.3em', marginTop: '10px',

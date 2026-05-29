@@ -6,8 +6,8 @@ import { useLocale, useTranslations } from 'next-intl';
 import { motion, useInView } from 'framer-motion';
 import { ChevronRight } from 'lucide-react';
 
-const MAP_IMG = '/images/34c2352fc050bde76c6eea5811ef525c150f64a8.png';
-const HERO_IMG = '/images/bf9f7b6f02cc9e1443c20d6967d1430724f52ec6.png'; // Torii scenery
+const MAP_IMG = 'https://res.cloudinary.com/dxhqwmwz1/image/upload/c_scale,w_440/f_auto/q_auto/v1779961439/%E5%AE%87%E4%BD%90%E7%A5%9E%E5%AE%AE%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6_%E7%94%B1%E7%B7%92_img02_lsgcyp.png';
+const HERO_IMG = 'https://res.cloudinary.com/dxhqwmwz1/image/upload/c_fill,g_auto,w_1600,h_450/f_auto/q_auto/v1779961438/%E5%AE%87%E4%BD%90%E7%A5%9E%E5%AE%AE%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6_%E7%94%B1%E7%B7%92_img01_akjwkm.jpg'; // Torii scenery
 
 const C = {
   crimson:  '#a50000',
@@ -36,27 +36,28 @@ function OrnamentDivider() {
 }
 
 function DeityTable() {
+  const t = useTranslations();
   const rows = [
     {
-      hall: '一之御殿',
-      reading: 'はちまんおおかみ',
-      name: '八幡大神',
-      formalReading: 'ほんだわけのみこと',
-      formal: '誉田別尊（応神天皇）',
+      hall: t('aboutHistory_text_1'),
+      reading: t('aboutHistory_text_2'),
+      name: t('aboutHistory_text_3'),
+      formalReading: t('aboutHistory_text_4'),
+      formal: t('aboutHistory_text_5'),
     },
     {
-      hall: '二之御殿',
-      reading: 'ひめおおかみ',
-      name: '比売大神',
-      formalReading: 'たぎつひめのみこと　いちきしまひめのみこと　たぎりひめのみこと',
-      formal: '多岐津姫命・市杵嶋姫命・多紀理姫命',
+      hall: t('aboutHistory_text_6'),
+      reading: t('aboutHistory_text_7'),
+      name: t('aboutHistory_text_8'),
+      formalReading: t('aboutHistory_text_9'),
+      formal: t('aboutHistory_text_10'),
     },
     {
-      hall: '三之御殿',
-      reading: 'じんぐうこうごう',
-      name: '神功皇后',
-      formalReading: 'おきながたらしひめのみこと',
-      formal: '息長帯姫命',
+      hall: t('aboutHistory_text_11'),
+      reading: t('aboutHistory_text_12'),
+      name: t('aboutHistory_text_13'),
+      formalReading: t('aboutHistory_text_14'),
+      formal: t('aboutHistory_text_15'),
     },
   ];
 
@@ -153,7 +154,7 @@ export default function HistoryPage() {
       <section className="relative h-[340px] overflow-hidden select-none">
         <img
           src={HERO_IMG}
-          alt="由緒"
+          alt={t('aboutHistory_text_16')}
           className="absolute inset-0 w-full h-full object-cover"
           style={{ objectPosition: 'center 40%' }}
         />
@@ -165,17 +166,11 @@ export default function HistoryPage() {
             <Link
               href={`/${locale}`}
               className="font-sans text-ivory/55 text-[0.62rem] tracking-widest hover:text-ivory transition-colors"
-            >
-              ホーム
-            </Link>
+            >{t("aboutHistoryPage_text_34653")}</Link>
             <ChevronRight size={11} className="text-ivory/30" />
-            <span className="font-sans text-gold-lt/90 text-[0.62rem] tracking-widest">
-              宇佐神宮について
-            </span>
+            <span className="font-sans text-gold-lt/90 text-[0.62rem] tracking-widest">{t("aboutHistoryPage_text_44003")}</span>
             <ChevronRight size={11} className="text-ivory/30" />
-            <span className="font-sans text-gold-lt/90 text-[0.62rem] tracking-widest">
-              由緒
-            </span>
+            <span className="font-sans text-gold-lt/90 text-[0.62rem] tracking-widest">{t("aboutHistoryPage_text_38805")}</span>
           </nav>
 
           <motion.div
@@ -187,9 +182,7 @@ export default function HistoryPage() {
             <p className="font-sans text-gold-lt text-[0.6rem] tracking-[0.35em] uppercase mb-2.5">
               History &amp; Origin
             </p>
-            <h1 className="font-serif text-ivory text-3xl md:text-5xl font-light tracking-[0.3em] drop-shadow-md">
-              由緒
-            </h1>
+            <h1 className="font-serif font-title-main text-ivory font-light tracking-[0.3em] drop-shadow-md" style={{ fontSize: "clamp(2rem, 5vw, 3rem)" }}>{t("aboutHistoryPage_text_38805")}</h1>
             <div className="flex items-center justify-center gap-3 mt-5">
               <div className="w-10 h-[1px] bg-gold/50" />
               <div className="w-1.5 h-1.5 bg-gold opacity-70 rotate-45" />
@@ -210,13 +203,12 @@ export default function HistoryPage() {
           {/* Opening paragraphs */}
           <FadeIn delay={0.05}>
             <P>
-              八幡さまは古くより多くの人々に親しまれ、<HL>お祀り</HL>されてきました。
+              八幡さまは古くより多くの人々に親しまれ、<HL>{t('aboutHistory_text_17')}</HL>されてきました。
             </P>
             <P>
               全国約１１万の神社のうち、八幡さまが最も多く、４万６００社あまりのお社（やしろ）があります。
             </P>
-            <P>
-              宇佐神宮は４万社あまりある八幡さまの<HL>総本宮</HL>です。
+            <P>{t("aboutHistoryPage_text_30364")}<HL>{t('aboutHistory_text_18')}</HL>です。
             </P>
           </FadeIn>
 
@@ -224,12 +216,11 @@ export default function HistoryPage() {
 
           {/* 御示顕・創建 */}
           <FadeIn delay={0.06}>
-            <SectionHeading>御示顕と宇佐神宮の創建</SectionHeading>
+            <SectionHeading>{t('aboutHistory_text_19')}</SectionHeading>
             <P indent>
-              御祭神である八幡大神さまは応神天皇のご神霊で、５７１年（欽明天皇の時代）に初めて宇佐の地に<HL>ご示顕</HL>になったといわれます。応神天皇は大陸の文化と産業を輸入し、新しい国づくりをされた方です。７２５年（神亀２年）、
+              御祭神である八幡大神さまは応神天皇のご神霊で、５７１年（欽明天皇の時代）に初めて宇佐の地に<HL>{t('aboutHistory_text_20')}</HL>になったといわれます。応神天皇は大陸の文化と産業を輸入し、新しい国づくりをされた方です。７２５年（神亀２年）、
             </P>
-            <P indent>
-              現在の地に御殿を<HL>造立</HL>し、八幡神をお祀りされました。
+            <P indent>{t("aboutHistoryPage_text_81897")}<HL>{t('aboutHistory_text_21')}</HL>し、八幡神をお祀りされました。
             </P>
             <P>
               これが宇佐神宮の創建です。
@@ -240,7 +231,7 @@ export default function HistoryPage() {
 
           {/* 比売大神・二之御殿 */}
           <FadeIn delay={0.07}>
-            <SectionHeading>比売大神と二之御殿</SectionHeading>
+            <SectionHeading>{t('aboutHistory_text_22')}</SectionHeading>
 
             {/* Float layout for text wrap */}
             <div className="overflow-hidden">
@@ -249,17 +240,14 @@ export default function HistoryPage() {
                   <div className="absolute top-1.5 right-[-6px] w-full h-full border border-gold/20 z-0" />
                   <img
                     src={MAP_IMG}
-                    alt="宇佐・出雲・畿内 地図"
+                    alt={t('aboutHistory_text_23')}
                     className="w-full relative z-10 border border-gold/25"
                   />
                 </div>
-                <p className="font-sans text-text-mute text-[0.6rem] tracking-wider mt-2.5 text-center">
-                  宇佐・出雲・畿内の位置関係
-                </p>
+                <p className="font-sans text-text-mute text-[0.6rem] tracking-wider mt-2.5 text-center">{t("aboutHistoryPage_text_88439")}</p>
               </div>
 
-              <P indent>
-                宇佐の地は<HL>畿内</HL>や出雲と同様に早くから開けたところで、<HL>神代</HL>に比売大神が<HL>宇佐嶋</HL>にご降臨されたと『<HL>日本書紀</HL>』に記されています。比売大神様は八幡さまが現われる以前の古い神、地主神として祀られ<HL>崇敬</HL>されてきました。八幡神が祀られた８年後の７３３年（天平５年）に<HL>神託</HL>により二之御殿が造立され、宇佐の<HL>国造</HL>は、比売大神を<HL>お祀り</HL>しました。
+              <P indent>{t("aboutHistoryPage_text_41845")}<HL>{t('aboutHistory_text_38')}</HL>{t('aboutHistory_text_37')}<HL>{t('aboutHistory_text_36')}</HL>{t('aboutHistory_text_35')}<HL>{t('aboutHistory_text_34')}</HL>{t('aboutHistory_text_33')}<HL>{t('aboutHistory_text_32')}</HL>{t('aboutHistory_text_31')}<HL>{t('aboutHistory_text_30')}</HL>{t('aboutHistory_text_29')}<HL>{t('aboutHistory_text_28')}</HL>{t('aboutHistory_text_27')}<HL>{t('aboutHistory_text_26')}</HL>{t('aboutHistory_text_25')}<HL>{t('aboutHistory_text_24')}</HL>しました。
               </P>
             </div>
           </FadeIn>
@@ -268,12 +256,12 @@ export default function HistoryPage() {
 
           {/* 神功皇后・三之御殿 */}
           <FadeIn delay={0.07}>
-            <SectionHeading>神功皇后と三之御殿</SectionHeading>
+            <SectionHeading>{t('aboutHistory_text_39')}</SectionHeading>
             <P indent>
               三之御殿は神託により、８２３年（弘仁１４年）に建立されました。
             </P>
             <P indent>
-              応神天皇の御母、神功皇后をお祀りしています。神功皇后は母神として神人交歓、安産、教育等の守護をされており、そのご<HL>威徳</HL>が高くあらわれています。
+              応神天皇の御母、神功皇后をお祀りしています。神功皇后は母神として神人交歓、安産、教育等の守護をされており、そのご<HL>{t('aboutHistory_text_40')}</HL>が高くあらわれています。
             </P>
           </FadeIn>
 
@@ -281,9 +269,8 @@ export default function HistoryPage() {
 
           {/* 御神徳・勅祭社 */}
           <FadeIn delay={0.07}>
-            <SectionHeading>御神徳と勅祭社</SectionHeading>
-            <P indent>
-              八幡大神の御神徳は強く<HL>顕現</HL>し、三殿一徳のご神威は<HL>奈良東大寺大仏建立の協力</HL>や、<HL>勅使・和気清麻呂（わけのきよまろ）公に国のあり方を正してゆく神教を賜った</HL>ことで特に有名です。皇室も伊勢の神宮につぐ第二の<HL>宗廟</HL>としてご崇敬になり、<HL>勅祭社</HL>１６社に列されています。また、一般の人々にも鎮守の神として広く親しまれてきました。
+            <SectionHeading>{t('aboutHistory_text_41')}</SectionHeading>
+            <P indent>{t("aboutHistoryPage_text_45995")}<HL>{t('aboutHistory_text_50')}</HL>{t('aboutHistory_text_49')}<HL>{t('aboutHistory_text_48')}</HL>{t('aboutHistory_text_47')}<HL>{t('aboutHistory_text_46')}</HL>{t('aboutHistory_text_45')}<HL>{t('aboutHistory_text_44')}</HL>{t('aboutHistory_text_43')}<HL>{t('aboutHistory_text_42')}</HL>１６社に列されています。また、一般の人々にも鎮守の神として広く親しまれてきました。
             </P>
           </FadeIn>
 
@@ -291,9 +278,9 @@ export default function HistoryPage() {
 
           {/* 八幡信仰 */}
           <FadeIn delay={0.07}>
-            <SectionHeading>八幡信仰と国宝本殿</SectionHeading>
+            <SectionHeading>{t('aboutHistory_text_51')}</SectionHeading>
             <P indent>
-              八幡信仰とは、応天皇のご聖徳を八幡神として称（たた）え奉るとともに、仏教文化と、我が国固有の神道を<HL>習合</HL>したものとも考えられています。その長い信仰の歴史は宇佐神宮の神事や祭会、うるわしい建造物、宝物などに今も見ることができます。<HL>千古斧（おの）</HL>を入れない深緑の杜（もり）に映える美しい本殿は国宝に指定されており、総本宮にふさわしい<HL>威容</HL>を誇っています。
+              八幡信仰とは、応天皇のご聖徳を八幡神として称（たた）え奉るとともに、仏教文化と、我が国固有の神道を<HL>{t('aboutHistory_text_56')}</HL>{t('aboutHistory_text_55')}<HL>{t('aboutHistory_text_54')}</HL>{t('aboutHistory_text_53')}<HL>{t('aboutHistory_text_52')}</HL>を誇っています。
             </P>
           </FadeIn>
 

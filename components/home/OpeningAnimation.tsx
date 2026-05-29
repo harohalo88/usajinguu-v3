@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 
 interface Props {
   onComplete: () => void;
@@ -9,6 +10,7 @@ interface Props {
 }
 
 export function OpeningAnimation({ onComplete, language }: Props) {
+  const t = useTranslations();
   const [phase, setPhase] = useState<'enter' | 'hold' | 'exit'>('enter');
 
   useEffect(() => {
@@ -24,18 +26,18 @@ export function OpeningAnimation({ onComplete, language }: Props) {
   }, [onComplete]);
 
   const subtitleMap: Record<string, string> = {
-    ja: '八幡総本宮',
+    ja: t('openinganimation_text_1'),
     en: 'Grand Shrine of Hachiman',
-    'zh-TW': '八幡總本宮',
-    'zh-CN': '八幡总本宫',
+    'zh-TW': t('openinganimation_text_2'),
+    'zh-CN': t('openinganimation_text_3'),
     ko: '하치만 총본궁',
   };
 
   const yearMap: Record<string, string> = {
-    ja: '神亀二年（七二五年）御鎮座',
+    ja: t('openinganimation_text_4'),
     en: 'Founded in 725 AD',
-    'zh-TW': '創建於西元725年',
-    'zh-CN': '创建于公元725年',
+    'zh-TW': t('openinganimation_text_5'),
+    'zh-CN': t('openinganimation_text_6'),
     ko: '서기 725년 창건',
   };
 
@@ -99,7 +101,7 @@ export function OpeningAnimation({ onComplete, language }: Props) {
           >
             <img
               src="/images/07ddf8f36fce46ea9f721642d4b1fb369ab2bb5e.png"
-              alt="宇佐神宮"
+              alt={t('openinganimation_text_7')}
               style={{
                 height: '80px',
                 width: 'auto',

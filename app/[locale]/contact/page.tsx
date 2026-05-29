@@ -19,92 +19,92 @@ const C = {
   textMute: '#7a6a5a',
 };
 
-const LOCALIZATION: Record<string, { subtitle: string; title: string; intro: string; cardsTitle: string; hoursLabel: string; hoursValue: string; note: string; phoneMsg: string; accessMsg: string; accessBtn: string }> = {
-  ja: {
-    subtitle: 'CONTACT',
-    title: 'お問い合わせ',
-    intro: '宇佐神宮への参拝、御祈願、式典その他についてのご不明な点はお気軽にお問い合わせください。',
-    cardsTitle: '連絡先一覧',
-    hoursLabel: '受付時間',
-    hoursValue: '午前9時 〜 午後5時（年中無休）',
-    note: '※祭事や神職の出仕状況により、ご対応にお時間をいただく場合がございます。',
-    phoneMsg: 'お電話での問い合わせはこちら',
-    accessMsg: '詳しい交通アクセスや駐車場情報はこちら',
-    accessBtn: '交通アクセスを見る',
-  },
-  en: {
-    subtitle: 'CONTACT',
-    title: 'Inquiries',
-    intro: 'Please feel free to contact us for any questions regarding worship, prayer services, or traditional ceremonies at Usa Jingu.',
-    cardsTitle: 'Contact Information',
-    hoursLabel: 'Office Hours',
-    hoursValue: '9:00 AM – 5:00 PM (Open daily)',
-    note: '*Please note that response times may vary during major festivals.',
-    phoneMsg: 'Call Us Directly',
-    accessMsg: 'Check detailed transportation and parking information',
-    accessBtn: 'View Access Guide',
-  },
-  'zh-TW': {
-    subtitle: 'CONTACT',
-    title: '聯絡我們',
-    intro: '如有關於宇佐神宮參拜、祈願儀式或各項典禮的任何疑問，歡迎隨時與我們聯絡。',
-    cardsTitle: '聯絡資訊',
-    hoursLabel: '接待時間',
-    hoursValue: '上午9點 〜 下午5點（全年無休）',
-    note: '※依祭典或神職人員出勤狀況，部分回覆可能需要較長時間。',
-    phoneMsg: '撥打電話詢問',
-    accessMsg: '查看詳細的交通與停車資訊',
-    accessBtn: '查看交通指南',
-  },
-  'zh-CN': {
-    subtitle: 'CONTACT',
-    title: '联系我们',
-    intro: '如有關於宇佐神宫参拜、祈愿仪式或各项典礼的任何疑问，欢迎隨时與我们联系。',
-    cardsTitle: '联系信息',
-    hoursLabel: '接待时间',
-    hoursValue: '上午9点 〜 下午5点（全年无休）',
-    note: '※依祭典或神职人员出勤状况，部分回复可能需要较长时间。',
-    phoneMsg: '拨打电话询问',
-    accessMsg: '查看详细的交通与停车信息',
-    accessBtn: '查看交通指南',
-  },
-  ko: {
-    subtitle: 'CONTACT',
-    title: '문의하기',
-    intro: '우사 신궁 참배, 기원제, 전통 예식 등에 관한 문의 사항이 있으시면 언제든지 편하게 연락 주시기 바랍니다.',
-    cardsTitle: '연락처 안내',
-    hoursLabel: '접수 시간',
-    hoursValue: '오전 9시 ~ 오후 5시 (연중무휴)',
-    note: '*제사 및 신직의 일정에 따라 대응에 다소 시간이 걸릴 수 있습니다.',
-    phoneMsg: '전화 문의 바로가기',
-    accessMsg: '상세한 교통 및 주차 안내 확인하기',
-    accessBtn: '교통 안내 보기',
-  },
-};
-
 export default function ContactPage() {
   const locale = useLocale();
   const t = useTranslations();
+
+  const LOCALIZATION: Record<string, { subtitle: string; title: string; intro: string; cardsTitle: string; hoursLabel: string; hoursValue: string; note: string; phoneMsg: string; accessMsg: string; accessBtn: string }> = {
+    ja: {
+      subtitle: 'CONTACT',
+      title: t('contact_text_1'),
+      intro: t('contact_text_2'),
+      cardsTitle: t('contact_text_3'),
+      hoursLabel: t('contact_text_4'),
+      hoursValue: t('contact_text_5'),
+      note: t('contact_text_6'),
+      phoneMsg: t('contact_text_7'),
+      accessMsg: t('contact_text_8'),
+      accessBtn: t('contact_text_9'),
+    },
+    en: {
+      subtitle: 'CONTACT',
+      title: 'Inquiries',
+      intro: 'Please feel free to contact us for any questions regarding worship, prayer services, or traditional ceremonies at Usa Jingu.',
+      cardsTitle: 'Contact Information',
+      hoursLabel: 'Office Hours',
+      hoursValue: '9:00 AM – 5:00 PM (Open daily)',
+      note: '*Please note that response times may vary during major festivals.',
+      phoneMsg: 'Call Us Directly',
+      accessMsg: 'Check detailed transportation and parking information',
+      accessBtn: 'View Access Guide',
+    },
+    'zh-TW': {
+      subtitle: 'CONTACT',
+      title: t('contact_text_10'),
+      intro: t('contact_text_11'),
+      cardsTitle: t('contact_text_12'),
+      hoursLabel: t('contact_text_13'),
+      hoursValue: t('contact_text_14'),
+      note: t('contact_text_15'),
+      phoneMsg: t('contact_text_16'),
+      accessMsg: t('contact_text_17'),
+      accessBtn: t('contact_text_18'),
+    },
+    'zh-CN': {
+      subtitle: 'CONTACT',
+      title: t('contact_text_19'),
+      intro: t('contact_text_20'),
+      cardsTitle: t('contact_text_21'),
+      hoursLabel: t('contact_text_22'),
+      hoursValue: t('contact_text_23'),
+      note: t('contact_text_24'),
+      phoneMsg: t('contact_text_25'),
+      accessMsg: t('contact_text_26'),
+      accessBtn: t('contact_text_27'),
+    },
+    ko: {
+      subtitle: 'CONTACT',
+      title: '문의하기',
+      intro: '우사 신궁 참배, 기원제, 전통 예식 등에 관한 문의 사항이 있으시면 언제든지 편하게 연락 주시기 바랍니다.',
+      cardsTitle: '연락처 안내',
+      hoursLabel: '접수 시간',
+      hoursValue: '오전 9시 ~ 오후 5시 (연중무휴)',
+      note: '*제사 및 신직의 일정에 따라 대응에 다소 시간이 걸릴 수 있습니다.',
+      phoneMsg: '전화 문의 바로가기',
+      accessMsg: '상세한 교통 및 주차 안내 확인하기',
+      accessBtn: '교통 안내 보기',
+    },
+  };
 
   const text = LOCALIZATION[locale] || LOCALIZATION.ja;
 
   const contactCards = [
     {
       icon: MapPin,
-      title: t('historyTitle') || '所在地',
+      title: t('historyTitle') || t('contact_text_28'),
       value: t('accessAddress'),
-      desc: '〒872-0102 大分県宇佐市南宇佐2859',
+      desc: t('contact_text_29'),
     },
     {
       icon: Phone,
-      title: '電話番号',
+      title: t('contact_text_30'),
       value: t('accessPhone').replace('TEL: ', '') || '0978-37-0001',
       desc: text.phoneMsg,
       link: `tel:${t('accessPhone').replace(/[^0-9]/g, '')}`,
     },
     {
       icon: Printer,
-      title: 'FAX番号',
+      title: t('contact_text_31'),
       value: t('accessFax') || '0978-37-0408',
       desc: 'FAX: 0978-37-0408',
     },
@@ -134,9 +134,7 @@ export default function ContactPage() {
             <Link
               href={`/${locale}`}
               className="font-sans text-ivory/55 text-[0.62rem] tracking-widest hover:text-ivory transition-colors"
-            >
-              ホーム
-            </Link>
+            >{t("contactPage_text_34653")}</Link>
             <ChevronRight size={11} className="text-ivory/30" />
             <span className="font-sans text-gold-lt/90 text-[0.62rem] tracking-widest">{text.title}</span>
           </nav>
@@ -148,7 +146,7 @@ export default function ContactPage() {
             className="text-center"
           >
             <p className="font-sans text-gold-lt text-[0.58rem] tracking-[0.35em] uppercase mb-2.5">{text.subtitle}</p>
-            <h1 className="font-serif text-ivory text-2xl md:text-3xl font-light tracking-[0.25em]">{text.title}</h1>
+            <h1 className="font-serif font-title-main text-ivory font-light tracking-[0.25em]" style={{ fontSize: 'clamp(2rem, 5vw, 2.8rem)' }}>{text.title}</h1>
             <div className="flex items-center justify-center gap-3 mt-4">
               <div className="w-9 h-[1px] bg-gold/45" />
               <div className="w-1 h-1 bg-gold opacity-65 rotate-45" />

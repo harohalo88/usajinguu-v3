@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 interface HeroProps {
   t: {
@@ -16,6 +17,7 @@ interface HeroProps {
 }
 
 export function Hero({ t }: HeroProps) {
+  const tTranslate = useTranslations();
   const { scrollY } = useScroll();
   const shouldReduceMotion = useReducedMotion();
 
@@ -46,10 +48,10 @@ export function Hero({ t }: HeroProps) {
         className="absolute inset-0"
       >
         <img
-          src="/images/ee650760d4d1494373b34b9d28f00b3bfd3bab61.png"
-          alt="宇佐神宮"
+          src="https://res.cloudinary.com/dxhqwmwz1/image/upload/c_fill,g_auto,w_1920,h_1080/f_auto,q_auto/%E3%83%9B%E3%83%BC%E3%83%A0%E3%83%98%E3%82%9A%E3%83%BC%E3%82%B7%E3%82%99_img01_ucgl5j.jpg"
+          alt={tTranslate('hero_text_1')}
           className="w-full h-full object-cover"
-          style={{ objectPosition: 'center 40%' }}
+          style={{ objectPosition: 'center' }}
         />
       </motion.div>
 
@@ -92,7 +94,7 @@ export function Hero({ t }: HeroProps) {
               whiteSpace: 'pre-line'
             }}
           >
-            {t.heroTaglineVertical || '静寂の\n美と\n自然の\n調和'}
+            {t.heroTaglineVertical || tTranslate('hero_text_2')}
           </div>
         </motion.div>
         <motion.div

@@ -6,6 +6,7 @@ import { useLocale } from 'next-intl';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronRight, Filter, Search, X } from 'lucide-react';
 import { C } from '@/components/ShrineUI';
+import { useTranslations } from 'next-intl';
 
 interface NewsItem {
   id: number;
@@ -18,29 +19,30 @@ interface NewsItem {
   month: number;
 }
 
-const NEWS_DATA: NewsItem[] = [
-  { id: 1, year: 2026, month: 3, date: '2026-03-16', displayDate: '令和8年3月16日', title: '令和8年3月18日（水）は、例祭斎行のため、祈願受付時間は午後1時から午後4時までとなります。ご理解の程よろしくお願い致します。', tag: 'おしらせ' },
-  { id: 2, year: 2026, month: 2, date: '2026-02-13', displayDate: '令和8年2月13日', title: '国宝宇佐神宮本殿特別拝観についてのお知らせ。', isLink: true, tag: '重要' },
-  { id: 3, year: 2026, month: 2, date: '2026-02-02', displayDate: '令和8年2月2日', title: '2.11 和の国日本 建国記念奉祝揮毫についてのお知らせ。', isLink: true, tag: '行事' },
-  { id: 4, year: 2026, month: 1, date: '2026-01-01', displayDate: '令和8年1月1日', title: '令和7年 宇佐神宮 勅祭・御鎮座1300年 奉祝行事報告についてのお知らせ。', isLink: true, tag: 'おしらせ' },
-  { id: 5, year: 2025, month: 12, date: '2025-12-01', displayDate: '令和7年12月1日', title: '点検作業の為、令和7年12月18日(水)終日モノレールの運行を停止します。ご理解 of 程よろしくお願い致します。', tag: 'おしらせ' },
-  { id: 6, year: 2025, month: 12, date: '2025-12-01', displayDate: '令和7年12月1日', title: '宇佐神宮から初詣参拝のお願いについて。', isLink: true, tag: 'おしらせ' },
-  { id: 7, year: 2025, month: 12, date: '2025-12-01', displayDate: '令和7年12月1日', title: '令和8年 宇佐神宮初詣交通規制のご案内。', isLink: true, tag: 'おしらせ' },
-  { id: 8, year: 2025, month: 12, date: '2025-12-01', displayDate: '令和7年12月1日', title: '令和8年 正月催し物についてのお知らせ。', isLink: true, tag: 'おしらせ' },
-  { id: 9, year: 2025, month: 11, date: '2025-11-18', displayDate: '令和7年11月18日', title: '正月神札・御守授与品ご郵送のご案内。', isLink: true, tag: '授与品' },
-  { id: 10, year: 2025, month: 11, date: '2025-11-04', displayDate: '令和7年11月4日', title: '令和7年11月23日（日）は新嘗祭斎行のため、祈願受付時間は午後1時から午後4時までとなります。ご理解の程よろしくお願い致します。', tag: 'おしらせ' },
-  { id: 11, year: 2025, month: 10, date: '2025-10-18', displayDate: '令和7年10月18日', title: '令和7年 七五三詣お祝い袋 授与についてのお知らせ。', isLink: true, tag: '授与品' },
-  { id: 12, year: 2025, month: 9, date: '2025-09-26', displayDate: '令和7年9月26日', title: '宇佐神宮勅祭・御鎮座1300年を応援する会より奉賛金受納のお知らせ。', isLink: true, tag: 'おしらせ' },
-  { id: 13, year: 2025, month: 9, date: '2025-09-23', displayDate: '令和7年9月23日', title: '宇佐神宮風除報賽祭 宇佐神宮御神能についてのお知らせ。', isLink: true, tag: '行事' },
-  { id: 14, year: 2025, month: 9, date: '2025-09-21', displayDate: '令和7年9月21日', title: '仲秋祭（放生会）における交通規制についてのお知らせ。', isLink: true, tag: 'おしらせ' },
-  { id: 15, year: 2025, month: 9, date: '2025-09-21', displayDate: '令和7年9月21日', title: '令和7年 七五三詣のご案内。', isLink: true, tag: 'おしらせ' },
-  { id: 16, year: 2025, month: 9, date: '2025-09-17', displayDate: '令和7年9月17日', title: '令和7年 勅祭記念 流鏑馬神事及び奉祝花火における交通規制のお知らせ。', isLink: true, tag: 'おしらせ' },
-  { id: 17, year: 2025, month: 9, date: '2025-09-16', displayDate: '令和7年9月16日', title: '呉橋横神橋 夜間閉門についてのお知らせ。', isLink: true, tag: 'おしらせ' },
-];
-
 const ITEMS_PER_PAGE = 15;
 
 export default function NewsListingPage() {
+  const t = useTranslations();
+
+  const NEWS_DATA: NewsItem[] = [
+    { id: 1, year: 2026, month: 3, date: '2026-03-16', displayDate: t('news_text_3'), title: t('news_text_2'), tag: t('news_text_1') },
+    { id: 2, year: 2026, month: 2, date: '2026-02-13', displayDate: t('news_text_6'), title: t('news_text_5'), isLink: true, tag: t('news_text_4') },
+    { id: 3, year: 2026, month: 2, date: '2026-02-02', displayDate: t('news_text_9'), title: t('news_text_8'), isLink: true, tag: t('news_text_7') },
+    { id: 4, year: 2026, month: 1, date: '2026-01-01', displayDate: t('news_text_12'), title: t('news_text_11'), isLink: true, tag: t('news_text_10') },
+    { id: 5, year: 2025, month: 12, date: '2025-12-01', displayDate: t('news_text_15'), title: t('news_text_14'), tag: t('news_text_13') },
+    { id: 6, year: 2025, month: 12, date: '2025-12-01', displayDate: t('news_text_18'), title: t('news_text_17'), isLink: true, tag: t('news_text_16') },
+    { id: 7, year: 2025, month: 12, date: '2025-12-01', displayDate: t('news_text_21'), title: t('news_text_20'), isLink: true, tag: t('news_text_19') },
+    { id: 8, year: 2025, month: 12, date: '2025-12-01', displayDate: t('news_text_24'), title: t('news_text_23'), isLink: true, tag: t('news_text_22') },
+    { id: 9, year: 2025, month: 11, date: '2025-11-18', displayDate: t('news_text_27'), title: t('news_text_26'), isLink: true, tag: t('news_text_25') },
+    { id: 10, year: 2025, month: 11, date: '2025-11-04', displayDate: t('news_text_30'), title: t('news_text_29'), tag: t('news_text_28') },
+    { id: 11, year: 2025, month: 10, date: '2025-10-18', displayDate: t('news_text_33'), title: t('news_text_32'), isLink: true, tag: t('news_text_31') },
+    { id: 12, year: 2025, month: 9, date: '2025-09-26', displayDate: t('news_text_36'), title: t('news_text_35'), isLink: true, tag: t('news_text_34') },
+    { id: 13, year: 2025, month: 9, date: '2025-09-23', displayDate: t('news_text_39'), title: t('news_text_38'), isLink: true, tag: t('news_text_37') },
+    { id: 14, year: 2025, month: 9, date: '2025-09-21', displayDate: t('news_text_42'), title: t('news_text_41'), isLink: true, tag: t('news_text_40') },
+    { id: 15, year: 2025, month: 9, date: '2025-09-21', displayDate: t('news_text_45'), title: t('news_text_44'), isLink: true, tag: t('news_text_43') },
+    { id: 16, year: 2025, month: 9, date: '2025-09-17', displayDate: t('news_text_48'), title: t('news_text_47'), isLink: true, tag: t('news_text_46') },
+    { id: 17, year: 2025, month: 9, date: '2025-09-16', displayDate: t('news_text_51'), title: t('news_text_50'), isLink: true, tag: t('news_text_49') },
+  ];
   const [selectedMonth, setSelectedMonth] = useState<{ year: number; month: number } | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
@@ -94,18 +96,12 @@ export default function NewsListingPage() {
             <Link
               href={`/${locale}`}
               className="font-sans text-ivory/55 text-[0.62rem] tracking-widest hover:text-ivory transition-colors"
-            >
-              ホーム
-            </Link>
+            >{t("newsPage_text_34653")}</Link>
             <ChevronRight size={11} className="text-ivory/30" />
-            <span className="font-sans text-gold-lt/90 text-[0.62rem] tracking-widest">
-              新着情報
-            </span>
+            <span className="font-sans text-gold-lt/90 text-[0.62rem] tracking-widest">{t("newsPage_text_25214")}</span>
           </nav>
 
-          <h1 style={{ fontFamily: 'var(--font-serif)', color: '#faf8f5', fontSize: 'clamp(2rem, 5vw, 2.8rem)', fontWeight: 300, letterSpacing: '0.2em', marginBottom: '8px' }}>
-            新着情報
-          </h1>
+          <h1 className="font-title-main" style={{ fontFamily: 'var(--font-serif)', color: '#faf8f5', fontSize: 'clamp(2rem, 5vw, 2.8rem)', fontWeight: 300, letterSpacing: '0.2em', marginBottom: '8px' }}>{t("newsPage_text_25214")}</h1>
           <p style={{ fontFamily: 'var(--font-sans)', color: C.goldLt, fontSize: '0.72rem', letterSpacing: '0.35em', textTransform: 'uppercase' }}>
             LATEST NEWS & ANNOUNCEMENTS
           </p>
@@ -121,14 +117,14 @@ export default function NewsListingPage() {
               <div className="mb-8">
                 <div className="flex items-center gap-2 mb-4" style={{ color: C.crimson }}>
                   <Filter size={14} />
-                  <span style={{ fontFamily: 'var(--font-serif)', fontSize: '1rem', letterSpacing: '0.1em' }}>絞り込み</span>
+                  <span style={{ fontFamily: 'var(--font-serif)', fontSize: '1rem', letterSpacing: '0.1em' }}>{t('news_text_52')}</span>
                 </div>
                 
                 {/* Search */}
                 <div className="relative mb-6">
                   <input 
                     type="text" 
-                    placeholder="キーワードで検索"
+                    placeholder={t('news_text_53')}
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     style={{ 
@@ -165,7 +161,7 @@ export default function NewsListingPage() {
                       transition: 'all 0.2s'
                     }}
                   >
-                    <span>すべて</span>
+                    <span>{t('news_text_54')}</span>
                     <span style={{ opacity: 0.5, fontSize: '0.7rem' }}>({NEWS_DATA.length})</span>
                   </button>
                   
@@ -192,7 +188,7 @@ export default function NewsListingPage() {
                           transition: 'all 0.2s'
                         }}
                       >
-                        <span>{m.year}年 {m.month}月</span>
+                        <span>{t("newsPage_myearMmonth")}</span>
                         <span style={{ opacity: 0.5, fontSize: '0.7rem' }}>({count})</span>
                       </button>
                     );
@@ -207,7 +203,7 @@ export default function NewsListingPage() {
             {/* Active Filters Bar */}
             {(selectedMonth || searchQuery) && (
               <div className="flex flex-wrap items-center gap-2 mb-6">
-                <span style={{ fontSize: '0.72rem', color: C.textMute, marginRight: '4px' }}>適用中:</span>
+                <span style={{ fontSize: '0.72rem', color: C.textMute, marginRight: '4px' }}>{t('news_text_55')}</span>
                 {selectedMonth && (
                   <span className="flex items-center gap-1 px-3 py-1" style={{ backgroundColor: C.stone, border: `1px solid ${C.border}`, fontSize: '0.7rem', color: C.crimson, borderRadius: '20px' }}>
                     {selectedMonth.year}年{selectedMonth.month}月
@@ -223,9 +219,7 @@ export default function NewsListingPage() {
                 <button 
                   onClick={() => { setSelectedMonth(null); setSearchQuery(''); }}
                   style={{ fontSize: '0.7rem', color: C.textMute, textDecoration: 'underline', border: 'none', background: 'none', cursor: 'pointer', marginLeft: '8px' }}
-                >
-                  リセット
-                </button>
+                >{t("newsPage_text_48240")}</button>
               </div>
             )}
 
@@ -302,9 +296,7 @@ export default function NewsListingPage() {
                             fontSize: '0.8rem',
                             fontFamily: 'var(--font-sans)'
                           }}
-                        >
-                          前へ
-                        </button>
+                        >{t("newsPage_text_16388")}</button>
                         
                         {Array.from({ length: totalPages }, (_, idx) => idx + 1).map(page => {
                           if (
@@ -352,9 +344,7 @@ export default function NewsListingPage() {
                             fontSize: '0.8rem',
                             fontFamily: 'var(--font-sans)'
                           }}
-                        >
-                          次へ
-                        </button>
+                        >{t("newsPage_text_38663")}</button>
                       </div>
                     )}
                   </>

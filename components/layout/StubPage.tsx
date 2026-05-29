@@ -16,13 +16,13 @@ interface StubPageProps {
   parentLabel?: string;
 }
 
-const LOCALIZATION: Record<string, { status: string; desc: string; home: string; parentBtn?: string; contactMsg: string; contactLink: string }> = {
+const getLocalization = (t: any) => ({
   ja: {
-    status: '準備中',
-    desc: 'このページは現在準備中です。',
-    home: 'ホームへ戻る',
-    contactMsg: 'お問い合わせはこちらから',
-    contactLink: 'お問い合せページへ →',
+    status: t('stubpage_text_1'),
+    desc: t('stubpage_text_2'),
+    home: t('stubpage_text_3'),
+    contactMsg: t('stubpage_text_4'),
+    contactLink: t('stubpage_text_5'),
   },
   en: {
     status: 'Under Preparation',
@@ -32,18 +32,18 @@ const LOCALIZATION: Record<string, { status: string; desc: string; home: string;
     contactLink: 'Go to Contact Page →',
   },
   'zh-TW': {
-    status: '準備中',
-    desc: '此頁面正在準備中。',
-    home: '返回首頁',
-    contactMsg: '如有任何疑問，請在此聯絡我們',
-    contactLink: '前往聯絡我們頁面 →',
+    status: t('stubpage_text_6'),
+    desc: t('stubpage_text_7'),
+    home: t('stubpage_text_8'),
+    contactMsg: t('stubpage_text_9'),
+    contactLink: t('stubpage_text_10'),
   },
   'zh-CN': {
-    status: '准备中',
-    desc: '此页面正在准备中。',
-    home: '返回首页',
-    contactMsg: '如有任何疑问，请在此联系我们',
-    contactLink: '前往联系我们页面 →',
+    status: t('stubpage_text_11'),
+    desc: t('stubpage_text_12'),
+    home: t('stubpage_text_13'),
+    contactMsg: t('stubpage_text_14'),
+    contactLink: t('stubpage_text_15'),
   },
   ko: {
     status: '준비 중',
@@ -52,13 +52,14 @@ const LOCALIZATION: Record<string, { status: string; desc: string; home: string;
     contactMsg: '궁금한 점이 있으시면 여기로 문의해 주세요',
     contactLink: '문의하기 페이지로 이동 →',
   },
-};
+});
 
 export function StubPage({ titleKey, enTitle, defaultTitle, parentPath, parentLabel }: StubPageProps) {
   const locale = useLocale();
   const t = useTranslations();
   
-  const text = LOCALIZATION[locale] || LOCALIZATION.ja;
+  const locData = getLocalization(t);
+  const text = (locData as Record<string, any>)[locale] || locData.ja;
 
   const getLocalizedLabel = (key: string, def: string) => {
     try {
@@ -89,7 +90,7 @@ export function StubPage({ titleKey, enTitle, defaultTitle, parentPath, parentLa
               href={`/${locale}`}
               className="font-sans text-ivory/55 text-[0.62rem] tracking-widest hover:text-ivory transition-colors"
             >
-              ホーム
+              {t('home')}
             </Link>
             {parentPath && parentLabel && (
               <>
@@ -113,7 +114,7 @@ export function StubPage({ titleKey, enTitle, defaultTitle, parentPath, parentLa
             className="text-center"
           >
             <p className="font-sans text-gold-lt text-[0.58rem] tracking-[0.35em] uppercase mb-2.5">{enTitle}</p>
-            <h1 className="font-serif text-ivory text-2xl md:text-3xl font-light tracking-[0.25em]">{pageTitle}</h1>
+            <h1 className="font-serif font-title-main text-ivory font-light tracking-[0.25em]" style={{ fontSize: 'clamp(2rem, 5vw, 2.8rem)' }}>{pageTitle}</h1>
             <div className="flex items-center justify-center gap-3 mt-4">
               <div className="w-9 h-[1px] bg-gold/45" />
               <div className="w-1 h-1 bg-gold opacity-65 rotate-45" />
@@ -135,9 +136,7 @@ export function StubPage({ titleKey, enTitle, defaultTitle, parentPath, parentLa
 
             <div className="p-12 border border-crimson/10 bg-stone rounded-sm shadow-sm relative overflow-hidden">
               {/* Kanji Watermark Backdrop */}
-              <div className="font-serif text-crimson/[0.03] text-8xl leading-none mb-[-1.5rem] select-none pointer-events-none">
-                準備
-              </div>
+              <div className="font-serif text-crimson/[0.03] text-8xl leading-none mb-[-1.5rem] select-none pointer-events-none">{t("layoutStubpage_text_51509")}</div>
               <div className="relative z-10">
                 <h2 className="font-serif text-crimson text-xl font-normal tracking-widest mb-4">{text.status}</h2>
                 <p className="font-sans text-text-mute text-sm leading-relaxed mb-2 select-text">{text.desc}</p>

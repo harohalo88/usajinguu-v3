@@ -97,7 +97,7 @@ export function AboutSection() {
               </p>
               <div className="mt-8 flex items-center gap-3 select-none">
                 <div className="w-8 h-[1px] bg-gold opacity-50" />
-                <span className="font-serif text-gold text-xs tracking-widest">八幡総本宮</span>
+                <span className="font-serif text-gold text-xs tracking-widest">{t('aboutsection_text_1')}</span>
                 <div className="w-8 h-[1px] bg-gold opacity-50" />
               </div>
             </FadeIn>
@@ -107,7 +107,7 @@ export function AboutSection() {
                 <div className="absolute -top-4 -left-4 w-full h-full border border-gold/20 z-0" />
                 <img 
                   src={SHRINE_IMG} 
-                  alt="宇佐神宮本殿" 
+                  alt={t('aboutsection_text_2')} 
                   className="w-full object-cover relative z-10 rounded-sm shadow-sm" 
                   style={{ height: '400px', objectPosition: 'center' }} 
                 />
@@ -139,13 +139,13 @@ export function AboutSection() {
 
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { name: t('deity1Name'), name2: t('deity1Name2'), desc: t('deity1Desc'), num: '一の神', accent: C.crimson },
-              { name: t('deity2Name'), name2: t('deity2Name2'), desc: t('deity2Desc'), num: '二 of God', accent: C.brown   },
-              { name: t('deity3Name'), name2: t('deity3Name2'), desc: t('deity3Desc'), num: '三 of God', accent: C.gold    },
+              { name: t('deity1Name'), name2: t('deity1Name2'), desc: t('deity1Desc'), num: t('aboutsection_text_3'), accent: C.crimson },
+              { name: t('deity2Name'), name2: t('deity2Name2'), desc: t('deity2Desc'), num: t('aboutsection_text_4'), accent: C.brown   },
+              { name: t('deity3Name'), name2: t('deity3Name2'), desc: t('deity3Desc'), num: t('aboutsection_text_5'), accent: C.gold    },
             ].map((deity, i) => {
               // Standardize local deity indicators safely
               const deityNums = [t('deity1Name2'), t('deity2Name2'), t('deity3Name2')];
-              const deityLabels = ['一の神', '二の神', '三の神'];
+              const deityLabels = [t('aboutsection_text_8'), t('aboutsection_text_7'), t('aboutsection_text_6')];
               
               return (
                 <FadeIn key={i} delay={i * 0.12}>

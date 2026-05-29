@@ -21,13 +21,6 @@ const C = {
   border:   'rgba(165,0,0,0.1)',
 };
 
-const TYPE_COLORS: Record<string, string> = {
-  '月例': C.brown,    'Monthly': C.brown,  '월례': C.brown,
-  '祭事': C.crimson,  'Festival': C.crimson, '제사': C.crimson,
-  '神楽': C.gold,     'Kagura': C.gold,    '가구라': C.gold,
-  '神樂': C.gold,     '神乐': C.gold,
-};
-
 function FadeIn({ children, delay = 0, className = '' }: { children: React.ReactNode; delay?: number; className?: string }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-60px' });
@@ -46,6 +39,13 @@ function FadeIn({ children, delay = 0, className = '' }: { children: React.React
 
 export function EventsSection() {
   const t = useTranslations();
+
+  const TYPE_COLORS: Record<string, string> = {
+    [t('eventssection_text_1')]: C.brown,    'Monthly': C.brown,  '월례': C.brown,
+    [t('eventssection_text_2')]: C.crimson,  'Festival': C.crimson, '제사': C.crimson,
+    [t('eventssection_text_3')]: C.gold,     'Kagura': C.gold,    '가구라': C.gold,
+    [t('eventssection_text_5')]: C.gold,     [t('eventssection_text_4')]: C.gold,
+  };
   const tFestivals = useTranslations('festivals');
   const tSchedule = useTranslations('scheduleItems');
 
@@ -81,7 +81,7 @@ export function EventsSection() {
       <div className="relative w-full overflow-hidden" style={{ height: '360px' }}>
         <img
           src={FESTIVAL_IMG}
-          alt="お祭り"
+          alt={t('eventssection_text_6')}
           className="w-full h-full object-cover"
           style={{ objectPosition: 'center 40%' }}
         />
@@ -230,7 +230,7 @@ export function EventsSection() {
       <div className="relative overflow-hidden" style={{ height: '260px' }}>
         <img
           src={AUTUMN_IMG}
-          alt="秋祭り"
+          alt={t('eventssection_text_7')}
           className="w-full h-full object-cover"
           style={{ objectPosition: 'center 60%' }}
         />

@@ -62,6 +62,7 @@ function DiamondRule() {
 }
 
 export default function DisclaimerPage() {
+  const t = useTranslations();
   const locale = useLocale();
 
   // Translations dictionary matching current locale
@@ -70,19 +71,19 @@ export default function DisclaimerPage() {
       ja: [
         {
           num: '１',
-          text: '宇佐神宮Webサイト（以下、当Webサイト）に掲載する情報の正確さには万全を期していますが、宇佐神宮は利用者が当Webサイトの情報を用いて行う一切の行為について、いかなる責任も負いません。'
+          text: t('disclaimer_text_1')
         },
         {
           num: '２',
-          text: '宇佐神宮は、利用者が当Webサイトにアクセスしたために被った損害、損失に対して、いかなる場合でも一切の責任を負いません。'
+          text: t('disclaimer_text_2')
         },
         {
           num: '３',
-          text: '当Webサイトは、予告なしにその内容を変更又は削除する場合があります。あらかじめご了承ください。'
+          text: t('disclaimer_text_3')
         },
         {
           num: '４',
-          text: '通信回線やコンピュータ等の障害によるシステムの中断・遅滞・中止・データの消失、データへの不正アクセスにより生じた損害、その他サービスのご利用に関してユーザーに生じた損害について、宇佐神宮は一切責任を負いません。'
+          text: t('disclaimer_text_4')
         }
       ],
       en: [
@@ -105,38 +106,38 @@ export default function DisclaimerPage() {
       ],
       'zh-TW': [
         {
-          num: '一',
-          text: '儘管本網站已盡一切努力確保宇佐神宮網站（以下簡稱「本網站」）所刊載資訊的準確性，但對於使用者利用本網站資訊所進行的任何行為，宇佐神宮不承擔任何責任。'
+          num: t('disclaimer_text_5'),
+          text: t('disclaimer_text_6')
         },
         {
-          num: '二',
-          text: '在任何情況下，宇佐神宮對使用者因存取本網站而遭受的任何損害或損失，均不承擔任何責任。'
+          num: t('disclaimer_text_7'),
+          text: t('disclaimer_text_8')
         },
         {
-          num: '三',
-          text: '本網站內容如有更改或刪除，恕不另行通知。敬請見諒。'
+          num: t('disclaimer_text_9'),
+          text: t('disclaimer_text_10')
         },
         {
-          num: '四',
-          text: '對於因通訊線路或電腦故障導致的系統中斷、延遲、中止、資料遺失，或因未經授權存取資料所造成的損害，以及使用者因使用本服務而產生的任何其他損害，宇佐神宮概不承擔任何責任。'
+          num: t('disclaimer_text_11'),
+          text: t('disclaimer_text_12')
         }
       ],
       'zh-CN': [
         {
-          num: '一',
-          text: '尽管本网站已尽一切努力确保宇佐神宫网站（以下简称“本网站”）所刊载信息的准确性，但对于用户利用本网站信息所进行的任何行为，宇佐神宫不承担任何责任。'
+          num: t('disclaimer_text_13'),
+          text: t('disclaimer_text_14')
         },
         {
-          num: '二',
-          text: '在任何情况下，宇佐神宫对用户因访问本网站而遭受的任何损害或损失，均不承担任何责任。'
+          num: t('disclaimer_text_15'),
+          text: t('disclaimer_text_16')
         },
         {
-          num: '三',
-          text: '本网站内容如有更改或删除，恕不另行通知。敬请谅解。'
+          num: t('disclaimer_text_17'),
+          text: t('disclaimer_text_18')
         },
         {
-          num: '四',
-          text: '对于因通信线路或电脑故障导致系统中断、延迟、中止、数据丢失，或因未经授权访问数据所造成的损害，以及用户因使用本服务而产生的任何其他损害，宇佐神宫概不承担任何责任。'
+          num: t('disclaimer_text_19'),
+          text: t('disclaimer_text_20')
         }
       ],
       ko: [
@@ -165,10 +166,10 @@ export default function DisclaimerPage() {
   const content = getDisclaimerContent();
 
   const labels: Record<string, Record<string, string>> = {
-    ja: { title: '免責事項', subtitle: '免責事項について', home: 'ホーム' },
+    ja: { title: t('disclaimer_text_23'), subtitle: t('disclaimer_text_22'), home: t('disclaimer_text_21') },
     en: { title: 'Disclaimer', subtitle: 'Legal Disclaimer', home: 'Home' },
-    'zh-TW': { title: '免責聲明', subtitle: '關於免責聲明', home: '首頁' },
-    'zh-CN': { title: '免责声明', subtitle: '关于免责声明', home: '首页' },
+    'zh-TW': { title: t('disclaimer_text_26'), subtitle: t('disclaimer_text_25'), home: t('disclaimer_text_24') },
+    'zh-CN': { title: t('disclaimer_text_29'), subtitle: t('disclaimer_text_28'), home: t('disclaimer_text_27') },
     ko: { title: '면책사항', subtitle: '면책사항에 대하여', home: '홈' },
   };
 
@@ -203,7 +204,7 @@ export default function DisclaimerPage() {
 
           <FadeIn>
             <p className="font-sans tracking-[0.5em] mb-4" style={{ color: GOLD, fontSize: '0.75rem' }}>LEGAL NOTICE</p>
-            <h1 className="font-serif text-white tracking-[0.4em] leading-tight" style={{ fontSize: '2rem' }}>
+            <h1 className="font-serif font-title-main text-white tracking-[0.4em] leading-tight" style={{ fontSize: 'clamp(2rem, 5vw, 2.8rem)' }}>
               {l.title}
             </h1>
             <div className="flex items-center justify-center gap-3 mt-5">

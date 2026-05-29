@@ -13,6 +13,7 @@ import {
   Printer,
   ChevronRight
 } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import {
   C,
   F,
@@ -41,109 +42,109 @@ interface Festival {
   hasImage: boolean;
 }
 
-const FESTIVALS: Festival[] = [
+const getFestivals = (t: any): Festival[] => [
   {
     id: 'rinpi',
-    name: '臨時奉幣祭（勅祭）',
-    date: '１０年に一度斎行（前回は平成２７年１０月６日）',
+    name: t('festivalsFestival-detail_text_1'),
+    date: t('festivalsFestival-detail_text_2'),
     paragraphs: [
-      '　天皇の思し召しによって勅使を神社に参向させ、天皇の祭文を神前に捧げ、奉幣を行う「勅使参向の社(ちょくしさんこうのやしろ)」と称される神社が、伊勢神宮を始め現在では全国に１６社あります。',
-      '　そのうちの一社である当神宮では「宇佐和気使(わけづかい)」と称される即位奉告使や、 「宇佐使」と称される恒例祭・臨時祈願使の参向が養老４年（７２０）以来度々あり、大正１４年からは現在の１０年に１度の奉幣祭となりました。祭典前夜の宇佐市民・崇敬者による提灯(ちょうちん)行列など、多くの奉納式典が故実に従い厳粛にとり行われます。',
+      t('festivalsFestival-detail_text_3'),
+      t('festivalsFestival-detail_text_4'),
     ],
     hasImage: true,
   },
   {
     id: 'chine',
-    name: '鎮疫祭（御心経会）',
-    date: '２月１３日 (２月１２日～１５日)',
+    name: t('festivalsFestival-detail_text_5'),
+    date: t('festivalsFestival-detail_text_6'),
     paragraphs: [
-      '　鎮疫祭は、かつて神宮境内に建立されていた、弥勒寺の守護神として奉斎された末社の八坂神社で斎行される祭典です。この祭典は「疫病災禍」を祓（はら）い鎮めるためのもので、前日の宵祭、当日の本殿祭に続き八坂神社前で祭典が行われます。その昔、夜中に執り行われ「般若心経」が唱えられていたため、今でも『御心経会』と呼ばれています。',
-      '　２月１２日の夕方から行われる宵祭では、忌火を灯す「火入の儀」が執り行われ、斎庭に用意された庭燎用の火炉に神火が灯されます。この火によって焼かれた餅を食べると、一年間無病息災になるといわれています。',
-      '　当日１３日は、上宮での「本殿祭」の後、「八坂神社祭」が斎行されます。八坂神社では、宮司の祝詞奏上に続き、「幣越神事（へいごししんじ）」が行われます。この行事は、榊の代わりに一丈四尺もの竹に五色をつけた「大幣（たいへい）」が、供奉員により八坂神社へ放り奉られます。「大幣を手に入れると１年間無病息災でいられる」と云われており、多くの参拝者が大幣を授かろうと賑わいます。',
-      '　神事には、舞「振鉾（えんぶ）」、舞楽「陵王（りょうおう）」、また僧侶方による般若心経読経も行われます。',
-      '　この神仏習合で奉仕される「鎮疫祭」は、貴重な祭礼として昭和50年に大分県選択無形民俗文化財に指定されました。',
+      t('festivalsFestival-detail_text_7'),
+      t('festivalsFestival-detail_text_8'),
+      t('festivalsFestival-detail_text_9'),
+      t('festivalsFestival-detail_text_10'),
+      t('festivalsFestival-detail_text_11'),
     ],
     hasImage: true,
   },
   {
     id: 'reisai',
-    name: '例 祭（宇佐祭）',
-    date: '３月１８日',
+    name: t('festivalsFestival-detail_text_12'),
+    date: t('festivalsFestival-detail_text_13'),
     paragraphs: [
-      '　皇室より幣帛(へいはく)を賜り、斎行される宇佐神宮で最も重要な祭典で、宇佐祭ともいわれます。欽明天皇三十二年二月初卯の大神ご顕現ゆかりの日に斎行されます。',
+      t('festivalsFestival-detail_text_14'),
     ],
     hasImage: true,
   },
   {
     id: 'otaue',
-    name: '御田植祭',
-    date: '６月の第４日曜日',
+    name: t('festivalsFestival-detail_text_15'),
+    date: t('festivalsFestival-detail_text_16'),
     paragraphs: [
-      '　上宮本殿での祭祀が終わると、御田植神事に奉仕する斎主以下神職の行列が境内の斎田として設けられた斎場に向かいます。',
-      '　水守が斎田に水を注ぎ鍬を担いで斎田を三巡、その後に郷司が水守を従えて田を一巡します。神職による奉楽のうちに、花傘(はながさ)をかぶり田の神に扮した少女（早乙女）が田植行事をします。素朴なうちにも典雅な神事です。',
+      t('festivalsFestival-detail_text_17'),
+      t('festivalsFestival-detail_text_18'),
     ],
     hasImage: true,
   },
   {
     id: 'shinkosai',
-    name: '御神幸祭（夏越祭り）',
-    date: '７月３１日・８月１日・８月２日',
+    name: t('festivalsFestival-detail_text_19'),
+    date: t('festivalsFestival-detail_text_20'),
     paragraphs: [
-      '　「夏越大祭」「夏祭」「ごじんじ」等と呼ばれ多くの方々に親しまれていますが、正式には「宇佐神宮御神幸祭（ごしんこうさい）」と称します。古くは「御祓会（おはらいえ）」とも呼ばれ、人々の疫病を除き災厄を防ぐと共に、八幡総本宮として国家国民の安寧を祈願する意味合いがありました。',
-      '　上宮での祭典の後、本殿より三所のご神体が三基の神輿(みこし)に乗り境内の頓宮(とんぐう)（御仮屋）まで御神幸になります。',
-      '　神幸行列は、天狗のように赤く鼻高の猿田彦が道案内として先頭に立ち、鮮やかな色彩の装束をまとった「蝶」「鳥」「駒（馬）」の稚児が列を成します。続いて裃（かみしも）や直垂（ひたたれ）を着けた列奉行、太鼓・横笛・鉦を賑やかに奏でる道行囃子、三基の神輿、輿に乗った宮司と神職が従います。',
-      '　神輿が頓宮に着くとご神体が仮殿に移され、その横を斎庭に設けられた祓所に三本の川御幣（昔は祓川の中に立てられていた）を立て、その前で「菅貫(すがぬき)神事」という解縄串(ときなわぐし)による古式の祓い神事が厳粛にとり行われ、国家安泰・五穀豊穣・万民息災などの祈念が込められます。',
-      '　御神体と神輿は、頓宮で三日二夜を過ごされた後、再び行列を成して上宮御本殿へと御還幸されます。',
-      '　御神幸祭期間中は、境内に特設舞台や屋台が設けられ多くの参拝者で賑わいます。',
+      t('festivalsFestival-detail_text_21'),
+      t('festivalsFestival-detail_text_22'),
+      t('festivalsFestival-detail_text_23'),
+      t('festivalsFestival-detail_text_24'),
+      t('festivalsFestival-detail_text_25'),
+      t('festivalsFestival-detail_text_26'),
     ],
     hasImage: true,
   },
   {
     id: 'yabusame',
-    name: '流鏑馬神事',
-    date: '８月１日',
+    name: t('festivalsFestival-detail_text_27'),
+    date: t('festivalsFestival-detail_text_28'),
     paragraphs: [
-      '　毎年７月３１日より８月２日にかけて斎行される「宇佐神宮御神幸祭（夏越祭り）」の中日に、天下泰平・五穀豊穣・万民豊楽を祈念し、「流鏑馬神事」が境内大尾山参道の馬場で斎行されます。',
-      '　令和元年８月１日、天皇陛下御即位を奉祝する流鏑馬神事が当神宮にて初めて斎行され、以降宇佐神宮を代表する伝統的な神事となりました。',
-      '　当日は、弓馬術礼法小笠原流が射手を務め、近隣の学生など地元有志の方々とともにご奉仕をします。',
+      t('festivalsFestival-detail_text_29'),
+      t('festivalsFestival-detail_text_30'),
+      t('festivalsFestival-detail_text_31'),
     ],
     hasImage: true,
   },
   {
     id: 'chushu',
-    name: '仲秋祭（放生会）',
-    date: '１０月体育の日、前日、前々日の３日間',
+    name: t('festivalsFestival-detail_text_32'),
+    date: t('festivalsFestival-detail_text_33'),
     paragraphs: [
-      '　奈良時代より明治１３（１８８０）年まで「放生会」と呼ばれていましたが、以後仲秋祭と名称が変更となりました。',
-      '　養老４（７２０）年、大隈・日向の隼人(はやと)の乱を鎮圧するため、大和朝廷は八幡神へ祈請し、薦枕（こもまくら）を神験（みしるし）として神輿に奉じ、戦地である大隅・日向に赴きました。この時の輿が、日本で初めての神輿とされています。',
-      '　鎮定のため同５年両国に行幸、３ヵ年にわたって抵抗する隼人を平定して、同７年ご還幸になられました。',
-      '　このとき、百人もの隼人の首をもち帰って葬った所が、神宮より西約１キロの所にある「凶首塚」です。また、隼人の霊を祠（まつ）る百太夫殿（現在の「百体神社」）が造立されました。 さらに、神亀元年（７２４）には「隼人の霊を慰めるため生会をすべし」との託宣があり、天平１６年（７４４）八幡神は和間(わま)の浜に行幸され、鎮圧された隼人の霊を慰めるため、蜷(にな)や貝を海に放つ「放生会」の祭典がとり行われました。これが｢放生会」の始まりです。',
+      t('festivalsFestival-detail_text_34'),
+      t('festivalsFestival-detail_text_35'),
+      t('festivalsFestival-detail_text_36'),
+      t('festivalsFestival-detail_text_37'),
     ],
     hasImage: true,
   },
   {
     id: 'fusai',
-    name: '風除報賽祭',
-    date: '１０月２０日～２１日',
+    name: t('festivalsFestival-detail_text_38'),
+    date: t('festivalsFestival-detail_text_39'),
     paragraphs: [
-      '　毎年８月７日に斎行される「風除祭」では、田畑の安全と豊作を祈念しますが、１０月２０日の「風除報賽祭」は、五穀豊穣の祈念が成就したことを報賽する祭典です。神能、鉾(ほこ)立てなどの神事があります。',
+      t('festivalsFestival-detail_text_40'),
     ],
     hasImage: true,
     subsections: [
       {
-        title: '神能',
-        date: '１０月２１日',
+        title: t('festivalsFestival-detail_text_41'),
+        date: t('festivalsFestival-detail_text_42'),
         paragraphs: [
-          '　神宮能楽殿の見所に神籬(ひもろぎ)を設けて大神をお招きし、能舞台で神能が催されます。',
-          '　能は観世流を主流としますが、地域性を重んじ「宇佐観世」とも呼ばれ地元で親しまれています。',
+          t('festivalsFestival-detail_text_43'),
+          t('festivalsFestival-detail_text_44'),
         ],
         hasImage: true,
       },
       {
-        title: '鉾立神事',
-        date: '１０月１９日～２１日',
+        title: t('festivalsFestival-detail_text_45'),
+        date: t('festivalsFestival-detail_text_46'),
         paragraphs: [
-          '　祭典の前日ら、境内に風除報賽の意味で氏子が奉納した鉾(ほこ)を建てます。太綱を使った壮大なものです。',
+          t('festivalsFestival-detail_text_47'),
         ],
         hasImage: true,
       },
@@ -151,12 +152,12 @@ const FESTIVALS: Festival[] = [
   },
   {
     id: 'niinamesai',
-    name: '新嘗祭',
-    date: '１１月２３日',
+    name: t('festivalsFestival-detail_text_48'),
+    date: t('festivalsFestival-detail_text_49'),
     paragraphs: [
-      '　新嘗祭（にいなめさい）とは、毎年11月23日に宮中をはじめ全国の神宮・神社で斎行される、日本の伝統的な祭儀の１つです。神の恵みと五穀豊穣を感謝する祭礼で、神前に新穀をお供えします。宮中においては、天皇陛下が新穀を神に献じ、それを自らも食されます。また、天皇の即位後、初めて斎行される新嘗祭を「大嘗祭（だいじょうさい）」と言います。',
-      '　新嘗祭と対をなす祭礼として、毎年2月17日に「祈年祭（きねんさい）」というその年の豊穣を祈願する祭典があります。',
-      '　当日は、氏子崇敬者の皆様方よりご奉納いただいた多くの新米をお供えし、五穀豊穣を参拝者と共に感謝します。',
+      t('festivalsFestival-detail_text_50'),
+      t('festivalsFestival-detail_text_51'),
+      t('festivalsFestival-detail_text_52'),
     ],
     hasImage: true,
   },
@@ -166,6 +167,7 @@ const FESTIVALS: Festival[] = [
 // LIGHTBOX
 // ─────────────────────────────────────────────────────────────────────────────
 function Lightbox({ src, onClose }: { src: string; onClose: () => void }) {
+  const t = useTranslations();
   return (
     <div
       onClick={onClose}
@@ -186,11 +188,10 @@ function Lightbox({ src, onClose }: { src: string; onClose: () => void }) {
           fontFamily: F.sans, fontSize: '0.75rem', letterSpacing: '0.12em',
         }}
       >
-        <X size={14} /> 閉じる
-      </button>
+        <X size={14} />{t("festivalsFestivalDetailPage_text_69921")}</button>
       <img
         src={src}
-        alt="祭典 拡大"
+        alt={t('festivalsFestival-detail_text_53')}
         onClick={e => e.stopPropagation()}
         style={{
           maxWidth: '90vw', maxHeight: '85vh',
@@ -206,6 +207,7 @@ function Lightbox({ src, onClose }: { src: string; onClose: () => void }) {
 // THUMBNAIL
 // ─────────────────────────────────────────────────────────────────────────────
 function FestivalThumbnail({ src, alt, onZoom }: { src: string; alt: string; onZoom: () => void }) {
+  const t = useTranslations();
   return (
     <div style={{ flexShrink: 0, textAlign: 'center' }}>
       <div
@@ -254,9 +256,7 @@ function FestivalThumbnail({ src, alt, onZoom }: { src: string; alt: string; onZ
           gap: '5px',
         }}
       >
-        <ZoomIn size={11} style={{ color: C.gold }} />
-        拡大して見る
-      </button>
+        <ZoomIn size={11} style={{ color: C.gold }} />{t("festivalsFestivalDetailPage_text_43606")}</button>
     </div>
   );
 }
@@ -265,6 +265,7 @@ function FestivalThumbnail({ src, alt, onZoom }: { src: string; alt: string; onZ
 // DATE BADGE
 // ─────────────────────────────────────────────────────────────────────────────
 function DateBadge({ date }: { date: string }) {
+  const t = useTranslations();
   return (
     <div style={{
       display: 'inline-flex',
@@ -282,9 +283,7 @@ function DateBadge({ date }: { date: string }) {
         color: C.gold,
         textTransform: 'uppercase',
         flexShrink: 0,
-      }}>
-        祭典日
-      </span>
+      }}>{t("festivalsFestivalDetailPage_text_76842")}</span>
       <span style={{
         fontFamily: F.serif,
         fontSize: '0.88rem',
@@ -309,6 +308,7 @@ function FestivalRow({
   index: number;
   onZoom: (src: string) => void;
 }) {
+  const t = useTranslations();
   const imgSrc = '/images/detail03-big.jpg';
 
   return (
@@ -403,7 +403,7 @@ function FestivalRow({
                 {sub.hasImage && (
                   <FestivalThumbnail
                     src={imgSrc}
-                    alt={`${sub.title} 祭典写真`}
+                    alt={t('festivalsFestivalDetailPage_subtitle')}
                     onZoom={() => onZoom(imgSrc)}
                   />
                 )}
@@ -416,7 +416,7 @@ function FestivalRow({
         {festival.id !== 'fusai' && (
           <FestivalThumbnail
             src={imgSrc}
-            alt={`${festival.name} 祭典写真`}
+            alt={t('festivalsFestivalDetailPage_festivalname')}
             onZoom={() => onZoom(imgSrc)}
           />
         )}
@@ -429,7 +429,8 @@ function FestivalRow({
 // ─────────────────────────────────────────────────────────────────────────────
 // SUMMARY TABLE  — quick overview at the top
 // ─────────────────────────────────────────────────────────────────────────────
-function SummaryTable() {
+function SummaryTable({ festivals }: { festivals: Festival[] }) {
+  const t = useTranslations();
   const scrollToEntry = (id: string) => {
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -449,7 +450,7 @@ function SummaryTable() {
         padding: '10px 16px',
         gap: '0 16px',
       }}>
-        {['No.', '祭 典 名', '祭 典 日'].map((h, i) => (
+        {['No.', t('festivalsFestival-detail_text_55'), t('festivalsFestival-detail_text_54')].map((h, i) => (
           <span key={i} style={{
             fontFamily: F.serif,
             fontSize: '0.75rem',
@@ -460,7 +461,7 @@ function SummaryTable() {
       </div>
 
       {/* table rows */}
-      {FESTIVALS.map((f, fi) => (
+      {festivals.map((f, fi) => (
         <button
           key={f.id}
           onClick={() => scrollToEntry(f.id)}
@@ -512,6 +513,7 @@ function SummaryTable() {
 // BACK-TO-TOP FLOATING BUTTON
 // ────────────────────────────────────────────────────────────────────────────
 function BackToTopButton() {
+  const t = useTranslations();
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -525,7 +527,7 @@ function BackToTopButton() {
   return (
     <button
       onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-      title="ページ上部へ"
+      title={t('festivalsFestival-detail_text_56')}
       style={{
         position: 'fixed',
         bottom: '32px',
@@ -550,9 +552,7 @@ function BackToTopButton() {
         letterSpacing: '0.16em',
         color: 'rgba(250,248,245,0.65)',
         whiteSpace: 'nowrap',
-      }}>
-        トップへ
-      </span>
+      }}>{t("festivalsFestivalDetailPage_text_58082")}</span>
     </button>
   );
 }
@@ -561,6 +561,8 @@ function BackToTopButton() {
 // MAIN PAGE
 // ─────────────────────────────────────────────────────────────────────────────
 export default function FestivalDetailPage() {
+  const t = useTranslations();
+  const festivals = getFestivals(t);
   const [lightboxSrc, setLightboxSrc] = useState<string | null>(null);
   const locale = useLocale();
 
@@ -604,20 +606,14 @@ export default function FestivalDetailPage() {
             <Link
               href={`/${locale}`}
               className="font-sans text-ivory/55 text-[0.62rem] tracking-widest hover:text-ivory transition-colors"
-            >
-              ホーム
-            </Link>
+            >{t("festivalsFestivalDetailPage_text_34653")}</Link>
             <ChevronRight size={11} className="text-ivory/30" />
             <Link
               href={`/${locale}/festivals/festival-list`}
               className="font-sans text-ivory/55 text-[0.62rem] tracking-widest hover:text-ivory transition-colors"
-            >
-              お祭り・行事
-            </Link>
+            >{t("festivalsFestivalDetailPage_text_81832")}</Link>
             <ChevronRight size={11} className="text-ivory/30" />
-            <span className="font-sans text-gold-lt/90 text-[0.62rem] tracking-widest">
-              祭儀の詳細
-            </span>
+            <span className="font-sans text-gold-lt/90 text-[0.62rem] tracking-widest">{t("festivalsFestivalDetailPage_text_40753")}</span>
           </nav>
 
           <p style={{
@@ -627,9 +623,7 @@ export default function FestivalDetailPage() {
           }}>
             Festival Ceremonies in Detail
           </p>
-          <h1 style={{ ...TS.h1hero as React.CSSProperties, marginBottom: '0' }}>
-            祭儀の詳細
-          </h1>
+          <h1 style={{ ...TS.h1hero as React.CSSProperties, marginBottom: '0' }}>{t("festivalsFestivalDetailPage_text_40753")}</h1>
           <div style={{
             display: 'flex', alignItems: 'center', justifyContent: 'center',
             gap: '12px', marginTop: '24px',
@@ -656,12 +650,12 @@ export default function FestivalDetailPage() {
 
         {/* Section banner — Summary */}
         <FadeIn delay={0.05}>
-          <SectionBanner ja="祭典一覧" en="Festival Schedule Overview" />
+          <SectionBanner ja={t('festivalsFestival-detail_text_57')} en="Festival Schedule Overview" />
         </FadeIn>
 
         {/* Summary table */}
         <FadeIn delay={0.1}>
-          <SummaryTable />
+          <SummaryTable festivals={festivals} />
         </FadeIn>
 
         <FadeIn delay={0.12}>
@@ -670,7 +664,7 @@ export default function FestivalDetailPage() {
 
         {/* Section banner — Details */}
         <FadeIn delay={0.14}>
-          <SectionBanner ja="各祭典の詳細" en="Ceremony Details" />
+          <SectionBanner ja={t('festivalsFestival-detail_text_58')} en="Ceremony Details" />
         </FadeIn>
 
         {/* Detail cards */}
@@ -679,7 +673,7 @@ export default function FestivalDetailPage() {
           overflow: 'hidden',
           marginBottom: '52px',
         }}>
-          {FESTIVALS.map((festival, fi) => (
+          {festivals.map((festival, fi) => (
             <div key={festival.id} id={festival.id} style={{ scrollMarginTop: '130px' }}>
               <FadeIn delay={0.04 + fi * 0.04}>
                 <FestivalRow

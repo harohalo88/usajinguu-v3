@@ -21,36 +21,36 @@ export function Footer() {
 
   const COLS = [
     {
-      title: getLocalizedLabel('footerLinks1Title', '宇佐神宮について'),
+      title: getLocalizedLabel('footerLinks1Title', t('footer_text_1')),
       links: [
-        { label: getLocalizedLabel('historyTitle', '由緒'), path: '/about/history' },
-        { label: getLocalizedLabel('deitiesTitle', 'ご祭神'), path: '/about/deities' },
-        { label: getLocalizedLabel('legendsTitle', '八幡大神ゆかりの伝承'), path: '/about/legends/goreisui' },
-        { label: getLocalizedLabel('timelineTitle', '歴史略年表'), path: '/about/timeline' },
-        { label: getLocalizedLabel('museumTitle', '宝物館のご案内'), path: '/about/museum' },
+        { label: getLocalizedLabel('historyTitle', t('footer_text_2')), path: '/about/history' },
+        { label: getLocalizedLabel('deitiesTitle', t('footer_text_3')), path: '/about/deities' },
+        { label: getLocalizedLabel('legendsTitle', t('footer_text_4')), path: '/about/legends/goreisui' },
+        { label: getLocalizedLabel('timelineTitle', t('footer_text_5')), path: '/about/timeline' },
+        { label: getLocalizedLabel('museumTitle', t('footer_text_6')), path: '/about/museum' },
       ],
     },
     {
-      title: getLocalizedLabel('footerLinks2Title', '参拝について'),
+      title: getLocalizedLabel('footerLinks2Title', t('footer_text_7')),
       links: [
-        { label: getLocalizedLabel('etiquetteTitle', '参拝の作法'), path: '/worship/etiquette' },
-        { label: getLocalizedLabel('groundsTitle', '境内のご案内'), path: '/worship/guide' },
-        { label: getLocalizedLabel('accessTitle', '交通アクセス'), path: '/worship/access' },
-        { label: getLocalizedLabel('monorailTitle', 'モノレールのご案内'), path: '/worship/monorail' },
-        { label: getLocalizedLabel('prayerTitle', '祈願祭'), path: '/worship/pray' },
-        { label: getLocalizedLabel('yaku', '厄除開運について'), path: '/worship/fortune' },
+        { label: getLocalizedLabel('etiquetteTitle', t('footer_text_8')), path: '/worship/etiquette' },
+        { label: getLocalizedLabel('groundsTitle', t('footer_text_9')), path: '/worship/guide' },
+        { label: getLocalizedLabel('accessTitle', t('footer_text_10')), path: '/worship/access' },
+        { label: getLocalizedLabel('monorailTitle', t('footer_text_11')), path: '/worship/monorail' },
+        { label: getLocalizedLabel('prayerTitle', t('footer_text_12')), path: '/worship/pray' },
+        { label: getLocalizedLabel('yaku', t('footer_text_13')), path: '/worship/fortune' },
       ],
     },
     {
-      title: getLocalizedLabel('footerLinks3Title', 'その他'),
+      title: getLocalizedLabel('footerLinks3Title', t('footer_text_14')),
       links: [
-        { label: getLocalizedLabel('navNews', '新着情報'), path: '/news' },
-        { label: getLocalizedLabel('weddingTitle', '神前結婚式'), path: '/wedding' },
-        { label: getLocalizedLabel('navContact', 'お問い合せ'), path: '/contact' },
-        { label: getLocalizedLabel('faqTitle', 'よくある質問'), path: '/faq' },
-        { label: getLocalizedLabel('footerDonation', '奉賛お申込み'), path: '/donation' },
-        { label: getLocalizedLabel('footerHachiman', '八幡講崇敬会'), path: '/society' },
-        { label: getLocalizedLabel('サイトマップ', 'サイトマップ'), path: '/sitemap' },
+        { label: getLocalizedLabel('navNews', t('footer_text_15')), path: '/news' },
+        { label: getLocalizedLabel('weddingTitle', t('footer_text_16')), path: '/wedding' },
+        { label: getLocalizedLabel('navContact', t('footer_text_17')), path: '/contact' },
+        { label: getLocalizedLabel('faqTitle', t('footer_text_18')), path: '/faq' },
+        { label: getLocalizedLabel('footerDonation', t('footer_text_19')), path: '/donation' },
+        { label: getLocalizedLabel('footerHachiman', t('footer_text_20')), path: '/society' },
+        { label: getLocalizedLabel(t('footer_text_22'), t('footer_text_21')), path: '/sitemap' },
       ],
     },
   ];
@@ -66,7 +66,7 @@ export function Footer() {
               <div className="mb-6 inline-block px-4 py-3 bg-white/5 rounded-sm select-none">
                 <img
                   src={LOGO_IMG}
-                  alt="宇佐神宮"
+                  alt={t('footer_text_23')}
                   className="h-11 w-auto object-contain block"
                 />
               </div>
@@ -75,7 +75,7 @@ export function Footer() {
                 <div className="flex items-start gap-2.5">
                   <MapPin size={13} className="text-gold mt-1 shrink-0" />
                   <p className="font-sans text-xs leading-relaxed">
-                    {getLocalizedLabel('footerAddress', '大分県宇佐市南宇佐2859')}
+                    {getLocalizedLabel('footerAddress', t('footer_text_24'))}
                   </p>
                 </div>
                 <div className="flex items-center gap-2.5">
@@ -88,8 +88,8 @@ export function Footer() {
               {/* Festivals Quick Links */}
               <div className="flex flex-wrap gap-2 mt-4">
                 {[
-                  { label: getLocalizedLabel('majorFestivalsTitle', '主な祭典'), path: '/festivals/festival-list' },
-                  { label: getLocalizedLabel('navFestivals', 'お祭りについて'), path: '/festivals/festival-list' },
+                  { label: getLocalizedLabel('majorFestivalsTitle', t('footer_text_25')), path: '/festivals/festival-list' },
+                  { label: getLocalizedLabel('navFestivals', t('footer_text_26')), path: '/festivals/festival-list' },
                 ].map((l, i) => (
                   <Link
                     key={i}
@@ -132,9 +132,9 @@ export function Footer() {
       <div className="py-5 border-b border-vermil/5 bg-[#0a0202]">
         <div className="max-w-6xl mx-auto px-6 md:px-10 flex flex-wrap gap-3">
           {[
-            { label: getLocalizedLabel('footerOmotesando', '表参道商店街'), path: '/omotesando' },
-            { label: getLocalizedLabel('footerDonation', '奉賛お申込み'), path: '/donation' },
-            { label: getLocalizedLabel('footerHachiman', '八幡講崇敬会'), path: '/society' },
+            { label: getLocalizedLabel('footerOmotesando', t('footer_text_27')), path: '/omotesando' },
+            { label: getLocalizedLabel('footerDonation', t('footer_text_28')), path: '/donation' },
+            { label: getLocalizedLabel('footerHachiman', t('footer_text_29')), path: '/society' },
           ].map((item, i) => (
             <Link
               key={i}
@@ -152,12 +152,12 @@ export function Footer() {
       <div className="py-5">
         <div className="max-w-6xl mx-auto px-6 md:px-10 flex flex-col sm:flex-row items-center justify-between gap-3 text-ivory/20 text-[0.65rem] select-none">
           <p className="font-sans tracking-wide">
-            {getLocalizedLabel('footerCopyright', '© 宇佐神宮 All Rights Reserved.')}
+            {getLocalizedLabel('footerCopyright', t('footer_text_30'))}
           </p>
           <div className="flex gap-5">
             {[
-              { label: getLocalizedLabel('footerDisclaimer', '免責事項'), path: '/disclaimer' },
-              { label: getLocalizedLabel('footerPrivacy', 'プライバシーポリシー'), path: '/faq' },
+              { label: getLocalizedLabel('footerDisclaimer', t('footer_text_31')), path: '/disclaimer' },
+              { label: getLocalizedLabel('footerPrivacy', t('footer_text_32')), path: '/faq' },
             ].map((link, i) => (
               <Link
                 key={i}

@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useLocale } from 'next-intl';
 import { motion } from 'framer-motion';
 import { ChevronRight, Clock, Car, CreditCard, Users, AlertTriangle } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import {
   C,
   FadeIn,
@@ -100,6 +101,7 @@ function RuleBullet({ children }: { children: React.ReactNode }) {
 
 // ═══════════════════════════════════════════════════════════════════════════════
 export default function GaienParkingPage() {
+  const t = useTranslations();
   const locale = useLocale();
 
   return (
@@ -128,17 +130,11 @@ export default function GaienParkingPage() {
             <Link
               href={`/${locale}`}
               className="font-sans text-ivory/55 text-[0.62rem] tracking-widest hover:text-ivory transition-colors"
-            >
-              ホーム
-            </Link>
+            >{t("worshipGaienParkingPage_text_34653")}</Link>
             <ChevronRight size={11} className="text-ivory/30" />
-            <span className="font-sans text-gold-lt/90 text-[0.62rem] tracking-widest">
-              ご参拝・ご祈願
-            </span>
+            <span className="font-sans text-gold-lt/90 text-[0.62rem] tracking-widest">{t("worshipGaienParkingPage_text_11089")}</span>
             <ChevronRight size={11} className="text-ivory/30" />
-            <span className="font-sans text-gold-lt/90 text-[0.62rem] tracking-widest">
-              外苑駐車場のご案内
-            </span>
+            <span className="font-sans text-gold-lt/90 text-[0.62rem] tracking-widest">{t("worshipGaienParkingPage_text_79725")}</span>
           </nav>
 
           <motion.div
@@ -159,9 +155,7 @@ export default function GaienParkingPage() {
               fontSize: 'clamp(1.8rem,5vw,2.8rem)', fontWeight: 300,
               letterSpacing: '0.35em',
               textShadow: '0 3px 20px rgba(0,0,0,0.5)',
-            }}>
-              外苑駐車場のご案内
-            </h1>
+            }}>{t("worshipGaienParkingPage_text_79725")}</h1>
             <div className="flex items-center justify-center gap-3 mt-5">
               <div style={{ width: '40px', height: '1px', backgroundColor: 'rgba(162,122,40,0.5)' }} />
               <div style={{ width: '5px', height: '5px', backgroundColor: C.gold, opacity: 0.7, transform: 'rotate(45deg)' }} />
@@ -240,7 +234,7 @@ export default function GaienParkingPage() {
                 }}>
                   <img
                     src={IMG_MAP}
-                    alt="外苑駐車場・表参道駐車場 配置図"
+                    alt={t('worshipGaien-parking_text_1')}
                     style={{ width: '100%', display: 'block' }}
                   />
                 </div>
@@ -262,26 +256,26 @@ export default function GaienParkingPage() {
             >
               <InfoCard
                 icon={<CreditCard size={18} strokeWidth={1.5} />}
-                label="駐車料金"
-                value="500円"
-                sub="12時間"
-                note="但し、野球場利用者を除く"
+                label={t('worshipGaien-parking_text_2')}
+                value={t('worshipGaien-parking_text_3')}
+                sub={t('worshipGaien-parking_text_4')}
+                note={t('worshipGaien-parking_text_5')}
               />
               <InfoCard
                 icon={<Car size={18} strokeWidth={1.5} />}
-                label="駐車台数"
-                value="150台"
+                label={t('worshipGaien-parking_text_6')}
+                value={t('worshipGaien-parking_text_7')}
               />
               <InfoCard
                 icon={<CreditCard size={18} strokeWidth={1.5} />}
-                label="精算方法"
-                value="自動精算機"
-                sub="ゲート出入口"
+                label={t('worshipGaien-parking_text_8')}
+                value={t('worshipGaien-parking_text_9')}
+                sub={t('worshipGaien-parking_text_10')}
               />
               <InfoCard
                 icon={<Clock size={18} strokeWidth={1.5} />}
-                label="利用可能時間"
-                value="24時間"
+                label={t('worshipGaien-parking_text_11')}
+                value={t('worshipGaien-parking_text_12')}
               />
             </div>
 
@@ -299,7 +293,7 @@ export default function GaienParkingPage() {
 
           {/* ── ★ 精算方法 detail ────────────────────────────────────────────── */}
           <FadeIn>
-            <SectionBanner ja="精算方法" en="Payment Method" />
+            <SectionBanner ja={t('worshipGaien-parking_text_13')} en="Payment Method" />
           </FadeIn>
 
           <FadeIn delay={0.05}>
@@ -343,7 +337,7 @@ export default function GaienParkingPage() {
 
           {/* ── ★ 利用規定 (Rules) ───────────────────────────────────────────── */}
           <FadeIn>
-            <SectionBanner ja="利用規定" en="Regulations" />
+            <SectionBanner ja={t('worshipGaien-parking_text_14')} en="Regulations" />
           </FadeIn>
 
           <FadeIn delay={0.05}>
@@ -356,9 +350,9 @@ export default function GaienParkingPage() {
               </p>
 
               <ul style={{ padding: 0, margin: '0 0 24px 0' }}>
-                <RuleBullet>幅 2.5mを超える車</RuleBullet>
-                <RuleBullet>長さ 5mを超える車</RuleBullet>
-                <RuleBullet>危険物積載車など管理上不適当と思われる車</RuleBullet>
+                <RuleBullet>{t('worshipGaien-parking_text_15')}</RuleBullet>
+                <RuleBullet>{t('worshipGaien-parking_text_16')}</RuleBullet>
+                <RuleBullet>{t('worshipGaien-parking_text_17')}</RuleBullet>
               </ul>
 
               <div style={{
@@ -419,9 +413,7 @@ export default function GaienParkingPage() {
                   whiteSpace: 'nowrap',
                   flexShrink: 0,
                 }}
-              >
-                周辺駐車場についてはこちら
-                <ChevronRight size={14} />
+              >{t("worshipGaienParkingPage_text_81282")}<ChevronRight size={14} />
               </Link>
             </div>
           </FadeIn>
@@ -436,9 +428,7 @@ export default function GaienParkingPage() {
                   color: '#faf8f5', backgroundColor: C.crimson, padding: '11px 28px',
                   textDecoration: 'none', display: 'inline-block',
                 }}
-              >
-                交通アクセスへ戻る
-              </Link>
+              >{t("worshipGaienParkingPage_text_19073")}</Link>
               <Link
                 href={`/${locale}/worship`}
                 style={{
@@ -446,9 +436,7 @@ export default function GaienParkingPage() {
                   color: C.crimson, backgroundColor: 'transparent', padding: '11px 28px',
                   textDecoration: 'none', border: `1px solid ${C.crimson}`, display: 'inline-block',
                 }}
-              >
-                参拝について
-              </Link>
+              >{t("worshipGaienParkingPage_text_50054")}</Link>
             </div>
           </FadeIn>
 

@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useLocale } from 'next-intl';
 import { motion } from 'framer-motion';
 import { ChevronRight, ZoomIn } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import {
   C,
   FadeIn,
@@ -18,6 +19,7 @@ const IMG_TORII = '/images/image-13.png';
 
 // ═══════════════════════════════════════════════════════════════════════════════
 export default function FortunePage() {
+  const t = useTranslations();
   const locale = useLocale();
 
   return (
@@ -48,17 +50,11 @@ export default function FortunePage() {
             <Link
               href={`/${locale}`}
               className="font-sans text-ivory/55 text-[0.62rem] tracking-widest hover:text-ivory transition-colors"
-            >
-              ホーム
-            </Link>
+            >{t("worshipFortunePage_text_34653")}</Link>
             <ChevronRight size={11} className="text-ivory/30" />
-            <span className="font-sans text-gold-lt/90 text-[0.62rem] tracking-widest">
-              ご参拝・ご祈願
-            </span>
+            <span className="font-sans text-gold-lt/90 text-[0.62rem] tracking-widest">{t("worshipFortunePage_text_11089")}</span>
             <ChevronRight size={11} className="text-ivory/30" />
-            <span className="font-sans text-gold-lt/90 text-[0.62rem] tracking-widest">
-              厄除開運について
-            </span>
+            <span className="font-sans text-gold-lt/90 text-[0.62rem] tracking-widest">{t("worshipFortunePage_text_34806")}</span>
           </nav>
 
           <motion.div
@@ -79,9 +75,7 @@ export default function FortunePage() {
               fontSize: 'clamp(1.8rem,5vw,2.8rem)', fontWeight: 300,
               letterSpacing: '0.35em',
               textShadow: '0 3px 20px rgba(0,0,0,0.5)',
-            }}>
-              厄除開運について
-            </h1>
+            }}>{t("worshipFortunePage_text_34806")}</h1>
             <div className="flex items-center justify-center gap-3 mt-5">
               <div style={{ width: '40px', height: '1px', backgroundColor: 'rgba(162,122,40,0.5)' }} />
               <div style={{ width: '5px', height: '5px', backgroundColor: C.gold, opacity: 0.7, transform: 'rotate(45deg)' }} />
@@ -101,7 +95,7 @@ export default function FortunePage() {
               fontFamily: 'var(--font-sans)', color: C.textMid,
               fontSize: '0.95rem', lineHeight: 2.3, letterSpacing: '0.05em',
             }}>
-              「厄年」とは、運気が下がり災難や不幸事に遭いやすい時期を言いますが、一方で「役」に通じ、祭礼や公共の役目に就くことで「役が除けられる」とも言われてきました。私たちの祖先は古くから積み重ねた経験と智慧から、人生には要所要所で節目があり、肉体的･社会的にも様々な変化による区切りがあることを見いだしました。その節目にあたり、あらかじめ心の準備を怠らぬよう「厄年」という習わしを意識したのです。「厄年」に当たる方は当宮で「厄除祈願」を行い、清々しい気持ちでこの節目の年をお過ごしになられることをお勧めします。
+              {t("worshipFortunePage_paragraph_yakudoshi_intro")}
             </p>
           </FadeIn>
 
@@ -109,7 +103,7 @@ export default function FortunePage() {
 
           {/* ══ さまざまな厄年 ══ */}
           <FadeIn>
-            <SectionBanner ja="さまざまな厄年" en="Types of Yakudoshi" />
+            <SectionBanner ja={t('worshipFortune_text_1')} en="Types of Yakudoshi" />
           </FadeIn>
 
           {/* Two-column: text LEFT, chart image RIGHT */}
@@ -123,7 +117,7 @@ export default function FortunePage() {
                   fontSize: '0.95rem', lineHeight: 2.2, letterSpacing: '0.05em',
                   marginBottom: '16px',
                 }}>
-                  厄年には「前厄・本厄・後厄」と「廻り年」があります。
+                  {t("worshipFortunePage_paragraph_yakudoshi_types_intro")}
                 </p>
 
                 <p style={{
@@ -131,31 +125,32 @@ export default function FortunePage() {
                   fontSize: '0.95rem', lineHeight: 2.3, letterSpacing: '0.05em',
                   marginBottom: '16px',
                 }}>
-                  「前厄・本厄・後厄」は年齢により巡ってくる厄年であり、<strong style={{ fontFamily: 'var(--font-serif)', color: C.text }}>「本厄」</strong>は数え年にて、
-                  <span style={{
-                    backgroundColor: C.blueBg,
-                    color: C.blue,
-                    fontWeight: 600,
-                    padding: '1px 5px',
-                    borderRadius: '2px',
-                    margin: '0 2px',
-                    whiteSpace: 'nowrap',
-                  }}>
-                    男性が２５歳・４２歳・６１歳
-                  </span>
-                  、
-                  <span style={{
-                    backgroundColor: C.pinkBg,
-                    color: C.crimson,
-                    fontWeight: 600,
-                    padding: '1px 5px',
-                    borderRadius: '2px',
-                    margin: '0 2px',
-                    whiteSpace: 'nowrap',
-                  }}>
-                    女性が１９歳・３３歳・６１歳
-                  </span>
-                  で、その前後の年がそれぞれ<strong style={{ fontFamily: 'var(--font-serif)', color: C.text }}>「前厄・後厄」</strong>にあたります。厄年にあたる３年間は慎むべき年といわれており、特に「本厄」は、男性女性ともに身体や環境の変化などにより、災厄・災難に最も見舞われることが多い「大厄」の年ともいわれます。
+                  {t.rich('worshipFortunePage_paragraph_yakudoshi_detail', {
+                    strong1: (chunks) => <strong style={{ fontFamily: 'var(--font-serif)', color: C.text }}>{chunks}</strong>,
+                    blue: (chunks) => (
+                      <span style={{
+                        backgroundColor: C.blueBg,
+                        color: C.blue,
+                        fontWeight: 600,
+                        padding: '1px 5px',
+                        borderRadius: '2px',
+                        margin: '0 2px',
+                        whiteSpace: 'nowrap',
+                      }}>{chunks}</span>
+                    ),
+                    pink: (chunks) => (
+                      <span style={{
+                        backgroundColor: C.pinkBg,
+                        color: C.crimson,
+                        fontWeight: 600,
+                        padding: '1px 5px',
+                        borderRadius: '2px',
+                        margin: '0 2px',
+                        whiteSpace: 'nowrap',
+                      }}>{chunks}</span>
+                    ),
+                    strong2: (chunks) => <strong style={{ fontFamily: 'var(--font-serif)', color: C.text }}>{chunks}</strong>
+                  })}
                 </p>
 
                 <p style={{
@@ -163,14 +158,16 @@ export default function FortunePage() {
                   fontSize: '0.95rem', lineHeight: 2.3, letterSpacing: '0.05em',
                   marginBottom: '16px',
                 }}>
-                  また<strong style={{ fontFamily: 'var(--font-serif)', color: C.text }}>「廻り年」</strong>とは、１２年に一度必ず廻ってくる自分の「干支の年」のことで、年男・年女とも称され男女共通の厄年に当たる「小厄」とされています。但し、還暦（数え年で６１歳）と男性の２５歳（数え年）は、前述の「本厄」の年に当たります。
+                  {t.rich('worshipFortunePage_paragraph_mawaritoshi', {
+                    strong1: (chunks) => <strong style={{ fontFamily: 'var(--font-serif)', color: C.text }}>{chunks}</strong>
+                  })}
                 </p>
 
                 <p style={{
                   fontFamily: 'var(--font-sans)', color: C.textMid,
                   fontSize: '0.95rem', lineHeight: 2.3, letterSpacing: '0.05em',
                 }}>
-                  さらに、初めて「廻り年」を迎える１３歳は特に重要な年齢とされており、特別に「十三参り」としてお参りする習わしがございます。
+                  {t('worshipFortunePage_paragraph_thirteen')}
                 </p>
               </div>
 
@@ -185,7 +182,7 @@ export default function FortunePage() {
                   >
                     <img
                       src={IMG_CHART}
-                      alt="厄年早見表（令和８年版）"
+                      alt={t('worshipFortune_text_5')}
                       className="w-full h-auto block"
                     />
                   </a>
@@ -195,9 +192,7 @@ export default function FortunePage() {
                     rel="noopener noreferrer"
                     className="flex items-center justify-center gap-1 mt-2 text-xs tracking-wider text-text-mute hover:text-crimson transition-colors"
                   >
-                    <ZoomIn size={12} />
-                    拡大表示
-                  </a>
+                    <ZoomIn size={12} />{t("worshipFortunePage_text_58489")}</a>
                 </div>
               )}
             </div>
@@ -207,7 +202,7 @@ export default function FortunePage() {
 
           {/* ══ 祝歳 ══ */}
           <FadeIn>
-            <SectionBanner ja="祝歳" en="Celebrations of Longevity" id="list1" />
+            <SectionBanner ja={t('worshipFortune_text_6')} en="Celebrations of Longevity" id="list1" />
           </FadeIn>
 
           <FadeIn delay={0.05}>
@@ -216,7 +211,10 @@ export default function FortunePage() {
               fontSize: '0.95rem', lineHeight: 2.3, letterSpacing: '0.05em',
               marginBottom: '24px',
             }}>
-              年齢を重ねるとその歳に応じて様々な呼び方が付けられ、特別な節目のお祝いとして長寿を敬い、神様に感謝する習わしを<strong style={{ fontFamily: 'var(--font-serif)', color: C.text }}>「祝歳」</strong>または<strong style={{ fontFamily: 'var(--font-serif)', color: C.text }}>「年祝い」</strong>といいます。
+              {t.rich('worshipFortunePage_paragraph_toshiiwai_intro', {
+                strong1: (chunks) => <strong style={{ fontFamily: 'var(--font-serif)', color: C.text }}>{chunks}</strong>,
+                strong2: (chunks) => <strong style={{ fontFamily: 'var(--font-serif)', color: C.text }}>{chunks}</strong>
+              })}
             </p>
 
             <div style={{
@@ -224,12 +222,12 @@ export default function FortunePage() {
               background: C.stone,
             }}>
               {[
-                { name: '古希（こき）', age: '70歳', desc: '中国の唐時代の詩人、杜甫の詩の一節である「人生七十古来稀なり」に由来しています。' },
-                { name: '喜寿（きじゅ）', age: '77歳', desc: '「喜」という字の草書体を書くと、「十七」の上に「七」が付いたような文字で「七十七」に見えることに由来しています。' },
-                { name: '傘寿（さんじゅ）', age: '80歳', desc: '「傘」の略字が八と十を重ねた形になり、八十と読めることに由来しています。' },
-                { name: '米寿（べいじゅ）', age: '88歳', desc: '「米」の字をくずすと八十八と読めることに由来しています。' },
-                { name: '卒寿（そつじゅ）', age: '90歳', desc: '「卒」の略字である「卆」が九十と読めることに由来しています。' },
-                { name: '白寿（はくじゅ）', age: '99歳', desc: '百から一を引くと「白」となることに由来しています。' },
+                { name: t('worshipFortune_text_12'), age: t('worshipFortune_text_11'), desc: t('worshipFortune_text_10') },
+                { name: t('worshipFortune_text_15'), age: t('worshipFortune_text_14'), desc: t('worshipFortune_text_13') },
+                { name: t('worshipFortune_text_18'), age: t('worshipFortune_text_17'), desc: t('worshipFortune_text_16') },
+                { name: t('worshipFortune_text_21'), age: t('worshipFortune_text_20'), desc: t('worshipFortune_text_19') },
+                { name: t('worshipFortune_text_24'), age: t('worshipFortune_text_23'), desc: t('worshipFortune_text_22') },
+                { name: t('worshipFortune_text_27'), age: t('worshipFortune_text_26'), desc: t('worshipFortune_text_25') },
               ].map((item, i) => (
                 <div
                   key={i}
@@ -277,7 +275,7 @@ export default function FortunePage() {
 
           {/* ══ 御礼報賽参り ══ */}
           <FadeIn>
-            <SectionBanner ja="御礼報賽参り" en="Gratitude & Thanksgiving" id="list2" />
+            <SectionBanner ja={t('worshipFortune_text_28')} en="Gratitude & Thanksgiving" id="list2" />
           </FadeIn>
 
           {/* Two-column: text LEFT, image-13 RIGHT */}
@@ -291,14 +289,14 @@ export default function FortunePage() {
                   fontSize: '0.95rem', lineHeight: 2.3, letterSpacing: '0.05em',
                   marginBottom: '16px',
                 }}>
-                  「御礼奉賛参り」とは、八幡大神様に祈願した願い事が成就した時や、無事災禍無く幸福に一年が過ごできた時に、大神様のお導きとご加護に感謝を申し上げることです。
+                  {t('worshipFortunePage_paragraph_gratitude_1')}
                 </p>
                 <p style={{
                   fontFamily: 'var(--font-sans)', color: C.textMid,
                   fontSize: '0.95rem', lineHeight: 2.3, letterSpacing: '0.05em',
                   marginBottom: '24px',
                 }}>
-                  「厄除開運祈願」によって前厄・本厄・後厄・廻り年などの厄年が無事明けた年にも、「厄明けの御礼報賽参り」をされ、今後益々の安全とご加護を祈念申し上げます。
+                  {t('worshipFortunePage_paragraph_gratitude_2')}
                 </p>
 
                 <Link
@@ -311,9 +309,7 @@ export default function FortunePage() {
                     paddingBottom: '2px',
                   }}
                 >
-                  <ChevronRight size={13} />
-                  その他のご祈願について
-                </Link>
+                  <ChevronRight size={13} />{t("worshipFortunePage_text_53107")}</Link>
               </div>
 
               {/* ── Right: image-13 (torii path) ── */}
@@ -326,7 +322,7 @@ export default function FortunePage() {
                 }}>
                   <img
                     src={IMG_TORII}
-                    alt="御礼報賽参り"
+                    alt={t('worshipFortune_text_29')}
                     style={{ width: '100%', display: 'block', objectFit: 'cover' }}
                   />
                 </div>
@@ -346,9 +342,7 @@ export default function FortunePage() {
                 color: '#faf8f5', backgroundColor: C.crimson, padding: '11px 28px',
                 textDecoration: 'none', display: 'inline-block',
               }}
-            >
-              参拝についてへ戻る
-            </Link>
+            >{t("worshipFortunePage_text_71902")}</Link>
             <Link
               href={`/${locale}/worship/pray`}
               style={{
@@ -356,9 +350,7 @@ export default function FortunePage() {
                 color: C.crimson, backgroundColor: 'transparent', padding: '11px 28px',
                 textDecoration: 'none', border: `1px solid ${C.crimson}`, display: 'inline-block',
               }}
-            >
-              祈願祭について
-            </Link>
+            >{t("worshipFortunePage_text_77566")}</Link>
           </div>
 
         </div>

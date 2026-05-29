@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useLocale } from 'next-intl';
 import { motion, useInView } from 'framer-motion';
 import { ChevronRight, MapPin, Phone, Printer } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 // ── Images ────────────────────────────────────────────────────────────────────
 const IMG_JIGYOU = '/images/image.png';
@@ -113,6 +114,7 @@ function BenefitItem({ num, children }: { num: number; children: React.ReactNode
 
 // ════════════════════════════════════════════════════════════════════════════
 export default function SocietyPage() {
+  const t = useTranslations();
   const locale = useLocale();
 
   return (
@@ -122,7 +124,7 @@ export default function SocietyPage() {
       <section style={{ position: 'relative', height: '340px', overflow: 'hidden' }}>
         <img
           src={IMG_HERO}
-          alt="八幡講崇敬会"
+          alt={t('society_text_1')}
           style={{
             position: 'absolute', inset: 0,
             width: '100%', height: '100%',
@@ -143,13 +145,9 @@ export default function SocietyPage() {
             <Link
               href={`/${locale}`}
               className="font-sans text-ivory/55 text-[0.62rem] tracking-widest hover:text-ivory transition-colors"
-            >
-              ホーム
-            </Link>
+            >{t("societyPage_text_34653")}</Link>
             <ChevronRight size={11} className="text-ivory/30" />
-            <span className="font-sans text-gold-lt/90 text-[0.62rem] tracking-widest">
-              八幡講崇敬会
-            </span>
+            <span className="font-sans text-gold-lt/90 text-[0.62rem] tracking-widest">{t("societyPage_text_89431")}</span>
           </nav>
 
           <motion.div
@@ -169,9 +167,7 @@ export default function SocietyPage() {
               fontFamily: 'var(--font-serif)', color: '#faf8f5',
               fontSize: 'clamp(1.8rem, 4.5vw, 2.8rem)', fontWeight: 300,
               letterSpacing: '0.35em', textShadow: '0 3px 20px rgba(0,0,0,0.4)',
-            }}>
-              八幡講崇敬会
-            </h1>
+            }}>{t("societyPage_text_89431")}</h1>
             <div className="flex items-center justify-center gap-3 mt-5">
               <div style={{ width: '40px', height: '1px', backgroundColor: 'rgba(162,122,40,0.5)' }} />
               <div style={{ width: '5px', height: '5px', backgroundColor: '#a27a28', opacity: 0.7, transform: 'rotate(45deg)' }} />
@@ -216,9 +212,7 @@ export default function SocietyPage() {
                   color: TEXT,
                   textShadow: `1px 1px 0 ${IVORY}, 2px 2px 0 rgba(162,122,40,0.06)`,
                 }}
-              >
-                ご入会の御案内
-              </h2>
+              >{t("societyPage_text_35251")}</h2>
             </div>
           </FadeIn>
 
@@ -261,9 +255,7 @@ export default function SocietyPage() {
                 <p className="font-sans tracking-[0.4em] uppercase mb-1" style={{ fontSize: '0.5rem', color: GOLD }}>
                   Activities &amp; Benefits
                 </p>
-                <h3 className="font-serif tracking-[0.3em]" style={{ fontSize: '1.2rem', color: TEXT }}>
-                  主な事業内容と特典
-                </h3>
+                <h3 className="font-serif tracking-[0.3em]" style={{ fontSize: '1.2rem', color: TEXT }}>{t("societyPage_text_15195")}</h3>
               </div>
               <div className="h-px flex-1 ml-4" style={{ background: 'rgba(162,122,40,0.15)' }} />
             </div>
@@ -281,9 +273,7 @@ export default function SocietyPage() {
                 </span>
                 <div className="h-px flex-1" style={{ background: 'rgba(162,122,40,0.2)' }} />
               </div>
-              <p className="font-serif tracking-[0.25em] mb-6" style={{ fontSize: '1rem', color: TEXT }}>
-                主な事業内容
-              </p>
+              <p className="font-serif tracking-[0.25em] mb-6" style={{ fontSize: '1rem', color: TEXT }}>{t("societyPage_text_89541")}</p>
 
               {/* Image */}
               <div
@@ -295,7 +285,7 @@ export default function SocietyPage() {
               >
                 <img
                   src={IMG_JIGYOU}
-                  alt="宇佐神宮社殿"
+                  alt={t('society_text_2')}
                   className="w-full transition-transform duration-1000 group-hover:scale-[1.03]"
                   style={{ display: 'block', height: 'auto' }}
                 />
@@ -303,10 +293,10 @@ export default function SocietyPage() {
 
               {/* Bullet list */}
               <ul className="space-y-4">
-                <BulletItem>御神徳宣揚のための祭典行事等への奉賛</BulletItem>
-                <BulletItem>御本殿以下境内地の管理、保全整備事業</BulletItem>
-                <BulletItem>神社史等の出版事業</BulletItem>
-                <BulletItem>その他宇佐神宮発展のために必要な事業</BulletItem>
+                <BulletItem>{t('society_text_3')}</BulletItem>
+                <BulletItem>{t('society_text_4')}</BulletItem>
+                <BulletItem>{t('society_text_5')}</BulletItem>
+                <BulletItem>{t('society_text_6')}</BulletItem>
               </ul>
             </FadeIn>
 
@@ -334,7 +324,7 @@ export default function SocietyPage() {
                 >
                   <img
                     src={IMG_REISAI}
-                    alt="例祭の様子"
+                    alt={t('society_text_7')}
                     className="w-full transition-transform duration-1000 group-hover:scale-[1.03]"
                     style={{ display: 'block', height: 'auto' }}
                   />
@@ -342,7 +332,7 @@ export default function SocietyPage() {
                 <div className="mt-2.5 flex items-start gap-2">
                   <div className="w-[2px] h-4 mt-0.5 shrink-0" style={{ background: CRIMSON }} />
                   <div>
-                    <p className="font-sans tracking-[0.2em]" style={{ fontSize: '0.7rem', color: TEXT }}>例祭の様子</p>
+                    <p className="font-sans tracking-[0.2em]" style={{ fontSize: '0.7rem', color: TEXT }}>{t('society_text_8')}</p>
                     <p className="font-sans tracking-[0.15em] mt-0.5" style={{ fontSize: '0.65rem', color: TEXT_MUT }}>
                       八幡講崇敬会員を始め、多くの方が御参列されます。
                     </p>
@@ -380,7 +370,7 @@ export default function SocietyPage() {
       <section className="py-20 md:py-28">
         <div className="max-w-3xl mx-auto px-6">
           <FadeIn>
-            <SectionHead en="How to Apply" ja="お申し込みの方法" />
+            <SectionHead en="How to Apply" ja={t('society_text_9')} />
           </FadeIn>
 
           <FadeIn delay={0.15}>
@@ -403,9 +393,7 @@ export default function SocietyPage() {
                 【お問い合わせ】
               </h3>
               <div style={{ borderTop: '1px solid rgba(162,122,40,0.18)', paddingTop: '20px' }}>
-                <p style={{ fontFamily: 'var(--font-serif)', color: '#faf8f5', fontSize: '0.95rem', letterSpacing: '0.18em', fontWeight: 500, marginBottom: '14px' }}>
-                  宇佐神宮八幡講崇敬会
-                </p>
+                <p style={{ fontFamily: 'var(--font-serif)', color: '#faf8f5', fontSize: '0.95rem', letterSpacing: '0.18em', fontWeight: 500, marginBottom: '14px' }}>{t("societyPage_text_39695")}</p>
                 <div className="flex flex-col gap-3">
                   <div className="flex items-start gap-3">
                     <MapPin size={14} color="#c49a3a" strokeWidth={1.5} style={{ marginTop: '3px', flexShrink: 0 }} />
@@ -417,9 +405,7 @@ export default function SocietyPage() {
                     <Phone size={14} color="#c49a3a" strokeWidth={1.5} style={{ flexShrink: 0 }} />
                     <p style={{ fontFamily: 'var(--font-sans)', color: 'rgba(250,248,245,0.8)', fontSize: '0.83rem', letterSpacing: '0.08em' }}>
                       TEL：0978-37-0001
-                      <span style={{ fontFamily: 'var(--font-sans)', color: 'rgba(250,248,245,0.55)', fontSize: '0.72rem', letterSpacing: '0.1em', marginLeft: '8px' }}>
-                        （八幡事務局）
-                      </span>
+                      <span style={{ fontFamily: 'var(--font-sans)', color: 'rgba(250,248,245,0.55)', fontSize: '0.72rem', letterSpacing: '0.1em', marginLeft: '8px' }}>{t("societyPage_text_39052")}</span>
                     </p>
                   </div>
                 </div>

@@ -21,7 +21,7 @@ export function FloatingBanner() {
         bottom: '20px',
         left: '50%',
         transform: 'translateX(-50%)',
-        width: '350px',
+        width: 'min(350px, calc(100vw - 32px))',
         height: '85px',
         zIndex: 9999,
       }}

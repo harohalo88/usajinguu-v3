@@ -69,7 +69,7 @@ export function WorshipGuide() {
       <div className="relative w-full overflow-hidden select-none" style={{ height: '300px' }}>
         <img 
           src={FOREST_IMG} 
-          alt="参拝" 
+          alt={t('worshipguide_text_1')} 
           className="w-full h-full object-cover" 
           style={{ objectPosition: 'center 30%' }} 
         />
@@ -201,10 +201,10 @@ export function WorshipGuide() {
             
             <FadeIn delay={0.2}>
               <div className="relative overflow-hidden rounded-sm shadow-md" style={{ height: '480px' }}>
-                <img src={ROPE_IMG} alt="境内" className="w-full h-full object-cover" />
+                <img src={ROPE_IMG} alt={t('worshipguide_text_2')} className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/55 to-transparent z-10" />
                 <div className="absolute bottom-6 left-6 right-6 z-20">
-                  <p className="font-serif text-gold-lt text-xs tracking-widest select-none">宇佐神宮境内</p>
+                  <p className="font-serif text-gold-lt text-xs tracking-widest select-none">{t('worshipguide_text_3')}</p>
                 </div>
               </div>
             </FadeIn>
@@ -337,7 +337,7 @@ export function WorshipGuide() {
 
       {/* ── Visual Purification Banner ── */}
       <div className="relative w-full overflow-hidden select-none" style={{ height: '240px' }}>
-        <img src={PURIFY_IMG} alt="手水" className="w-full h-full object-cover" />
+        <img src={PURIFY_IMG} alt={t('worshipguide_text_4')} className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-[#1a0404]/60" />
         <div className="absolute inset-0 flex items-center justify-center text-center px-4">
           <div>

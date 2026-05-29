@@ -13,78 +13,6 @@ const LOGO_IMG = '/images/07ddf8f36fce46ea9f721642d4b1fb369ab2bb5e.png';
 type NavChild = { labelKey: string; defaultLabel: string; path: string; children?: NavChild[]; isGroup?: boolean };
 type NavItem  = { labelKey: string; defaultLabel: string; path: string; children?: NavChild[]; isGroup?: boolean };
 
-const NAV_ITEMS: NavItem[] = [
-  {
-    labelKey: 'navAbout',
-    defaultLabel: '宇佐神宮について',
-    path: '/about/history',
-    children: [
-      { labelKey: 'historyTitle', defaultLabel: '由緒', path: '/about/history' },
-      { labelKey: 'deitiesTitle', defaultLabel: 'ご祭神', path: '/about/deities' },
-      {
-        labelKey: 'legendsTitle',
-        defaultLabel: '八幡大神ゆかりの伝承',
-        path: '/about/legends/goreisui',
-        isGroup: true, // renders as section label — children always visible, no secondary hover needed
-        children: [
-          { labelKey: 'legend1Title', defaultLabel: '御霊水', path: '/about/legends/goreisui' },
-          { labelKey: 'legend2Title', defaultLabel: '東大寺の大仏建立', path: '/about/legends/todaiji' },
-          { labelKey: 'legend3Title', defaultLabel: '和気清麻呂とご神託', path: '/about/legends/wake' },
-          { labelKey: 'legend4Title', defaultLabel: '神仏習合', path: '/about/legends/shinbutsu' },
-        ],
-      },
-      { labelKey: 'timelineTitle', defaultLabel: '歴史略年表', path: '/about/timeline' },
-      { labelKey: 'museumTitle', defaultLabel: '宝物館のご案内', path: '/about/museum' },
-    ],
-  },
-  {
-    labelKey: 'navWorship',
-    defaultLabel: '参拝について',
-    path: '/worship/guide',
-    children: [
-      { labelKey: 'etiquetteTitle', defaultLabel: '参拝の作法', path: '/worship/etiquette' },
-      { labelKey: 'groundsTitle', defaultLabel: '境内のご案内', path: '/worship/guide' },
-      { labelKey: 'accessTitle', defaultLabel: '交通アクセス', path: '/worship/access' },
-      { labelKey: 'monorailTitle', defaultLabel: 'モノレールのご案内', path: '/worship/monorail' },
-      { labelKey: 'prayerTitle', defaultLabel: '祈願祭', path: '/worship/pray' },
-      { labelKey: 'yaku', defaultLabel: '厄除開運について', path: '/worship/fortune' },
-      { labelKey: 'offsiteTitle', defaultLabel: '出張祭典について', path: '/worship/trip' },
-      { labelKey: 'amuletsTitle', defaultLabel: '授与品について', path: '/worship/confer' },
-    ],
-  },
-  {
-    labelKey: 'navFestivals',
-    defaultLabel: 'お祭りについて',
-    path: '/festivals/festival-list',
-    children: [
-      { labelKey: 'majorFestivalsTitle', defaultLabel: '主な祭典', path: '/festivals/festival-list' },
-      { labelKey: 'festivalsTitle', defaultLabel: '祭儀の詳細', path: '/festivals/festival-detail' },
-    ],
-  },
-  { labelKey: 'weddingTitle', defaultLabel: '神前結婚式', path: '/wedding' },
-  { labelKey: 'footerHachiman', defaultLabel: '八幡講崇敬会', path: '/society' },
-  {
-    labelKey: 'その他',
-    defaultLabel: 'その他',
-    path: '/news',
-    children: [
-      { labelKey: 'navNews', defaultLabel: '新着情報', path: '/news' },
-      { labelKey: 'footerOmotesando', defaultLabel: '表参道商店街', path: '/omotesando' },
-      { labelKey: 'faqTitle', defaultLabel: 'よくある質問', path: '/faq' },
-      { labelKey: 'navContact', defaultLabel: 'お問い合せ', path: '/contact' },
-      { labelKey: 'footerDonation', defaultLabel: '奉賛お申込み', path: '/donation' },
-    ],
-  },
-];
-
-const LANGUAGES = [
-  { code: 'ja', label: '日本語', short: 'JP' },
-  { code: 'en', label: 'English', short: 'EN' },
-  { code: 'zh-TW', label: '繁體中文', short: '繁' },
-  { code: 'zh-CN', label: '简体中文', short: '簡' },
-  { code: 'ko', label: '한국어', short: 'KO' },
-];
-
 const C = {
   crimson: '#a50000',
   vermil: '#e2501f',
@@ -101,6 +29,78 @@ export function Header() {
   const locale = useLocale();
   const pathname = usePathname();
   const router = useRouter();
+
+  const NAV_ITEMS: NavItem[] = [
+    {
+      labelKey: 'navAbout',
+      defaultLabel: t('header_text_1'),
+      path: '/about/history',
+      children: [
+        { labelKey: 'historyTitle', defaultLabel: t('header_text_2'), path: '/about/history' },
+        { labelKey: 'deitiesTitle', defaultLabel: t('header_text_3'), path: '/about/deities' },
+        {
+          labelKey: 'legendsTitle',
+          defaultLabel: t('header_text_4'),
+          path: '/about/legends/goreisui',
+          isGroup: true, // renders as section label — children always visible, no secondary hover needed
+          children: [
+            { labelKey: 'legend1Title', defaultLabel: t('header_text_5'), path: '/about/legends/goreisui' },
+            { labelKey: 'legend2Title', defaultLabel: t('header_text_6'), path: '/about/legends/todaiji' },
+            { labelKey: 'legend3Title', defaultLabel: t('header_text_7'), path: '/about/legends/wake' },
+            { labelKey: 'legend4Title', defaultLabel: t('header_text_8'), path: '/about/legends/shinbutsu' },
+          ],
+        },
+        { labelKey: 'timelineTitle', defaultLabel: t('header_text_9'), path: '/about/timeline' },
+        { labelKey: 'museumTitle', defaultLabel: t('header_text_10'), path: '/about/museum' },
+      ],
+    },
+    {
+      labelKey: 'navWorship',
+      defaultLabel: t('header_text_11'),
+      path: '/worship/guide',
+      children: [
+        { labelKey: 'etiquetteTitle', defaultLabel: t('header_text_12'), path: '/worship/etiquette' },
+        { labelKey: 'groundsTitle', defaultLabel: t('header_text_13'), path: '/worship/guide' },
+        { labelKey: 'accessTitle', defaultLabel: t('header_text_14'), path: '/worship/access' },
+        { labelKey: 'monorailTitle', defaultLabel: t('header_text_15'), path: '/worship/monorail' },
+        { labelKey: 'prayerTitle', defaultLabel: t('header_text_16'), path: '/worship/pray' },
+        { labelKey: 'yaku', defaultLabel: t('header_text_17'), path: '/worship/fortune' },
+        { labelKey: 'offsiteTitle', defaultLabel: t('header_text_18'), path: '/worship/trip' },
+        { labelKey: 'amuletsTitle', defaultLabel: t('header_text_19'), path: '/worship/confer' },
+      ],
+    },
+    {
+      labelKey: 'navFestivals',
+      defaultLabel: t('header_text_20'),
+      path: '/festivals/festival-list',
+      children: [
+        { labelKey: 'majorFestivalsTitle', defaultLabel: t('header_text_21'), path: '/festivals/festival-list' },
+        { labelKey: 'festivalsTitle', defaultLabel: t('header_text_22'), path: '/festivals/festival-detail' },
+      ],
+    },
+    { labelKey: 'weddingTitle', defaultLabel: t('header_text_23'), path: '/wedding' },
+    { labelKey: 'footerHachiman', defaultLabel: t('header_text_24'), path: '/society' },
+    {
+      labelKey: t('header_text_25'),
+      defaultLabel: t('header_text_26'),
+      path: '/news',
+      children: [
+        { labelKey: 'navNews', defaultLabel: t('header_text_27'), path: '/news' },
+        { labelKey: 'footerOmotesando', defaultLabel: t('header_text_28'), path: '/omotesando' },
+        { labelKey: 'faqTitle', defaultLabel: t('header_text_29'), path: '/faq' },
+        { labelKey: 'navContact', defaultLabel: t('header_text_30'), path: '/contact' },
+        { labelKey: 'footerDonation', defaultLabel: t('header_text_31'), path: '/donation' },
+      ],
+    },
+  ];
+
+  const LANGUAGES = [
+    { code: 'ja', label: t('header_text_32'), short: 'JP' },
+    { code: 'en', label: 'English', short: 'EN' },
+    { code: 'zh-TW', label: t('header_text_34'), short: t('header_text_33') },
+    { code: 'zh-CN', label: t('header_text_36'), short: t('header_text_35') },
+    { code: 'ko', label: '한국어', short: 'KO' },
+  ];
 
   const [scrolled, setScrolled] = useState(false);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
@@ -183,7 +183,7 @@ export function Header() {
           <Link href={`/${locale}`} className="flex items-center shrink-0 hover:opacity-85 transition-opacity">
             <img
               src={LOGO_IMG}
-              alt="宇佐神宮"
+              alt={t('header_text_37')}
               style={{
                 height: scrolled ? '42px' : '40px',
                 width: 'auto',
@@ -410,7 +410,7 @@ export function Header() {
             >
               {/* Drawer Top Header */}
               <div className="flex items-center justify-between px-5 py-4 border-b border-crimson/10 shrink-0 select-none">
-                <img src={LOGO_IMG} alt="宇佐神宮" className="h-[34px] w-auto object-contain" />
+                <img src={LOGO_IMG} alt={t('header_text_38')} className="h-[34px] w-auto object-contain" />
                 <button
                   onClick={() => setMobileOpen(false)}
                   className="bg-transparent border-0 cursor-pointer text-text-mute"

@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useLocale } from 'next-intl';
 import { motion, useInView } from 'framer-motion';
 import { Clock, Users, AlertCircle, PhoneCall, ChevronRight } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 // ── Images ────────────────────────────────────────────────────────────────────
 const IMG_HERO  = '/images/regenerate_monorail.png';
@@ -56,6 +57,7 @@ function OrnamentDivider() {
 
 // ── Page ─────────────────────────────────────────────────────────────────────
 export default function MonorailPage() {
+  const t = useTranslations();
   const locale = useLocale();
   return (
     <div className="w-full min-h-screen" style={{ backgroundColor: C.ivory }}>
@@ -64,7 +66,7 @@ export default function MonorailPage() {
       <section style={{ position: 'relative', height: '340px', overflow: 'hidden' }}>
         <img
           src={IMG_HERO}
-          alt="モノレール"
+          alt={t('worshipMonorail_text_1')}
           style={{
             position: 'absolute', inset: 0,
             width: '100%', height: '100%',
@@ -85,17 +87,11 @@ export default function MonorailPage() {
             <Link
               href={`/${locale}`}
               className="font-sans text-ivory/55 text-[0.62rem] tracking-widest hover:text-ivory transition-colors"
-            >
-              ホーム
-            </Link>
+            >{t("worshipMonorailPage_text_34653")}</Link>
             <ChevronRight size={11} className="text-ivory/30" />
-            <span className="font-sans text-gold-lt/90 text-[0.62rem] tracking-widest">
-              ご参拝・ご祈願
-            </span>
+            <span className="font-sans text-gold-lt/90 text-[0.62rem] tracking-widest">{t("worshipMonorailPage_text_11089")}</span>
             <ChevronRight size={11} className="text-ivory/30" />
-            <span className="font-sans text-gold-lt/90 text-[0.62rem] tracking-widest">
-              モノレールのご案内
-            </span>
+            <span className="font-sans text-gold-lt/90 text-[0.62rem] tracking-widest">{t("worshipMonorailPage_text_29672")}</span>
           </nav>
 
           <motion.div
@@ -115,9 +111,7 @@ export default function MonorailPage() {
               fontFamily: 'var(--font-serif)', color: '#faf8f5',
               fontSize: 'clamp(2rem, 5vw, 3rem)', fontWeight: 300,
               letterSpacing: '0.3em', textShadow: '0 3px 20px rgba(0,0,0,0.4)',
-            }}>
-              モノレールのご案内
-            </h1>
+            }}>{t("worshipMonorailPage_text_29672")}</h1>
             <div className="flex items-center justify-center gap-3 mt-5">
               <div style={{ width: '40px', height: '1px', backgroundColor: 'rgba(162,122,40,0.5)' }} />
               <div style={{ width: '5px', height: '5px', backgroundColor: C.gold, opacity: 0.7, transform: 'rotate(45deg)' }} />
@@ -168,7 +162,7 @@ export default function MonorailPage() {
               }}>
                 <img
                   src={IMG_PHOTO}
-                  alt="モノレール"
+                  alt={t('worshipMonorail_text_2')}
                   style={{ width: '100%', display: 'block', objectFit: 'cover' }}
                 />
               </div>
@@ -288,18 +282,16 @@ export default function MonorailPage() {
                 <p style={{
                   fontFamily: 'var(--font-sans)', color: C.crimson,
                   fontSize: '0.7rem', letterSpacing: '0.22em', textTransform: 'uppercase',
-                }}>
-                  ご利用の際のご注意
-                </p>
+                }}>{t("worshipMonorailPage_text_82446")}</p>
               </div>
 
               <ul style={{ listStyle: 'none', margin: 0, padding: 0 }}>
                 {[
-                  '清掃作業のため、毎月運行を停止する日があります。',
-                  '車イス２台の乗車不可',
-                  '危険防止のため着席または手すりにおつかまりください。',
-                  'モノレールは、悪天候及び整備点検等により一時運行できない場合があります。',
-                  'ご利用になられる際は一度お電話にてご確認ください。',
+                  t('worshipMonorail_text_3'),
+                  t('worshipMonorail_text_4'),
+                  t('worshipMonorail_text_5'),
+                  t('worshipMonorail_text_6'),
+                  t('worshipMonorail_text_7'),
                 ].map((note, i) => (
                   <li
                     key={i}
@@ -355,7 +347,7 @@ export default function MonorailPage() {
             }}>
               <img
                 src={IMG_HERO}
-                alt="モノレール"
+                alt={t('worshipMonorail_text_8')}
                 style={{ width: '100%', display: 'block' }}
               />
             </div>

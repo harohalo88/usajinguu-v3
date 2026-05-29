@@ -5,8 +5,10 @@ import Link from 'next/link';
 import { useLocale } from 'next-intl';
 import { motion } from 'framer-motion';
 import { Calendar, ArrowLeft, ChevronRight } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 export default function NewsDetailPage() {
+  const t = useTranslations();
   const locale = useLocale();
   const heroImage = "https://images.unsplash.com/photo-1766119407463-686b65d2e25a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0cmFkaXRpb25hbCUyMGphcGFuZXNlJTIwc2hyaW5lJTIwYXJjaGl0ZWN0dXJlJTIwcmVkJTIwdGVtcGxlfGVufDF8fHx8MTc3NDI0NjY4MHww&ixlib=rb-4.1.0&q=80&w=1080";
   const contentImage = "https://images.unsplash.com/photo-1763312262854-056705666019?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwZW9wbGUlMjB2aXNpdGluZyUyMGphcGFuZXNlJTIwc2hyaW5lJTIwZ2F0aGVyaW5nfGVufDF8fHx8MTc3NDI0NjY4NHww&ixlib=rb-4.1.0&q=80&w=1080";
@@ -29,20 +31,14 @@ export default function NewsDetailPage() {
             <Link
               href={`/${locale}`}
               className="font-sans text-white/55 text-[0.62rem] tracking-widest hover:text-white transition-colors"
-            >
-              ホーム
-            </Link>
+            >{t("newsIdPage_text_34653")}</Link>
             <ChevronRight size={11} className="text-white/30" />
             <Link
               href={`/${locale}/news`}
               className="font-sans text-white/55 text-[0.62rem] tracking-widest hover:text-white transition-colors"
-            >
-              新着情報
-            </Link>
+            >{t("newsIdPage_text_25214")}</Link>
             <ChevronRight size={11} className="text-white/30" />
-            <span className="font-sans text-[#c49a3a] text-[0.62rem] tracking-widest">
-              お知らせ詳細
-            </span>
+            <span className="font-sans text-[#c49a3a] text-[0.62rem] tracking-widest">{t("newsIdPage_text_84834")}</span>
           </nav>
 
           <motion.div
@@ -55,9 +51,9 @@ export default function NewsDetailPage() {
             <div className="space-y-4">
               <div className="flex items-center gap-2 text-[#a27a28] font-medium tracking-widest">
                 <Calendar className="w-4 h-4" />
-                <time dateTime="2026-02-13">令和8年2月13日</time>
+                <time dateTime="2026-02-13">{t('news[id]_text_1')}</time>
               </div>
-              <h1 className="text-3xl md:text-5xl lg:text-6xl text-white font-serif leading-tight tracking-wider">
+              <h1 className="font-title-main text-3xl md:text-5xl lg:text-6xl text-white font-serif leading-tight tracking-wider">
                 国宝 宇佐神宮本殿特別拝観
               </h1>
             </div>
@@ -77,36 +73,36 @@ export default function NewsDetailPage() {
           {/* Intro Text */}
           <div className="prose prose-lg max-w-none text-gray-800 leading-loose space-y-6">
             <p>
-              宇佐神宮御本殿を期間限定で一般公開致します。瑞垣に囲まれて平素は全容を見ることが出来ない国宝の八幡造本殿を間近に参拝・拝観頂ける機会です。皆様のご参拝をお待ち致しております。<strong className="font-bold text-gray-900">なお、御神体や本殿内部の公開は致しませんので、予めご承知ください。</strong>
+              宇佐神宮御本殿を期間限定で一般公開致します。瑞垣に囲まれて平素は全容を見ることが出来ない国宝の八幡造本殿を間近に参拝・拝観頂ける機会です。皆様のご参拝をお待ち致しております。<strong className="font-bold text-gray-900">{t('news[id]_text_2')}</strong>
             </p>
 
             {/* Detail Blocks */}
             <div className="space-y-10 mt-12">
               {/* Period */}
               <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-[#e2501f] pl-4">【公開期間】</h3>
-                <p className="pl-5">令和8年5月3日（日）から5月6日（水・祝）</p>
+                <h3 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-[#e2501f] pl-4">{t('news[id]_text_3')}</h3>
+                <p className="pl-5">{t('news[id]_text_4')}</p>
               </div>
 
               {/* Time */}
               <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-[#e2501f] pl-4">【受付時間】</h3>
-                <p className="pl-5">午前9時から午後4時まで</p>
+                <h3 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-[#e2501f] pl-4">{t('news[id]_text_5')}</h3>
+                <p className="pl-5">{t('news[id]_text_6')}</p>
               </div>
 
               {/* Fee Table */}
               <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4 border-l-4 border-[#e2501f] pl-4">【お一人の拝観料】</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-4 border-l-4 border-[#e2501f] pl-4">{t('news[id]_text_7')}</h3>
                 <div className="pl-5">
                   <table className="w-full border-collapse border border-gray-200 text-left bg-white shadow-sm">
                     <tbody>
                       <tr className="border-b border-gray-200">
-                        <th className="py-4 px-6 font-medium text-gray-700 bg-gray-50/50 w-1/2">一般（中学生以上）</th>
-                        <td className="py-4 px-6 text-gray-800">800円</td>
+                        <th className="py-4 px-6 font-medium text-gray-700 bg-gray-50/50 w-1/2">{t('news[id]_text_8')}</th>
+                        <td className="py-4 px-6 text-gray-800">{t('news[id]_text_9')}</td>
                       </tr>
                       <tr>
-                        <th className="py-4 px-6 font-medium text-gray-700 bg-gray-50/50">小学生以下</th>
-                        <td className="py-4 px-6 text-gray-800">無料</td>
+                        <th className="py-4 px-6 font-medium text-gray-700 bg-gray-50/50">{t('news[id]_text_10')}</th>
+                        <td className="py-4 px-6 text-gray-800">{t('news[id]_text_11')}</td>
                       </tr>
                     </tbody>
                   </table>
@@ -118,34 +114,32 @@ export default function NewsDetailPage() {
                 <div className="relative w-full max-w-md bg-gray-200 aspect-[4/3] rounded overflow-hidden shadow-md">
                    <img
                     src={contentImage} 
-                    alt="御本殿特別拝観の様子" 
+                    alt={t('news[id]_text_12')} 
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <p className="mt-4 text-sm text-gray-600 font-medium tracking-wide">
-                  御本殿特別拝観の様子
-                </p>
+                <p className="mt-4 text-sm text-gray-600 font-medium tracking-wide">{t("newsIdPage_text_72653")}</p>
               </div>
 
               {/* Benefits */}
               <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-[#e2501f] pl-4">【拝観特典】</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-[#e2501f] pl-4">{t('news[id]_text_13')}</h3>
                 <ul className="pl-5 space-y-1">
-                  <li>・特別記念品を授与致します。</li>
+                  <li>{t('news[id]_text_14')}</li>
                 </ul>
               </div>
 
               {/* Prohibitions */}
               <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4 border-l-4 border-[#e2501f] pl-4">【禁止事項】</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-4 border-l-4 border-[#e2501f] pl-4">{t('news[id]_text_15')}</h3>
                 <ul className="pl-5 space-y-2 text-gray-700">
-                  <li>・ビデオ・カメラ・携帯電話など映像機器による撮影行為</li>
-                  <li>・ペット同伴での拝観</li>
-                  <li>・飲食・喫煙行為</li>
-                  <li>・飲酒された方の拝観</li>
-                  <li>・敷設の柵内への立ち入り</li>
-                  <li>・社殿等に手を触れること等の行為</li>
-                  <li>・危険物の持ち込み</li>
+                  <li>{t('news[id]_text_16')}</li>
+                  <li>{t('news[id]_text_17')}</li>
+                  <li>{t('news[id]_text_18')}</li>
+                  <li>{t('news[id]_text_19')}</li>
+                  <li>{t('news[id]_text_20')}</li>
+                  <li>{t('news[id]_text_21')}</li>
+                  <li>{t('news[id]_text_22')}</li>
                 </ul>
               </div>
             </div>
@@ -157,9 +151,7 @@ export default function NewsDetailPage() {
               href={`/${locale}/news`} 
               className="inline-flex items-center gap-2 text-[#e2501f] font-medium tracking-wider hover:text-[#c43e14] transition-colors group px-6 py-3 border border-transparent hover:border-[#e2501f] rounded-full"
             >
-              <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
-              新着情報一覧へ戻る
-            </Link>
+              <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />{t("newsIdPage_text_49628")}</Link>
           </div>
         </motion.div>
       </section>

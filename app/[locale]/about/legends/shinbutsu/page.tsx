@@ -5,13 +5,14 @@ import Link from 'next/link';
 import { useLocale } from 'next-intl';
 import { motion, useInView } from 'framer-motion';
 import { ChevronRight } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 // ── Images ────────────────────────────────────────────────────────────────────
 const IMG_SCROLL = '/images/shinbutsu02.jpg';
-const IMG_RUINS  = '/images/shinbutsu05.jpg';
+const IMG_RUINS  = 'https://res.cloudinary.com/dxhqwmwz1/image/upload/c_scale,w_760/f_auto/q_auto/v1779961441/%E5%AE%87%E4%BD%90%E7%A5%9E%E5%AE%AE%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6_%E7%A5%9E%E4%BB%8F%E7%BF%92%E5%90%88_img03_lj97ya.jpg';
 
-// ── Hero (Unsplash) ───────────────────────────────────────────────────────────
-const IMG_HERO = 'https://images.unsplash.com/photo-1772183095167-ea058f26667d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1920';
+// ── Hero (Cloudinary) ─────────────────────────────────────────────────────────
+const IMG_HERO = 'https://res.cloudinary.com/dxhqwmwz1/image/upload/c_crop,w_3000,h_844,x_0,y_700/c_scale,w_1600,h_450/f_auto/q_auto/v1779961439/%E5%AE%87%E4%BD%90%E7%A5%9E%E5%AE%AE%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6_%E7%A5%9E%E4%BB%8F%E7%BF%92%E5%90%88_img01_hxyfwg.jpg';
 
 // ── Design tokens ─────────────────────────────────────────────────────────────
 const CRIMSON  = '#a50000';
@@ -101,6 +102,7 @@ function LegendCard({ href, label, sub }: { href: string; label: string; sub: st
 
 // ════════════════════════════════════════════════════════════════════════════
 export default function ShinbutsuPage() {
+  const t = useTranslations();
   const locale = useLocale();
   return (
     <div className="min-h-screen" style={{ background: IVORY, color: TEXT }}>
@@ -109,7 +111,7 @@ export default function ShinbutsuPage() {
       <section style={{ position: 'relative', height: '340px', overflow: 'hidden' }}>
         <img
           src={IMG_HERO}
-          alt="神仏習合の歴史"
+          alt={t('aboutLegendsShinbutsu_text_1')}
           style={{
             position: 'absolute', inset: 0,
             width: '100%', height: '100%',
@@ -129,17 +131,11 @@ export default function ShinbutsuPage() {
             <Link
               href={`/${locale}`}
               className="font-sans text-ivory/55 text-[0.62rem] tracking-widest hover:text-ivory transition-colors"
-            >
-              ホーム
-            </Link>
+            >{t("aboutLegendsShinbutsuPage_text_34653")}</Link>
             <ChevronRight size={11} className="text-ivory/30" />
-            <span className="font-sans text-gold-lt/90 text-[0.62rem] tracking-widest">
-              宇佐神宮について
-            </span>
+            <span className="font-sans text-gold-lt/90 text-[0.62rem] tracking-widest">{t("aboutLegendsShinbutsuPage_text_44003")}</span>
             <ChevronRight size={11} className="text-ivory/30" />
-            <span className="font-sans text-gold-lt/90 text-[0.62rem] tracking-widest">
-              神仏習合の歴史
-            </span>
+            <span className="font-sans text-gold-lt/90 text-[0.62rem] tracking-widest">{t("aboutLegendsShinbutsuPage_text_51489")}</span>
           </nav>
 
           <motion.div
@@ -159,9 +155,7 @@ export default function ShinbutsuPage() {
               fontFamily: 'var(--font-serif)', color: '#faf8f5',
               fontSize: 'clamp(2rem, 5vw, 3rem)', fontWeight: 300,
               letterSpacing: '0.3em', textShadow: '0 3px 20px rgba(0,0,0,0.4)',
-            }}>
-              神仏習合の歴史
-            </h1>
+            }}>{t("aboutLegendsShinbutsuPage_text_51489")}</h1>
             <div className="flex items-center justify-center gap-3 mt-5">
               <div style={{ width: '40px', height: '1px', backgroundColor: 'rgba(162,122,40,0.5)' }} />
               <div style={{ width: '5px', height: '5px', backgroundColor: '#a27a28', opacity: 0.7, transform: 'rotate(45deg)' }} />
@@ -206,9 +200,7 @@ export default function ShinbutsuPage() {
                   color: TEXT,
                   textShadow: `1px 1px 0 ${IVORY}, 2px 2px 0 rgba(162,122,40,0.06)`,
                 }}
-              >
-                隼人の乱と放生会
-              </h2>
+              >{t("aboutLegendsShinbutsuPage_text_20151")}</h2>
             </div>
           </FadeIn>
 
@@ -227,8 +219,8 @@ export default function ShinbutsuPage() {
               <div className="sm:w-[45%]">
                 <CaptionedImage
                   src={IMG_SCROLL}
-                  alt="八幡宇佐宮御託宣集"
-                  caption="八幡宇佐宮御託宣集"
+                  alt={t('aboutLegendsShinbutsu_text_2')}
+                  caption={t('aboutLegendsShinbutsu_text_3')}
                 />
               </div>
             </div>
@@ -283,9 +275,7 @@ export default function ShinbutsuPage() {
                     color: TEXT,
                     textShadow: `1px 1px 0 rgba(242,236,228,0.9), 2px 2px 0 rgba(162,122,40,0.06)`,
                   }}
-                >
-                  仏教と銅と新羅神
-                </h2>
+                >{t("aboutLegendsShinbutsuPage_text_24243")}</h2>
               </div>
             </FadeIn>
 
@@ -322,9 +312,7 @@ export default function ShinbutsuPage() {
             <FadeIn delay={0.1}>
               <div className="flex items-center gap-3 mb-7">
                 <div className="w-[3px] h-7" style={{ background: CRIMSON }} />
-                <h3 className="font-serif tracking-[0.3em]" style={{ fontSize: '1.2rem', color: TEXT }}>
-                  弥勒寺
-                </h3>
+                <h3 className="font-serif tracking-[0.3em]" style={{ fontSize: '1.2rem', color: TEXT }}>{t("aboutLegendsShinbutsuPage_text_19009")}</h3>
               </div>
 
               <p className="font-sans text-[0.88rem] leading-[2.3] tracking-wide mb-8" style={{ color: TEXT_MID }}>
@@ -352,8 +340,8 @@ export default function ShinbutsuPage() {
           <FadeIn delay={0.25} className="md:sticky md:top-24">
             <CaptionedImage
               src={IMG_RUINS}
-              alt="神宮寺・弥勒寺跡"
-              caption="神宮寺・弥勒寺跡"
+              alt={t('aboutLegendsShinbutsu_text_4')}
+              caption={t('aboutLegendsShinbutsu_text_5')}
             />
           </FadeIn>
 
@@ -370,17 +358,15 @@ export default function ShinbutsuPage() {
         <FadeIn>
           <div className="flex items-center gap-3 mb-12">
             <div className="w-[3px] h-6" style={{ background: GOLD }} />
-            <h3 className="font-serif tracking-[0.35em]" style={{ fontSize: '1.1rem', color: TEXT }}>
-              その他の伝承
-            </h3>
+            <h3 className="font-serif tracking-[0.35em]" style={{ fontSize: '1.1rem', color: TEXT }}>{t("aboutLegendsShinbutsuPage_text_63428")}</h3>
           </div>
         </FadeIn>
 
         <FadeIn delay={0.1}>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-            <LegendCard href="/about/legends/goreisui" label="御霊水"          sub="Sacred Spring" />
-            <LegendCard href="/about/legends/todaiji"  label="東大寺の大仏建立"  sub="Tōdai-ji Temple" />
-            <LegendCard href="/about/legends/wake"     label="和気清麻呂とご神託" sub="Wake no Kiyomaro" />
+            <LegendCard href="/about/legends/goreisui" label={t('aboutLegendsShinbutsu_text_6')}          sub="Sacred Spring" />
+            <LegendCard href="/about/legends/todaiji"  label={t('aboutLegendsShinbutsu_text_7')}  sub="Tōdai-ji Temple" />
+            <LegendCard href="/about/legends/wake"     label={t('aboutLegendsShinbutsu_text_8')} sub="Wake no Kiyomaro" />
           </div>
         </FadeIn>
       </section>

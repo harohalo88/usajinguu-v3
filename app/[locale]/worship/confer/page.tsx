@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useLocale } from 'next-intl';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronRight, X, ZoomIn } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import {
   C,
   FadeIn,
@@ -44,57 +45,6 @@ interface Category {
   };
 }
 
-// ── Data ───────────────────────────────────────────────────────────────────────
-const CATEGORIES: Category[] = [
-  {
-    ja: '御守',
-    en: 'Omamori',
-    products: [
-      { title: '交通安全　木札守',       reading: 'もくさつまもり',        img: imgNishiki },
-      { title: '交通安全　無事カエル守', reading: 'ぶじかえるまもり',      img: imgNishiki  },
-      { title: '交通安全　錦守',         reading: 'にしきまもり',           img: imgNishiki  },
-      { title: '交通安全ステッカー',     reading: 'こうつうあんぜんすてっかー', img: imgNishiki },
-      { title: '健康長寿守',             reading: 'けんこうちょうじゅまもり', img: imgNishiki },
-      { title: '八幡神像守',             reading: 'はちまんしんぞうまもり', img: imgNishiki  },
-      { title: '勝守',                   reading: 'かちまもり',             img: imgNishiki  },
-    ],
-  },
-  {
-    ja: '御神札',
-    en: 'Goshinsatsu',
-    products: [
-      { title: '八幡守護木札（小）',  reading: 'はちまんしゅごもくさつ', img: imgHachiman },
-      { title: '商売繁盛木札（小）',  reading: 'しょうばいはんじょうもくさつ', img: imgHachiman },
-      { title: '宇佐神宮神札',        reading: 'うさじんぐうしんさつ',   img: imgHachiman  },
-      { title: '水神札',              reading: 'すいじんさつ',           img: imgHachiman   },
-      { title: '荒神札',              reading: 'こうじんさつ',           img: imgHachiman    },
-    ],
-    info: {
-      heading: '御神札について',
-      body: [
-        '神棚等にお祀りするお札です。',
-        '大きさは、荒神・水神、小、中、大、丙、甲があり、家内安全、商売繁盛、事業発展、海上安全などお札がございます。',
-      ],
-      table: {
-        note: '（初穂料 1,000円〜10,000円）',
-        headers: ['', 'タテ×ヨコ（cm）', '初穂料'],
-        rows: [
-          ['荒神・水神', '19.0×5.0', '1,000円'],
-          ['小', '24.5×5.5', '2,000円'],
-          ['大', '35.0×10.0', '3,500円'],
-        ],
-      },
-    },
-  },
-  {
-    ja: 'その他授与品',
-    en: 'Other Sacred Items',
-    products: [
-      { title: 'くすの香守',   reading: 'くすのかまもり', img: imgKusunoki  },
-      { title: 'クリアファイル', reading: 'くりあふぁいる', img: imgClearFile },
-    ],
-  },
-];
 
 // ── Lightbox ──────────────────────────────────────────────────────────────────
 interface LightboxProps {
@@ -102,6 +52,7 @@ interface LightboxProps {
   onClose: () => void;
 }
 function Lightbox({ product, onClose }: LightboxProps) {
+  const t = useTranslations();
   const { src, title, reading } = { src: product.img, title: product.title, reading: product.reading };
   return (
     <AnimatePresence>
@@ -130,9 +81,7 @@ function Lightbox({ product, onClose }: LightboxProps) {
             className="absolute -top-10 right-0 flex items-center gap-1.5 transition-opacity hover:opacity-100 font-sans text-ivory/70 text-[0.7rem] tracking-widest bg-none border-none cursor-pointer"
             style={{ background: 'none', border: 'none' }}
           >
-            <X size={14} />
-            閉じる
-          </button>
+            <X size={14} />{t("worshipConferPage_text_69921")}</button>
 
           {/* Image */}
           <div style={{ border: `1px solid ${C.borderG}`, background: C.stone }}>
@@ -162,6 +111,7 @@ function Lightbox({ product, onClose }: LightboxProps) {
 
 // ── Product card ──────────────────────────────────────────────────────────────
 function ProductCard({ product, onOpen }: { product: Product; onOpen: (p: Product) => void }) {
+  const t = useTranslations();
   const [hovered, setHovered] = useState(false);
   return (
     <FadeIn>
@@ -244,7 +194,7 @@ function ProductCard({ product, onOpen }: { product: Product; onOpen: (p: Produc
                   paddingLeft: '1em',
                   position: 'relative',
                 }}>
-                  <span style={{ position: 'absolute', left: 0, color: C.gold }}>・</span>
+                  <span style={{ position: 'absolute', left: 0, color: C.gold }}>{t('worshipConfer_text_44')}</span>
                   {line}
                 </p>
               ))}
@@ -270,6 +220,7 @@ function ProductCard({ product, onOpen }: { product: Product; onOpen: (p: Produc
 
 // ── Category section ──────────────────────────────────────────────────────────
 function CategorySection({ category, onOpen }: { category: Category; onOpen: (p: Product) => void }) {
+  const t = useTranslations();
   return (
     <section style={{ padding: '64px 0 0' }}>
       {/* Category heading */}
@@ -337,7 +288,7 @@ function CategorySection({ category, onOpen }: { category: Category; onOpen: (p:
               >
                 {category.info.body.map((line, idx) => (
                   <li key={idx} style={{ paddingLeft: '1.2em', position: 'relative' }}>
-                    <span style={{ position: 'absolute', left: 0, color: C.gold }}>・</span>
+                    <span style={{ position: 'absolute', left: 0, color: C.gold }}>{t('worshipConfer_text_45')}</span>
                     {line}
                   </li>
                 ))}
@@ -415,6 +366,59 @@ function CategorySection({ category, onOpen }: { category: Category; onOpen: (p:
 
 // ── Main page ─────────────────────────────────────────────────────────────────
 export default function ConferPage() {
+  const t = useTranslations();
+
+  const CATEGORIES: Category[] = [
+    {
+      ja: t('worshipConfer_text_1'),
+      en: 'Omamori',
+      products: [
+        { title: t('worshipConfer_text_3'),       reading: t('worshipConfer_text_2'),        img: imgNishiki },
+        { title: t('worshipConfer_text_5'), reading: t('worshipConfer_text_4'),      img: imgNishiki  },
+        { title: t('worshipConfer_text_7'),         reading: t('worshipConfer_text_6'),           img: imgNishiki  },
+        { title: t('worshipConfer_text_9'),     reading: t('worshipConfer_text_8'), img: imgNishiki },
+        { title: t('worshipConfer_text_11'),             reading: t('worshipConfer_text_10'), img: imgNishiki },
+        { title: t('worshipConfer_text_13'),             reading: t('worshipConfer_text_12'), img: imgNishiki  },
+        { title: t('worshipConfer_text_15'),                   reading: t('worshipConfer_text_14'),             img: imgNishiki  },
+      ],
+    },
+    {
+      ja: t('worshipConfer_text_16'),
+      en: 'Goshinsatsu',
+      products: [
+        { title: t('worshipConfer_text_18'),  reading: t('worshipConfer_text_17'), img: imgHachiman },
+        { title: t('worshipConfer_text_20'),  reading: t('worshipConfer_text_19'), img: imgHachiman },
+        { title: t('worshipConfer_text_22'),        reading: t('worshipConfer_text_21'),   img: imgHachiman  },
+        { title: t('worshipConfer_text_24'),              reading: t('worshipConfer_text_23'),           img: imgHachiman   },
+        { title: t('worshipConfer_text_26'),              reading: t('worshipConfer_text_25'),           img: imgHachiman    },
+      ],
+      info: {
+        heading: t('worshipConfer_text_27'),
+        body: [
+          t('worshipConfer_text_28'),
+          t('worshipConfer_text_29'),
+        ],
+        table: {
+          note: t('worshipConfer_text_30'),
+          headers: ['', t('worshipConfer_text_32'), t('worshipConfer_text_31')],
+          rows: [
+            [t('worshipConfer_text_34'), '19.0×5.0', t('worshipConfer_text_33')],
+            [t('worshipConfer_text_36'), '24.5×5.5', t('worshipConfer_text_35')],
+            [t('worshipConfer_text_38'), '35.0×10.0', t('worshipConfer_text_37')],
+          ],
+        },
+      },
+    },
+    {
+      ja: t('worshipConfer_text_39'),
+      en: 'Other Sacred Items',
+      products: [
+        { title: t('worshipConfer_text_41'),   reading: t('worshipConfer_text_40'), img: imgKusunoki  },
+        { title: t('worshipConfer_text_43'), reading: t('worshipConfer_text_42'), img: imgClearFile },
+      ],
+    },
+  ];
+
   const locale = useLocale();
   const [lightbox, setLightbox] = useState<Product | null>(null);
   const openLightbox  = useCallback((p: Product) => setLightbox(p), []);
@@ -434,7 +438,7 @@ export default function ConferPage() {
       <section style={{ position: 'relative', height: '340px', overflow: 'hidden' }}>
         <img
           src={HERO_IMG}
-          alt="授与品について"
+          alt={t('worshipConfer_text_46')}
           style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 45%' }}
         />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(10,3,3,0.42), rgba(10,3,3,0.72))' }} />
@@ -445,26 +449,18 @@ export default function ConferPage() {
             <Link
               href={`/${locale}`}
               className="font-sans text-ivory/55 text-[0.62rem] tracking-widest hover:text-ivory transition-colors"
-            >
-              ホーム
-            </Link>
+            >{t("worshipConferPage_text_34653")}</Link>
             <ChevronRight size={11} className="text-ivory/30" />
-            <span className="font-sans text-gold-lt/90 text-[0.62rem] tracking-widest">
-              ご参拝・ご祈願
-            </span>
+            <span className="font-sans text-gold-lt/90 text-[0.62rem] tracking-widest">{t("worshipConferPage_text_11089")}</span>
             <ChevronRight size={11} className="text-ivory/30" />
-            <span className="font-sans text-gold-lt/90 text-[0.62rem] tracking-widest">
-              授与品について
-            </span>
+            <span className="font-sans text-gold-lt/90 text-[0.62rem] tracking-widest">{t("worshipConferPage_text_16790")}</span>
           </nav>
 
           <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="text-center">
             <p style={{ fontFamily: 'var(--font-sans)', color: C.goldLt, fontSize: '0.58rem', letterSpacing: '0.35em', textTransform: 'uppercase', marginBottom: '10px' }}>
               Amulets &amp; Sacred Items
             </p>
-            <h1 style={{ fontFamily: 'var(--font-serif)', color: '#faf8f5', fontSize: 'clamp(1.6rem, 4vw, 2.4rem)', fontWeight: 300, letterSpacing: '0.28em' }}>
-              授与品について
-            </h1>
+            <h1 className="font-title-main" style={{ fontFamily: 'var(--font-serif)', color: '#faf8f5', fontSize: 'clamp(1.6rem, 4vw, 2.4rem)', fontWeight: 300, letterSpacing: '0.28em' }}>{t("worshipConferPage_text_16790")}</h1>
             <div className="flex items-center justify-center gap-3 mt-4">
               <div style={{ width: '36px', height: '1px', backgroundColor: 'rgba(162,122,40,0.45)' }} />
               <div style={{ width: '4px', height: '4px', backgroundColor: '#a27a28', opacity: 0.65, transform: 'rotate(45deg)' }} />
@@ -481,9 +477,7 @@ export default function ConferPage() {
             <p style={{ fontFamily: 'var(--font-sans)', color: C.gold, fontSize: '0.58rem', letterSpacing: '0.35em', textTransform: 'uppercase', marginBottom: '16px' }}>
               SACRED ITEMS
             </p>
-            <h2 style={{ fontFamily: 'var(--font-serif)', color: '#333333', fontSize: 'clamp(1.1rem,2.5vw,1.4rem)', letterSpacing: '0.25em', fontWeight: 400, marginBottom: '24px' }}>
-              八幡大神の御神威をいただく
-            </h2>
+            <h2 style={{ fontFamily: 'var(--font-serif)', color: '#333333', fontSize: 'clamp(1.1rem,2.5vw,1.4rem)', letterSpacing: '0.25em', fontWeight: 400, marginBottom: '24px' }}>{t("worshipConferPage_text_65796")}</h2>
             <p style={{ fontFamily: 'var(--font-sans)', color: C.textMid, fontSize: '0.85rem', lineHeight: 2.1, letterSpacing: '0.05em' }}>
               このお守り一覧表は、宇佐神宮オリジナルのお守りです。<br />
               それぞれ、八幡大神様又境内にお祀りしている神様の由緒やご神徳に因(ちな)むお守りです。<br />
@@ -520,9 +514,7 @@ export default function ConferPage() {
               <p style={{ fontFamily: 'var(--font-sans)', color: C.gold, fontSize: '0.58rem', letterSpacing: '0.35em', textTransform: 'uppercase', marginBottom: '12px' }}>
                 NOTICE
               </p>
-              <h3 style={{ fontFamily: 'var(--font-serif)', color: '#333333', letterSpacing: '0.2em', fontWeight: 400, marginBottom: '16px' }}>
-                授与品に関するお知らせ
-              </h3>
+              <h3 style={{ fontFamily: 'var(--font-serif)', color: '#333333', letterSpacing: '0.2em', fontWeight: 400, marginBottom: '16px' }}>{t("worshipConferPage_text_22597")}</h3>
               <ul
                 style={{
                   fontFamily: 'var(--font-sans)', color: C.textMid,
@@ -531,15 +523,15 @@ export default function ConferPage() {
                 }}
               >
                 <li style={{ paddingLeft: '1.2em', position: 'relative' }}>
-                  <span style={{ position: 'absolute', left: 0, color: C.gold }}>・</span>
+                  <span style={{ position: 'absolute', left: 0, color: C.gold }}>{t('worshipConfer_text_47')}</span>
                   授与品は授与所にて受け付けております。受付時間はお問い合わせください。
                 </li>
                 <li style={{ paddingLeft: '1.2em', position: 'relative', marginTop: '8px' }}>
-                  <span style={{ position: 'absolute', left: 0, color: C.gold }}>・</span>
+                  <span style={{ position: 'absolute', left: 0, color: C.gold }}>{t('worshipConfer_text_48')}</span>
                   在庫状況により一部の授与品をお受けできない場合がございます。
                 </li>
                 <li style={{ paddingLeft: '1.2em', position: 'relative', marginTop: '8px' }}>
-                  <span style={{ position: 'absolute', left: 0, color: C.gold }}>・</span>
+                  <span style={{ position: 'absolute', left: 0, color: C.gold }}>{t('worshipConfer_text_49')}</span>
                   郵送での頒布は行っておりません。直接お越しください。
                 </li>
               </ul>
@@ -556,9 +548,7 @@ export default function ConferPage() {
               color: '#faf8f5', backgroundColor: C.crimson, padding: '11px 28px',
               textDecoration: 'none', display: 'inline-block',
             }}
-          >
-            参拝についてへ戻る
-          </Link>
+          >{t("worshipConferPage_text_71902")}</Link>
           <Link
             href={`/${locale}`}
             style={{
@@ -566,9 +556,7 @@ export default function ConferPage() {
               color: C.crimson, backgroundColor: 'transparent', padding: '11px 28px',
               textDecoration: 'none', border: `1px solid ${C.crimson}`, display: 'inline-block',
             }}
-          >
-            ホームへ
-          </Link>
+          >{t("worshipConferPage_text_25133")}</Link>
         </div>
       </div>
 

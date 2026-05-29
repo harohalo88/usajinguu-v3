@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useLocale } from 'next-intl';
 import { motion, useInView } from 'framer-motion';
 import { Clock, ChevronRight, MapPin, Phone, Printer } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 // ── Images ────────────────────────────────────────────────────────────────────
 const IMG_INTRO = '/images/image-9.png';
@@ -61,6 +62,7 @@ function DiamondRule() {
 
 // ════════════════════════════════════════════════════════════════════════════
 export default function PrayPage() {
+  const t = useTranslations();
   const locale = useLocale();
 
   return (
@@ -91,17 +93,11 @@ export default function PrayPage() {
             <Link
               href={`/${locale}`}
               className="font-sans text-ivory/55 text-[0.62rem] tracking-widest hover:text-ivory transition-colors"
-            >
-              ホーム
-            </Link>
+            >{t("worshipPrayPage_text_34653")}</Link>
             <ChevronRight size={11} className="text-ivory/30" />
-            <span className="font-sans text-gold-lt/90 text-[0.62rem] tracking-widest">
-              ご参拝・ご祈願
-            </span>
+            <span className="font-sans text-gold-lt/90 text-[0.62rem] tracking-widest">{t("worshipPrayPage_text_11089")}</span>
             <ChevronRight size={11} className="text-ivory/30" />
-            <span className="font-sans text-gold-lt/90 text-[0.62rem] tracking-widest">
-              ご祈祷のご案内
-            </span>
+            <span className="font-sans text-gold-lt/90 text-[0.62rem] tracking-widest">{t("worshipPrayPage_text_59693")}</span>
           </nav>
 
           <motion.div
@@ -121,9 +117,7 @@ export default function PrayPage() {
               fontFamily: 'var(--font-serif)', color: '#faf8f5',
               fontSize: 'clamp(1.8rem, 5vw, 2.8rem)', fontWeight: 300,
               letterSpacing: '0.35em', textShadow: '0 3px 20px rgba(0,0,0,0.5)',
-            }}>
-              ご祈祷のご案内
-            </h1>
+            }}>{t("worshipPrayPage_text_59693")}</h1>
             <div className="flex items-center justify-center gap-3 mt-5">
               <div style={{ width: '40px', height: '1px', backgroundColor: 'rgba(162,122,40,0.5)' }} />
               <div style={{ width: '5px', height: '5px', backgroundColor: C.gold, opacity: 0.7, transform: 'rotate(45deg)' }} />
@@ -158,7 +152,7 @@ export default function PrayPage() {
               }}>
                 <img
                   src={IMG_INTRO}
-                  alt="上宮祈祷殿"
+                  alt={t('worshipPray_text_1')}
                   style={{ width: '100%', display: 'block', objectFit: 'cover', height: '210px' }}
                 />
               </div>
@@ -177,47 +171,41 @@ export default function PrayPage() {
                 listStyle: 'none', padding: 0, margin: 0,
               }}>
                 <li style={{ paddingLeft: '1.2em', position: 'relative' }}>
-                  <span style={{ position: 'absolute', left: 0, color: C.gold }}>・</span>
+                  <span style={{ position: 'absolute', left: 0, color: C.gold }}>{t('worshipPray_text_2')}</span>
                   <Link
                     href={`/${locale}/worship/fortune/`}
                     style={{ color: C.crimson, textDecoration: 'none' }}
                     className="hover:underline"
-                  >
-                    厄除開運（前厄・本厄・後厄・還暦前厄・還暦本厄・還暦後厄・年男・年女・十三参り）
-                  </Link>
+                  >{t("worshipPrayPage_text_14223")}</Link>
                 </li>
                 <li style={{ paddingLeft: '1.2em', position: 'relative', marginTop: '4px' }}>
-                  <span style={{ position: 'absolute', left: 0, color: C.gold }}>・</span>
+                  <span style={{ position: 'absolute', left: 0, color: C.gold }}>{t('worshipPray_text_3')}</span>
                   家内安全 ・交通安全 ・病気平癒 ・身上安全
                 </li>
                 <li style={{ paddingLeft: '1.2em', position: 'relative', marginTop: '4px' }}>
-                  <span style={{ position: 'absolute', left: 0, color: C.gold }}>・</span>
+                  <span style={{ position: 'absolute', left: 0, color: C.gold }}>{t('worshipPray_text_4')}</span>
                   <Link
                     href={`/${locale}/worship/fortune/#list1`}
                     style={{ color: C.crimson, textDecoration: 'none' }}
                     className="hover:underline"
-                  >
-                    祝歳（古希・喜寿・傘寿・米寿・卒寿・白寿）
-                  </Link>
+                  >{t("worshipPrayPage_text_67265")}</Link>
                 </li>
                 <li style={{ paddingLeft: '1.2em', position: 'relative', marginTop: '4px' }}>
-                  <span style={{ position: 'absolute', left: 0, color: C.gold }}>・</span>
+                  <span style={{ position: 'absolute', left: 0, color: C.gold }}>{t('worshipPray_text_5')}</span>
                   心願成就 ・神恩感謝 ・良縁成就 ・安産祈願 ・商売繁盛 ・事業発展 ・工場安全 ・工事安全
                 </li>
                 <li style={{ paddingLeft: '1.2em', position: 'relative', marginTop: '4px' }}>
-                  <span style={{ position: 'absolute', left: 0, color: C.gold }}>・</span>
+                  <span style={{ position: 'absolute', left: 0, color: C.gold }}>{t('worshipPray_text_6')}</span>
                   海上安全 ・大漁満足 ・選挙当選 ・必勝祈願 ・入試合格 ・学業成就 ・
                   <Link
                     href={`/${locale}/worship/fortune/#list2`}
                     style={{ color: C.crimson, textDecoration: 'none' }}
                     className="hover:underline"
-                  >
-                    御礼報賽参り
-                  </Link>
+                  >{t("worshipPrayPage_text_66117")}</Link>
                   {' '}・旅行安全
                 </li>
                 <li style={{ paddingLeft: '1.2em', position: 'relative', marginTop: '4px' }}>
-                  <span style={{ position: 'absolute', left: 0, color: C.gold }}>・</span>
+                  <span style={{ position: 'absolute', left: 0, color: C.gold }}>{t('worshipPray_text_7')}</span>
                   皇室弥栄国家安泰世界平和祈願 ・七五三詣
                 </li>
               </ul>
@@ -229,9 +217,7 @@ export default function PrayPage() {
                     href={`/${locale}/worship/trip`}
                     style={{ color: C.crimson, textDecoration: 'none' }}
                     className="hover:underline"
-                  >
-                    出張祭典等について
-                  </Link>
+                  >{t("worshipPrayPage_text_89108")}</Link>
                 </p>
               </div>
             </div>
@@ -245,9 +231,7 @@ export default function PrayPage() {
               <p style={{ fontFamily: 'var(--font-sans)', color: C.gold, fontSize: '0.58rem', letterSpacing: '0.35em', textTransform: 'uppercase', marginBottom: '8px' }}>
                 How to Apply
               </p>
-              <h2 style={{ fontFamily: 'var(--font-serif)', color: C.text, fontSize: 'clamp(1.2rem,3vw,1.5rem)', letterSpacing: '0.22em', fontWeight: 400 }}>
-                受付手順
-              </h2>
+              <h2 style={{ fontFamily: 'var(--font-serif)', color: C.text, fontSize: 'clamp(1.2rem,3vw,1.5rem)', letterSpacing: '0.22em', fontWeight: 400 }}>{t("worshipPrayPage_text_85781")}</h2>
               <div style={{ marginTop: '14px', height: '1px', background: `linear-gradient(to right,${C.borderG},transparent)` }} />
             </div>
           </FadeIn>
@@ -261,16 +245,16 @@ export default function PrayPage() {
                 <div style={{ overflow: 'hidden', border: `1px solid ${C.borderG}` }}>
                   <img
                     src={IMG_STEP1}
-                    alt="祈祷殿受付"
+                    alt={t('worshipPray_text_8')}
                     style={{ width: '100%', display: 'block', objectFit: 'cover', height: '180px' }}
                   />
                 </div>
                 <div style={{ padding: '20px 16px 28px', background: C.stone, border: `1px solid ${C.border}`, borderTop: 'none', minHeight: '110px' }}>
                   <div className="flex items-center gap-2 mb-3">
                     <div style={{ width: '22px', height: '22px', background: C.crimson, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                      <span style={{ fontFamily: 'var(--font-serif)', color: '#faf8f5', fontSize: '0.65rem' }}>壱</span>
+                      <span style={{ fontFamily: 'var(--font-serif)', color: '#faf8f5', fontSize: '0.65rem' }}>{t('worshipPray_text_9')}</span>
                     </div>
-                    <span style={{ fontFamily: 'var(--font-serif)', color: C.text, fontSize: '0.85rem', letterSpacing: '0.15em' }}>受付</span>
+                    <span style={{ fontFamily: 'var(--font-serif)', color: C.text, fontSize: '0.85rem', letterSpacing: '0.15em' }}>{t('worshipPray_text_10')}</span>
                   </div>
                   <p style={{ fontFamily: 'var(--font-sans)', color: C.textMid, fontSize: '0.8rem', lineHeight: 1.9, letterSpacing: '0.04em' }}>
                     上宮ご神木奥の祈祷殿受付にお越し下さい。
@@ -294,16 +278,16 @@ export default function PrayPage() {
                 <div style={{ overflow: 'hidden', border: `1px solid ${C.borderG}`, borderLeft: 'none' }}>
                   <img
                     src={IMG_STEP2}
-                    alt="申込用紙記入"
+                    alt={t('worshipPray_text_11')}
                     style={{ width: '100%', display: 'block', objectFit: 'cover', height: '180px' }}
                   />
                 </div>
                 <div style={{ padding: '20px 16px 28px', background: C.stone, border: `1px solid ${C.border}`, borderTop: 'none', borderLeft: 'none', minHeight: '110px' }}>
                   <div className="flex items-center gap-2 mb-3">
                     <div style={{ width: '22px', height: '22px', background: C.crimson, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                      <span style={{ fontFamily: 'var(--font-serif)', color: '#faf8f5', fontSize: '0.65rem' }}>弐</span>
+                      <span style={{ fontFamily: 'var(--font-serif)', color: '#faf8f5', fontSize: '0.65rem' }}>{t('worshipPray_text_12')}</span>
                     </div>
-                    <span style={{ fontFamily: 'var(--font-serif)', color: C.text, fontSize: '0.85rem', letterSpacing: '0.15em' }}>申込</span>
+                    <span style={{ fontFamily: 'var(--font-serif)', color: C.text, fontSize: '0.85rem', letterSpacing: '0.15em' }}>{t('worshipPray_text_13')}</span>
                   </div>
                   <p style={{ fontFamily: 'var(--font-sans)', color: C.textMid, fontSize: '0.8rem', lineHeight: 1.9, letterSpacing: '0.04em' }}>
                     申込用紙にご記入の上、受付をお済ませください。
@@ -327,16 +311,16 @@ export default function PrayPage() {
                 <div style={{ overflow: 'hidden', border: `1px solid ${C.borderG}`, borderLeft: 'none' }}>
                   <img
                     src={IMG_STEP3}
-                    alt="巫女による祈祷殿案内"
+                    alt={t('worshipPray_text_14')}
                     style={{ width: '100%', display: 'block', objectFit: 'cover', height: '180px' }}
                   />
                 </div>
                 <div style={{ padding: '20px 16px 28px', background: C.stone, border: `1px solid ${C.border}`, borderTop: 'none', borderLeft: 'none', minHeight: '110px' }}>
                   <div className="flex items-center gap-2 mb-3">
                     <div style={{ width: '22px', height: '22px', background: C.crimson, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                      <span style={{ fontFamily: 'var(--font-serif)', color: '#faf8f5', fontSize: '0.65rem' }}>参</span>
+                      <span style={{ fontFamily: 'var(--font-serif)', color: '#faf8f5', fontSize: '0.65rem' }}>{t('worshipPray_text_15')}</span>
                     </div>
-                    <span style={{ fontFamily: 'var(--font-serif)', color: C.text, fontSize: '0.85rem', letterSpacing: '0.15em' }}>ご祈祷</span>
+                    <span style={{ fontFamily: 'var(--font-serif)', color: C.text, fontSize: '0.85rem', letterSpacing: '0.15em' }}>{t('worshipPray_text_16')}</span>
                   </div>
                   <p style={{ fontFamily: 'var(--font-sans)', color: C.textMid, fontSize: '0.8rem', lineHeight: 1.9, letterSpacing: '0.04em' }}>
                     祈祷殿控室にてお待ちいただきました後、巫女が祈祷殿へとご案内致します。
@@ -359,9 +343,7 @@ export default function PrayPage() {
               >
                 <div className="flex items-center gap-2">
                   <Clock size={15} color="#faf8f5" strokeWidth={1.5} />
-                  <span style={{ fontFamily: 'var(--font-serif)', color: '#faf8f5', fontSize: '0.85rem', letterSpacing: '0.22em', whiteSpace: 'nowrap' }}>
-                    受付時間
-                  </span>
+                  <span style={{ fontFamily: 'var(--font-serif)', color: '#faf8f5', fontSize: '0.85rem', letterSpacing: '0.22em', whiteSpace: 'nowrap' }}>{t("worshipPrayPage_text_56028")}</span>
                 </div>
               </div>
               <div
@@ -370,9 +352,7 @@ export default function PrayPage() {
               >
                 <p style={{ fontFamily: 'var(--font-serif)', color: C.text, fontSize: 'clamp(1.4rem,3vw,1.9rem)', letterSpacing: '0.2em', fontWeight: 400 }}>
                   9時～16時
-                  <span style={{ fontFamily: 'var(--font-sans)', color: C.textMute, fontSize: '0.8rem', letterSpacing: '0.12em', marginLeft: '12px' }}>
-                    （毎日）
-                  </span>
+                  <span style={{ fontFamily: 'var(--font-sans)', color: C.textMute, fontSize: '0.8rem', letterSpacing: '0.12em', marginLeft: '12px' }}>{t("worshipPrayPage_text_77683")}</span>
                 </p>
                 <p style={{ fontFamily: 'var(--font-sans)', color: C.textMute, fontSize: '0.78rem', lineHeight: 1.9, letterSpacing: '0.04em', marginTop: '6px' }}>
                   ※恒例祭及び結婚式等により、しばらくお待ちいただく場合がございます。
@@ -389,9 +369,7 @@ export default function PrayPage() {
               <p style={{ fontFamily: 'var(--font-sans)', color: C.gold, fontSize: '0.58rem', letterSpacing: '0.35em', textTransform: 'uppercase', marginBottom: '8px' }}>
                 Offering
               </p>
-              <h2 style={{ fontFamily: 'var(--font-serif)', color: C.text, fontSize: 'clamp(1.2rem,3vw,1.5rem)', letterSpacing: '0.22em', fontWeight: 400 }}>
-                初穂料について
-              </h2>
+              <h2 style={{ fontFamily: 'var(--font-serif)', color: C.text, fontSize: 'clamp(1.2rem,3vw,1.5rem)', letterSpacing: '0.22em', fontWeight: 400 }}>{t("worshipPrayPage_text_47695")}</h2>
               <div style={{ marginTop: '14px', height: '1px', background: `linear-gradient(to right,${C.borderG},transparent)` }} />
             </div>
           </FadeIn>
@@ -419,11 +397,9 @@ export default function PrayPage() {
                 >
                   <div className="flex items-center gap-2 mb-4">
                     <div style={{ width: '8px', height: '8px', background: C.gold, transform: 'rotate(45deg)', flexShrink: 0 }} />
-                    <p style={{ fontFamily: 'var(--font-serif)', color: C.text, fontSize: '0.95rem', letterSpacing: '0.2em' }}>個人</p>
+                    <p style={{ fontFamily: 'var(--font-serif)', color: C.text, fontSize: '0.95rem', letterSpacing: '0.2em' }}>{t('worshipPray_text_17')}</p>
                   </div>
-                  <p style={{ fontFamily: 'var(--font-sans)', color: C.textMid, fontSize: '0.83rem', letterSpacing: '0.06em' }}>
-                    １項目につき
-                  </p>
+                  <p style={{ fontFamily: 'var(--font-sans)', color: C.textMid, fontSize: '0.83rem', letterSpacing: '0.06em' }}>{t("worshipPrayPage_text_38815")}</p>
                   <p style={{ fontFamily: 'var(--font-serif)', color: C.crimson, fontSize: 'clamp(1.1rem,2.5vw,1.4rem)', letterSpacing: '0.08em', marginTop: '4px' }}>
                     5,000円より
                   </p>
@@ -440,11 +416,9 @@ export default function PrayPage() {
                 >
                   <div className="flex items-center gap-2 mb-4">
                     <div style={{ width: '8px', height: '8px', background: C.crimson, transform: 'rotate(45deg)', flexShrink: 0 }} />
-                    <p style={{ fontFamily: 'var(--font-serif)', color: C.text, fontSize: '0.95rem', letterSpacing: '0.2em' }}>団体</p>
+                    <p style={{ fontFamily: 'var(--font-serif)', color: C.text, fontSize: '0.95rem', letterSpacing: '0.2em' }}>{t('worshipPray_text_18')}</p>
                   </div>
-                  <p style={{ fontFamily: 'var(--font-sans)', color: C.textMid, fontSize: '0.83rem', letterSpacing: '0.06em' }}>
-                    １項目につき
-                  </p>
+                  <p style={{ fontFamily: 'var(--font-sans)', color: C.textMid, fontSize: '0.83rem', letterSpacing: '0.06em' }}>{t("worshipPrayPage_text_38815")}</p>
                   <p style={{ fontFamily: 'var(--font-serif)', color: C.crimson, fontSize: 'clamp(1.1rem,2.5vw,1.4rem)', letterSpacing: '0.08em', marginTop: '4px' }}>
                     10,000円より
                   </p>
@@ -499,9 +473,7 @@ export default function PrayPage() {
                   <p style={{ fontFamily: 'var(--font-sans)', color: C.gold, fontSize: '0.58rem', letterSpacing: '0.35em', textTransform: 'uppercase', marginBottom: '4px' }}>
                     Postal Prayer
                   </p>
-                  <h2 style={{ fontFamily: 'var(--font-serif)', color: C.text, fontSize: 'clamp(1.05rem,2.5vw,1.3rem)', letterSpacing: '0.22em', fontWeight: 400 }}>
-                    遠方からの祈願祭（郵送の祈願祭）
-                  </h2>
+                  <h2 style={{ fontFamily: 'var(--font-serif)', color: C.text, fontSize: 'clamp(1.05rem,2.5vw,1.3rem)', letterSpacing: '0.22em', fontWeight: 400 }}>{t("worshipPrayPage_text_24863")}</h2>
                 </div>
               </div>
               <div style={{ height: '1px', background: `linear-gradient(to right,${C.borderG},transparent)`, marginBottom: '20px' }} />
@@ -561,9 +533,7 @@ export default function PrayPage() {
                   className="inline-flex items-center gap-1 hover:underline"
                   style={{ fontFamily: 'var(--font-sans)', color: C.crimson, fontSize: '0.8rem', letterSpacing: '0.1em', textDecoration: 'none' }}
                 >
-                  <ChevronRight size={13} />
-                  申し込み用紙等ダウンロードはこちらから
-                </a>
+                  <ChevronRight size={13} />{t("worshipPrayPage_text_29065")}</a>
               </div>
             </div>
           </FadeIn>
@@ -579,9 +549,7 @@ export default function PrayPage() {
                   <p style={{ fontFamily: 'var(--font-sans)', color: C.gold, fontSize: '0.58rem', letterSpacing: '0.35em', textTransform: 'uppercase', marginBottom: '4px' }}>
                     Reservation
                   </p>
-                  <h2 style={{ fontFamily: 'var(--font-serif)', color: C.text, fontSize: 'clamp(1.05rem,2.5vw,1.3rem)', letterSpacing: '0.22em', fontWeight: 400 }}>
-                    祭のご予約について
-                  </h2>
+                  <h2 style={{ fontFamily: 'var(--font-serif)', color: C.text, fontSize: 'clamp(1.05rem,2.5vw,1.3rem)', letterSpacing: '0.22em', fontWeight: 400 }}>{t("worshipPrayPage_text_15205")}</h2>
                 </div>
               </div>
               <div style={{ height: '1px', background: `linear-gradient(to right,${C.borderG},transparent)`, marginBottom: '20px' }} />
@@ -654,9 +622,7 @@ export default function PrayPage() {
                 color: '#faf8f5', backgroundColor: C.crimson, padding: '11px 28px',
                 textDecoration: 'none', display: 'inline-block',
               }}
-            >
-              参拝についてへ戻る
-            </Link>
+            >{t("worshipPrayPage_text_71902")}</Link>
             <Link
               href={`/${locale}`}
               style={{
@@ -664,9 +630,7 @@ export default function PrayPage() {
                 color: C.crimson, backgroundColor: 'transparent', padding: '11px 28px',
                 textDecoration: 'none', border: `1px solid ${C.crimson}`, display: 'inline-block',
               }}
-            >
-              ホームへ
-            </Link>
+            >{t("worshipPrayPage_text_25133")}</Link>
           </div>
 
         </div>

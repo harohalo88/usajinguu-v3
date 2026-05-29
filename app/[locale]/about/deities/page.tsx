@@ -6,11 +6,11 @@ import { useLocale, useTranslations } from 'next-intl';
 import { motion, useInView } from 'framer-motion';
 import { ChevronRight } from 'lucide-react';
 
-const IMG_CHOKUSHIMON = '/images/6a48dd876bbb9fd7b3c5b62cfbb47834f575b4e5.png';
-const IMG_ICHINO      = '/images/ee650760d4d1494373b34b9d28f00b3bfd3bab61.png';
+const IMG_CHOKUSHIMON = 'https://res.cloudinary.com/dxhqwmwz1/image/upload/c_fill,g_auto,w_520,h_480/f_auto/q_auto/v1779961453/%E5%AE%87%E4%BD%90%E7%A5%9E%E5%AE%AE%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6_%E3%81%93%E3%82%99%E7%A5%AD%E7%A5%9E_img02_ai5dst.jpg';
+const IMG_ICHINO      = 'https://res.cloudinary.com/dxhqwmwz1/image/upload/c_crop,w_2100,h_2400,x_600,y_300/c_scale,w_560,h_640/f_auto/q_auto/v1779961440/%E5%AE%87%E4%BD%90%E7%A5%9E%E5%AE%AE%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6_%E3%81%93%E3%82%99%E7%A5%AD%E7%A5%9E_img03_zx656c.jpg';
 const IMG_NINO        = '/images/ebea25b0b79be4de5408cbcabb0ca154084c31e0.png';
 const IMG_SANNO       = '/images/72fae222054618f68438fc341245f268f8dab5e6.png';
-const HEADER_IMG      = '/images/bf9f7b6f02cc9e1443c20d6967d1430724f52ec6.png';
+const HEADER_IMG      = 'https://res.cloudinary.com/dxhqwmwz1/image/upload/c_fill,g_auto,w_1600,h_450/f_auto/q_auto/v1780029960/%E5%AE%87%E4%BD%90%E7%A5%9E%E5%AE%AE%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6_%E3%81%93%E3%82%99%E7%A5%AD%E7%A5%9E_img01_dnksin.png';
 
 const C = {
   crimson:  '#a50000',
@@ -49,8 +49,9 @@ interface DeitySectionProps {
 function DeitySection({
   index, heading, subHeading, image, imageAlt, imageRight, text, highlight,
 }: DeitySectionProps) {
+  const t = useTranslations();
   const accent = index === 1 ? C.gold : C.crimson;
-  const number = ['一之御殿', '二之御殿', '三之御殿'][index];
+  const number = [t('aboutDeities_text_3'), t('aboutDeities_text_2'), t('aboutDeities_text_1')][index];
 
   return (
     <FadeIn>
@@ -128,9 +129,9 @@ export default function DeityPage() {
   const locale = useLocale();
   const t = useTranslations();
 
-  const HACHIMAN_HEADING = '八幡大神　[ 誉田別尊（応神天皇）]';
-  const HIME_HEADING     = '比売大神　[ 多岐津姫命・市杵嶋姫命・多紀理姫命 ]';
-  const JINGU_HEADING    = '神功皇后　[ 息長帯姫命 ]';
+  const HACHIMAN_HEADING = t('aboutDeities_text_4');
+  const HIME_HEADING     = t('aboutDeities_text_5');
+  const JINGU_HEADING    = t('aboutDeities_text_6');
 
   return (
     <>
@@ -138,7 +139,7 @@ export default function DeityPage() {
       <section className="relative h-[340px] overflow-hidden select-none">
         <img
           src={HEADER_IMG}
-          alt="ご祭神"
+          alt={t('aboutDeities_text_7')}
           className="absolute inset-0 w-full h-full object-cover"
           style={{ objectPosition: 'center 30%' }}
         />
@@ -150,17 +151,11 @@ export default function DeityPage() {
             <Link
               href={`/${locale}`}
               className="font-sans text-ivory/55 text-[0.62rem] tracking-widest hover:text-ivory transition-colors"
-            >
-              ホーム
-            </Link>
+            >{t("aboutDeitiesPage_text_34653")}</Link>
             <ChevronRight size={11} className="text-ivory/30" />
-            <span className="font-sans text-gold-lt/90 text-[0.62rem] tracking-widest">
-              宇佐神宮について
-            </span>
+            <span className="font-sans text-gold-lt/90 text-[0.62rem] tracking-widest">{t("aboutDeitiesPage_text_44003")}</span>
             <ChevronRight size={11} className="text-ivory/30" />
-            <span className="font-sans text-gold-lt/90 text-[0.62rem] tracking-widest">
-              ご祭神
-            </span>
+            <span className="font-sans text-gold-lt/90 text-[0.62rem] tracking-widest">{t("aboutDeitiesPage_text_30788")}</span>
           </nav>
 
           <motion.div
@@ -172,9 +167,7 @@ export default function DeityPage() {
             <p className="font-sans text-gold-lt text-[0.6rem] tracking-[0.35em] uppercase mb-2.5">
               Enshrined Deities
             </p>
-            <h1 className="font-serif text-ivory text-3xl md:text-5xl font-light tracking-[0.3em] drop-shadow-md">
-              ご祭神
-            </h1>
+            <h1 className="font-serif font-title-main text-ivory font-light tracking-[0.3em] drop-shadow-md" style={{ fontSize: "clamp(2rem, 5vw, 3rem)" }}>{t("aboutDeitiesPage_text_30788")}</h1>
             <div className="flex items-center justify-center gap-3 mt-5">
               <div className="w-10 h-[1px] bg-gold/50" />
               <div className="w-1.5 h-1.5 bg-gold opacity-70 rotate-45" />
@@ -195,12 +188,10 @@ export default function DeityPage() {
                 <div className="w-full max-w-[260px] shrink-0 mx-auto md:mx-0 select-none">
                   <img
                     src={IMG_CHOKUSHIMON}
-                    alt="勅使門"
+                    alt={t('aboutDeities_text_8')}
                     className="w-full h-[240px] object-cover rounded-sm border border-gold/20 shadow-sm"
                   />
-                  <p className="font-sans text-text-mute text-xs tracking-wider mt-2.5 text-center">
-                    勅使門（ちょくしもん）
-                  </p>
+                  <p className="font-sans text-text-mute text-xs tracking-wider mt-2.5 text-center">{t("aboutDeitiesPage_text_33295")}</p>
                 </div>
 
                 {/* Description and Anchors */}
@@ -215,9 +206,9 @@ export default function DeityPage() {
                   {/* Fast anchor triggers */}
                   <div className="grid grid-cols-3 gap-3 select-none">
                     {[
-                      { name: '八幡大神', sub: '一之御殿', anchor: '#hachiman', accent: C.crimson },
-                      { name: '比売大神', sub: '二之御殿', anchor: '#hime',     accent: C.gold    },
-                      { name: '神功皇后', sub: '三之御殿', anchor: '#jingu',    accent: C.crimson  },
+                      { name: t('aboutDeities_text_10'), sub: t('aboutDeities_text_9'), anchor: '#hachiman', accent: C.crimson },
+                      { name: t('aboutDeities_text_12'), sub: t('aboutDeities_text_11'), anchor: '#hime',     accent: C.gold    },
+                      { name: t('aboutDeities_text_14'), sub: t('aboutDeities_text_13'), anchor: '#jingu',    accent: C.crimson  },
                     ].map((d, i) => (
                       <a
                         key={i}
@@ -246,10 +237,10 @@ export default function DeityPage() {
             heading={HACHIMAN_HEADING}
             subHeading="Hachiman Okami  •  Homudawake no Mikoto (Emperor Ojin)"
             image={IMG_ICHINO}
-            imageAlt="一之御殿"
+            imageAlt={t('aboutDeities_text_15')}
             imageRight={true}
-            text="東大寺の大仏建立や道鏡の神託事件の時など、数々のご神威をあらわし皇室を護られたことで朝廷から厚く信仰されてきました。また皇室だけでなく、清和源氏をはじめ全国の武士も武運の神「弓矢八幡」として崇敬を寄せ、一般の人々にも鎮守の神として親しまれてきました。６世紀、菱形池のほとりに初めてご顕現された八幡大神は「誉田天皇広幡八幡麿」また「護国霊験威力神通大自在王菩薩」と名乗られたと伝えられています。仏教の世界でも八幡大菩薩として崇（あが）められ、元寇の時に神風をかせた神は八幡様であるとされています。"
-            highlight="「護国霊験威力神通大自在王菩薩」の名の通り自在なる御働きをお顕（あらわ）しになります。また、「八幡神」をお祀りしている八幡神社は全国に存在し、八百万（やおよろず）の広がりを持つ強いご神力でご守護されています。"
+            text={t('aboutDeities_text_16')}
+            highlight={t('aboutDeities_text_17')}
           />
         </div>
 
@@ -260,10 +251,10 @@ export default function DeityPage() {
             heading={HIME_HEADING}
             subHeading="Hime Okami  •  The Three Goddesses of Munakata"
             image={IMG_NINO}
-            imageAlt="二之御殿"
+            imageAlt={t('aboutDeities_text_18')}
             imageRight={false}
-            text="天照大御神（あまてらすおおみかみ）と素戔嗚尊（すさのおのみこと）の誓約によって誕生したとされる神で、多岐津姫命（たぎつひめのみこと）・市杵嶋姫命（いちきしまひめのみこと）・多紀理姫命（たぎりひめのみこと）の三女神のことを言います。筑紫の宇佐嶋（宇佐の御許山）に天降られたと伝えられており、八幡様のあらわれる以前の古い神様、地主神であるとされています。"
-            highlight="海北の道中の主として筑前（福岡）の宗像大社や宮地嶽神社、安芸（広島）の厳島神社などにも祀られており、学問・芸術の上達から財運や交通安全（航海の安全）など幅広くご守護をされています。"
+            text={t('aboutDeities_text_19')}
+            highlight={t('aboutDeities_text_20')}
           />
         </div>
 
@@ -274,10 +265,10 @@ export default function DeityPage() {
             heading={JINGU_HEADING}
             subHeading="Empress Jingu  •  Okinagatarashi-hime no Mikoto"
             image={IMG_SANNO}
-            imageAlt="三之御殿"
+            imageAlt={t('aboutDeities_text_21')}
             imageRight={true}
-            text="神功皇后は、香椎（かしい：福岡県）の斎宮（いわいのみや）で天神地祇（てんじんちぎ）の教えを仰いで熊襲（くまそ）を鎮められた後、皇祖の神助（しんじょ）を得て大陸との交渉を成し遂げられました。『日本書紀』には皇后の敬神（けいしん）の様子や、後に宇美（うみ：福岡県）でご誕生になる応神天皇が胎中天皇であられたこと等が記されています。"
-            highlight="神功皇后は母神として神人交歓、安産、教育などの守護をされており、そのご威徳が高くあらわれています。"
+            text={t('aboutDeities_text_22')}
+            highlight={t('aboutDeities_text_23')}
           />
         </div>
       </div>

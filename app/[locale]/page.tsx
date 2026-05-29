@@ -38,16 +38,16 @@ export default function IndexPage() {
       {
         '@type': 'PlaceOfWorship',
         '@id': `https://www.usajingu.or.jp/${locale}/#placeofworship`,
-        'name': locale === 'ja' ? '宇佐神宮' : 'Usa Jingu',
-        'alternateName': locale === 'ja' ? '八幡総本宮 宇佐神宮' : 'Usa Jingu Grand Shrine',
+        'name': locale === 'ja' ? t('home_text_1') : 'Usa Jingu',
+        'alternateName': locale === 'ja' ? t('home_text_2') : 'Usa Jingu Grand Shrine',
         'description': locale === 'ja'
-          ? '全国四万社あまりの八幡様の総本宮、宇佐神宮。神亀二年（725年）の創建以来、皇室の御崇敬篤き霊地。'
+          ? t('home_text_3')
           : 'The head shrine of all Hachiman shrines across Japan. Founded in 725 AD, a historic and sacred sanctuary.',
         'url': `https://www.usajingu.or.jp/${locale}`,
         'address': {
           '@type': 'PostalAddress',
-          'addressLocality': locale === 'ja' ? '宇佐市南宇佐' : 'Minamiusa, Usa City',
-          'addressRegion': locale === 'ja' ? '大分県' : 'Oita Prefecture',
+          'addressLocality': locale === 'ja' ? t('home_text_4') : 'Minamiusa, Usa City',
+          'addressRegion': locale === 'ja' ? t('home_text_5') : 'Oita Prefecture',
           'postalCode': '872-0102',
           'streetAddress': '2859',
           'addressCountry': 'JP'
@@ -62,9 +62,9 @@ export default function IndexPage() {
       {
         '@type': 'TouristAttraction',
         '@id': `https://www.usajingu.or.jp/${locale}/#touristattraction`,
-        'name': locale === 'ja' ? '宇佐神宮' : 'Usa Jingu Shrine',
+        'name': locale === 'ja' ? t('home_text_6') : 'Usa Jingu Shrine',
         'description': locale === 'ja'
-          ? '大分県宇佐市にある神社。全国の八幡宮の総本社であり、国宝の本殿や美しい自然、伝統的な参拝作法である二礼四拍手一礼で知られています。'
+          ? t('home_text_7')
           : 'A historic Shinto shrine located in Usa, Oita Prefecture. Famous for its National Treasure main hall and unique 2-bow, 4-clap, 1-bow worship etiquette.',
         'url': `https://www.usajingu.or.jp/${locale}`,
         'image': 'https://www.usajingu.or.jp/images/bf9f7b6f02cc9e1443c20d6967d1430724f52ec6.png'

@@ -6,40 +6,40 @@ import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { useTranslations, useLocale } from 'next-intl';
 
-const TAG_COLORS: Record<string, { bg: string; color: string }> = {
-  // Japanese Tags
-  'お知らせ':   { bg: 'rgba(165,0,0,0.08)',   color: '#a50000' },
-  '祭事':       { bg: 'rgba(226,80,31,0.08)',  color: '#c04010' },
-  'モノレール': { bg: 'rgba(162,122,40,0.1)',   color: '#7a5c1a' },
-  
-  // Traditional Chinese Tags
-  '公告':       { bg: 'rgba(165,0,0,0.08)',   color: '#a50000' },
-  '活動':       { bg: 'rgba(226,80,31,0.08)',  color: '#c04010' },
-  '纜車':       { bg: 'rgba(162,122,40,0.1)',   color: '#7a5c1a' },
-  
-  // Simplified Chinese Tags
-  '缆车':       { bg: 'rgba(162,122,40,0.1)',   color: '#7a5c1a' },
-  
-  // English Tags
-  'Notice':     { bg: 'rgba(165,0,0,0.08)',   color: '#a50000' },
-  'Event':      { bg: 'rgba(226,80,31,0.08)',  color: '#c04010' },
-  'Monorail':   { bg: 'rgba(162,122,40,0.1)',   color: '#7a5c1a' },
-  
-  // Korean Tags
-  '공지':       { bg: 'rgba(165,0,0,0.08)',   color: '#a50000' },
-  '행사':       { bg: 'rgba(226,80,31,0.08)',  color: '#c04010' },
-  '모노레일':   { bg: 'rgba(162,122,40,0.1)',   color: '#7a5c1a' },
-};
-
-function getTagStyle(tag: string) {
-  return TAG_COLORS[tag] || { bg: 'rgba(122,106,90,0.1)', color: '#7a6a5a' };
-}
-
 export function NewsSection() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-80px' });
   const t = useTranslations();
   const locale = useLocale();
+
+  const TAG_COLORS: Record<string, { bg: string; color: string }> = {
+    // Japanese Tags
+    [t('newssection_text_1')]:   { bg: 'rgba(165,0,0,0.08)',   color: '#a50000' },
+    [t('newssection_text_2')]:       { bg: 'rgba(226,80,31,0.08)',  color: '#c04010' },
+    [t('newssection_text_3')]: { bg: 'rgba(162,122,40,0.1)',   color: '#7a5c1a' },
+    
+    // Traditional Chinese Tags
+    [t('newssection_text_4')]:       { bg: 'rgba(165,0,0,0.08)',   color: '#a50000' },
+    [t('newssection_text_5')]:       { bg: 'rgba(226,80,31,0.08)',  color: '#c04010' },
+    [t('newssection_text_6')]:       { bg: 'rgba(162,122,40,0.1)',   color: '#7a5c1a' },
+    
+    // Simplified Chinese Tags
+    [t('newssection_text_7')]:       { bg: 'rgba(162,122,40,0.1)',   color: '#7a5c1a' },
+    
+    // English Tags
+    'Notice':     { bg: 'rgba(165,0,0,0.08)',   color: '#a50000' },
+    'Event':      { bg: 'rgba(226,80,31,0.08)',  color: '#c04010' },
+    'Monorail':   { bg: 'rgba(162,122,40,0.1)',   color: '#7a5c1a' },
+    
+    // Korean Tags
+    '공지':       { bg: 'rgba(165,0,0,0.08)',   color: '#a50000' },
+    '행사':       { bg: 'rgba(226,80,31,0.08)',  color: '#c04010' },
+    '모노레일':   { bg: 'rgba(162,122,40,0.1)',   color: '#7a5c1a' },
+  };
+
+  function getTagStyle(tag: string) {
+    return TAG_COLORS[tag] || { bg: 'rgba(122,106,90,0.1)', color: '#7a6a5a' };
+  }
 
   const newsKeys = ['0', '1', '2', '3', '4'];
 
